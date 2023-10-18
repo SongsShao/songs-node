@@ -37,13 +37,13 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+# scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 # Dark Mode
-darkmode: false
+darkmode: true
 
 
 # ---------------------------------------------------------------
@@ -67,8 +67,8 @@ creative_commons:
   license: by-nc-sa
   # Available values: big | small
   size: small
-  sidebar: false
-  post: false
+  sidebar: true
+  post: true
   # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
   # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
   language:
@@ -78,6 +78,7 @@ creative_commons:
 open_graph:
   enable: true
   options:
+    type: blog
     #twitter_card: <twitter:card>
     #twitter_id: <twitter:creator>
     #twitter_site: <twitter:site>
@@ -96,19 +97,21 @@ open_graph:
 # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
 # External url should start with http:// or https://
 menu:
-  #home: / || fa fa-home
-  #about: /about/ || fa fa-user
-  #tags: /tags/ || fa fa-tags
-  #categories: /categories/ || fa fa-th
-  #archives: /archives/ || fa fa-archive
-  #schedule: /schedule/ || fa fa-calendar
+  home: / || fa fa-home
+  about: /about/me || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+  schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
-  #commonweal: /404/ || fa fa-heartbeat
+  commonweal: /404/ || fa fa-heartbeat
+  #Docs:
+  #  default: /docs/ || fa fa-book
 
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: false
+  badges: true
 
 
 # ---------------------------------------------------------------
@@ -141,9 +144,9 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: /images/avatar.gif
   # If true, the avatar will be displayed in circle.
-  rounded: false
+  rounded: true
   # If true, the avatar will be rotated with the cursor.
   rotated: false
 
@@ -155,7 +158,7 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  #GitHub: https://github.com/yourname || fab fa-github
+  GitHub: https://github.com/yourname || fab fa-github
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -174,10 +177,10 @@ social_icons:
 links_settings:
   icon: fa fa-globe
   # Available values: block | inline
-  layout: block
+  layout: inline
 
 links:
-  #Title: https://example.com
+  algorithm-note: https://songsnodes.gitee.io/algorithm-note/
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).
@@ -203,7 +206,7 @@ language_switcher: false
 
 footer:
   # Specify the year when the site was setup. If not defined, current year will be used.
-  #since: 2021
+  since: 2023
 
   # Icon between year and copyright info.
   icon:
@@ -219,7 +222,7 @@ footer:
   copyright:
 
   # Powered by Hexo & NexT
-  powered: true
+  powered: false
 
   # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
   beian:
@@ -257,22 +260,28 @@ post_meta:
 # Post wordcount display settings
 # Dependencies: https://github.com/next-theme/hexo-word-counter
 symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+  awl: 4
+  wpm: 275
   separated_meta: true
   item_text_total: false
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
-tag_icon: false
+tag_icon: true
 
 # Donate (Sponsor) settings
 # Front-matter variable (nonsupport animation).
 reward_settings:
   # If true, a donate button will be displayed in every article by default.
-  enable: false
+  enable: true
   animation: false
 
 reward:
-  #wechatpay: /images/wechatpay.png
-  #alipay: /images/alipay.png
+  wechatpay: /images/wechat.png
+  alipay: /images/alipay.png
   #paypal: /images/paypal.png
   #bitcoin: /images/bitcoin.png
 
@@ -287,14 +296,14 @@ follow_me:
 # Related popular posts
 # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
 related_posts:
-  enable: false
+  enable: true
   icon: fa fa-signs-post
 
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit:
-  enable: false
-  url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
+  enable: true
+  url:  https://gitee.com/songsnodes/songs-site/tree/master/source/ # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
 # Show previous post and next post in post footer if exists
@@ -306,6 +315,9 @@ post_navigation: left
 # Custom Page Settings
 # See: https://theme-next.js.org/docs/theme-settings/custom-pages
 # ---------------------------------------------------------------
+
+tag_generator:
+  enable_index_page: true
 
 # TagCloud settings for tags page.
 tagcloud:
@@ -336,7 +348,7 @@ calendar:
 
 # Preload styles and preconnect CDN for fonts and plugins.
 # For more information: https://www.w3.org/TR/resource-hints/#preconnect
-preconnect: false
+preconnect: true
 
 # Set the text alignment in posts / pages.
 text_align:
@@ -345,7 +357,7 @@ text_align:
   mobile: justify
 
 # Reduce padding / margin indents on devices with narrow width.
-mobile_layout_economy: false
+mobile_layout_economy: true
 
 # Browser header panel color.
 theme_color:
@@ -370,7 +382,7 @@ codeblock:
     dark: prism-dark
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Available values: default | flat | mac
     style:
   # Fold code block
@@ -383,22 +395,22 @@ back2top:
   # Back to top in sidebar.
   sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: left | right
-  start_at: left
+  start_at: right
   # Available values: top | bottom
-  position: top
+  position: bottom
   reversed: false
   color: "#37c6c0"
   height: 3px
 
 # Bookmark Support
 bookmark:
-  enable: false
+  enable: true
   # Customize the color of the bookmark.
   color: "#222"
   # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
@@ -407,8 +419,8 @@ bookmark:
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: false
-  permalink: https://github.com/yourname
+  enable: true
+  permalink: https://gitee.com/songsnodes/songs-site.git
 
 
 # ---------------------------------------------------------------
@@ -424,7 +436,7 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
   host:
@@ -437,30 +449,30 @@ font:
   # Global font settings used for all elements inside <body>.
   global:
     external: true
-    family: Lato
-    size:
+    family: Monda
+    size: 1.125
 
   # Font settings for site title (.site-title).
   title:
     external: true
-    family:
+    family: Lobster Two
     size:
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
     external: true
-    family:
+    family: Amita
     size:
 
   # Font settings for posts (.post-body).
   posts:
     external: true
-    family:
+    family: Montserrat
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family:
+    family: PT Mono
 
 
 # ---------------------------------------------------------------
@@ -916,7 +928,7 @@ vendors:
   # For example:
   # custom_cdn_url: https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}
   # custom_cdn_url: https://cdnjs.cloudflare.com/ajax/libs/${cdnjs_name}/${version}/${cdnjs_file}
-  custom_cdn_url:
+  custom_cdn_url: https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}
 
 # Assets
 # Accelerate delivery of static files using a CDN
@@ -924,3 +936,5 @@ vendors:
 css: css
 js: js
 images: images
+
+relative_link: false
