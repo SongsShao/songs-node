@@ -8,6 +8,8 @@
 # Theme Core Configuration Settings
 # See: https://theme-next.js.org/docs/theme-settings/
 # ---------------------------------------------------------------
+cache:
+  enable: true
 
 # Remove unnecessary files after hexo generate.
 minify: false
@@ -277,26 +279,27 @@ excerpt_description: true
 # If true, the read more button will be displayed in excerpt section.
 read_more_btn: true
 
-# Post meta display settings
-post_meta:
-  item_text: true
-  created_at: true
-  updated_at:
-    enable: true
-    another_day: true
-  categories: true
+# ============================================================= #
+# ======================= Post Settings ======================= #
+# ============================================================= #
 
-# Post wordcount display settings
-# Dependencies: https://github.com/next-theme/hexo-word-counter
-symbols_count_time:
-  symbols: true
-  time: true
-  total_symbols: true
-  total_time: true
-  awl: 4
-  wpm: 275
-  separated_meta: true
+post_meta:
+  updated_at:
+    enable: false
+
+symbols_count_time: 
+  symbols: true              # 是否启用
+  time: true                 # 估计阅读时间
+  total_symbols: true        # 页脚部分中所有帖子字数
+  total_time: true           # 页脚部分中所有帖子的估计阅读时间
+  exclude_codeblock: false
+  awl: 4                     # 平均字长
+  wpm: 275                   # 每分钟的平均单词数
+  suffix: "mins."
+  separated_meta: false      # 以分隔线显示单词计数和估计读取时间
+  item_text_post: true      # 显示单词计数和估计阅读时间的文本描述
   item_text_total: false
+
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: true
@@ -333,11 +336,7 @@ related_posts:
 post_edit:
   enable: true
   url: https://gitee.com/songsnodes/songs-site/tree/master/source/ # Link for view source
-  #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
-# Show previous post and next post in post footer if exists
-# Available values: left | right | false
-post_navigation: left
 
 # ---------------------------------------------------------------
 # Custom Page Settings
@@ -368,22 +367,10 @@ calendar:
   singleEvents: true
   maxResults: 250
 
-# ---------------------------------------------------------------
-# Misc Theme Settings
-# See: https://theme-next.js.org/docs/theme-settings/miscellaneous
-# ---------------------------------------------------------------
+# ============================================================= #
+# ==================== Misc Theme Settings ==================== #
+# ============================================================= #
 
-# Preload styles and preconnect CDN for fonts and plugins.
-# For more information: https://www.w3.org/TR/resource-hints/#preconnect
-preconnect: true
-
-# Set the text alignment in posts / pages.
-text_align:
-  # Available values: start | end | left | right | center | justify | justify-all | match-parent
-  desktop: justify
-  mobile: justify
-
-# Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: true
 
 # Browser header panel color.
@@ -463,42 +450,13 @@ github_banner:
 
 font:
   enable: true
-
-  # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-  host: https://fonts.lug.ustc.edu.cn
-
-  # Font options:
-  # `external: true` will load this font family from `host` above.
-  # `family: Times New Roman`. Without any quotes.
-  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
-
-  # Global font settings used for all elements inside <body>.
-  global:
+  codes:
     external: true
-    family: Monda
-    size: 1.125
-
-  # Font settings for site title (.site-title).
-  title:
-    external: true
-    family: Lobster Two
-    size:
-
-  # Font settings for headlines (<h1> to <h6>).
-  headings:
-    external: true
-    family: Amita
-    size:
-
-  # Font settings for posts (.post-body).
+    family: Inconsolata
   posts:
     external: true
     family: Montserrat
-
-  # Font settings for <code> and code blocks.
-  codes:
-    external: true
-    family: PT Mono
+    size: 0.9
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -701,7 +659,17 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
-  active:
+  active: valine
+valine:
+  enable: true
+  appid: bFoZJadYLSdllWCdWyxV072u-gzGzoHsz # 填写上面复制的AppID
+  appkey: Ewf1wqBGasmaG6HMPpvpv6d7 # 填写上面复制的AppKey
+  placeholder: Welcome to comment # 填写评论框里提示的内容
+  avatar: robohash # 评论者的默认头像
+  pageSize: 7 # 每页显示的评论数量
+  visitor: false # 是否显示阅读次数。若有busuanzi插件，建议关闭
+  recordIP: true # 是否显示评论者IP
+
   # Setting `true` means remembering the comment system selected by the visitor.
   storage: true
   # Lazyload all comment systems.
@@ -865,7 +833,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # For more information: http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: fa fa-user
   total_views: true
