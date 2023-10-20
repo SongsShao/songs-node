@@ -1,6 +1,6 @@
 ---
 title: 编写 Promise 方法
-permalink: /javascript-promise.html
+permalink: /javascript/promise.html
 date: 2023-10-19 22:14:04
 description: Promise 是异步编程的一种解决方案，它是一个对象，可以获取异步 操作的消息，他的出现大大改善了异步编程的困境，避免了地狱回调， 它比传统的解决方案回调函数和事件更合理和更强大。
 tag: [前端, JavaScript, es6]

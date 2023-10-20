@@ -660,7 +660,7 @@ comments:
   style: tabs
   # Choose a comment system to be displayed by default.
   # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
-  active: valine
+  active: changyan
 valine:
   enable: true
   appid: bFoZJadYLSdllWCdWyxV072u-gzGzoHsz # 填写上面复制的AppID
@@ -705,10 +705,9 @@ disqusjs:
 # Changyan
 # For more information: https://changyan.kuaizhan.com
 changyan:
-  enable: false
-  appid:
-  appkey:
-  # Show comments count
+  enable: true
+  appid: cywWcj4BR
+  appkey: a30428fc71ec317dbe68d573c2f4ce31
   count: true
 
 # LiveRe comments system
