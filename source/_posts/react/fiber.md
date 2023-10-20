@@ -1,6 +1,6 @@
 ---
 title: Fiber 架构的起源
-permalink: /react-fiber.html
+permalink: /react/fiber.html
 date: 2023-10-19 20:12:08
 description: Fiber 架构的引入使得 React 在渲染过程中可以更加灵活地响应用户交互，提供更好的用户体验。
 tag: [前端, react, JavaScript, Fiber]

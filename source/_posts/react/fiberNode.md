@@ -1,6 +1,6 @@
 ---
 title: FiberNode结构解析
-permalink: /react-fiber-node.html
+permalink: /react/fiber/node.html
 date: 2023-10-19 20:12:08
 tag: [前端, react, JavaScript, Fiber]
 comments: true

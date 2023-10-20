@@ -1,6 +1,6 @@
 ---
 title: React 获取服务器端时间
-permalink: /react-service-time.html
+permalink: /react/service/time.html
 date: 2023-10-19 20:12:08
 description: 本质上就是给服务器端发送一个请求
 tag: [前端, react, JavaScript]

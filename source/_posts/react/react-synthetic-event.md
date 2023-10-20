@@ -1,6 +1,6 @@
 ---
 title: React 使用合成事件（SyntheticEvent）
-permalink: /react-synthetic-event.html
+permalink: /react/synthetic/event.html
 description: React 使用合成事件（SyntheticEvent）来处理浏览器原生事件的跨浏览器兼容性问题。合成事件是一个封装了原生事件的对象，提供了一致的跨浏览器接口，使您能够在不同浏览器中以一致的方式处理事件。
 date: 2023-10-18 21:27:49
 tag: [前端, react, JavaScript]
