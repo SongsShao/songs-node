@@ -252,26 +252,26 @@ Promise 实现是通过js class编写，主要包括status、value、error、res
      }
    ```
 然后执行：
-```js
-  const p1 = new myPromise((resolve, reject) => {
-      resolve(111);
-      reject(333333);
-  })
-  p1.then(res => {
-      console.log("res1:", res);
-  }, err => {
-      console.log("err1:", err);
-  })
-  // 调用then方法多次调用
-  p1.then(res => {
-      console.log("res2:", res);
-  }, err => {
-      console.log("err2:", err);
-  })
-  执行结果：
-  res1: 111
-  res2: 111
-```
+  ```js
+    const p1 = new myPromise((resolve, reject) => {
+        resolve(111);
+        reject(333333);
+    })
+    p1.then(res => {
+        console.log("res1:", res);
+    }, err => {
+        console.log("err1:", err);
+    })
+    // 调用then方法多次调用
+    p1.then(res => {
+        console.log("res2:", res);
+    }, err => {
+        console.log("err2:", err);
+    })
+    执行结果：
+    res1: 111
+    res2: 111
+  ```
 
 5. catch 添加对Promise对象拒绝时的处理程序
 ```js
