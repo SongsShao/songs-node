@@ -20,28 +20,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"songsnodes.gitee.io","root":"/songs-site/","images":"/songs-site/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/songs-site/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
 
-    <meta name="description" content="Notes on personal growth">
+    <meta name="description" content="浏览器第一次加载资源，服务器返回 200，浏览器从服务器下载资源文件，并缓存资源文件与 response header，以供下次加载时对比使用">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="docs">
-<meta property="og:url" content="https://songsnodes.gitee.io/songs-site/docs/index.html">
+<meta property="og:title" content="浏览器缓存的全过程">
+<meta property="og:url" content="https://songsnodes.gitee.io/songs-site/browser/mechanism/cache.html">
 <meta property="og:site_name" content="songs-note">
-<meta property="og:description" content="Notes on personal growth">
+<meta property="og:description" content="浏览器第一次加载资源，服务器返回 200，浏览器从服务器下载资源文件，并缓存资源文件与 response header，以供下次加载时对比使用">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-10-19T09:39:06.000Z">
-<meta property="article:modified_time" content="2023-10-19T09:39:06.128Z">
+<meta property="og:image" content="https://pic.imgdb.cn/item/65323b8ec458853aef72a6ad.png">
+<meta property="article:published_time" content="2023-10-20T08:29:38.000Z">
+<meta property="article:modified_time" content="2023-10-20T08:34:40.572Z">
 <meta property="article:author" content="songshao">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="浏览器">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/65323b8ec458853aef72a6ad.png">
 
 
-<link rel="canonical" href="https://songsnodes.gitee.io/songs-site/docs/">
+<link rel="canonical" href="https://songsnodes.gitee.io/songs-site/browser/mechanism/cache">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":true,"permalink":"https://songsnodes.gitee.io/songs-site/docs/index.html","path":"docs/index.html","title":"docs"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://songsnodes.gitee.io/songs-site/browser/mechanism/cache.html","path":"/browser/mechanism/cache.html","title":"浏览器缓存的全过程"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>docs | songs-note
-</title>
+<title>浏览器缓存的全过程 | songs-note</title>
   
 
 
@@ -127,7 +130,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -140,6 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">浏览器缓存的全过程</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -216,34 +220,148 @@
 
     </div>
 
-    <div class="main-inner page posts-expand">
+    <div class="main-inner post posts-expand">
 
 
-    
-    
-    
-    <div class="post-block" lang="en"><header class="post-header">
+  
 
-<h1 class="post-title" itemprop="name headline">docs<a href="https://gitee.com/songsnodes/songs-site/tree/master/source/docs/index.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
-</h1>
 
-<div class="post-meta-container">
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://songsnodes.gitee.io/songs-site/browser/mechanism/cache.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/songs-site/images/avatar.gif">
+      <meta itemprop="name" content="songshao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="songs-note">
+      <meta itemprop="description" content="Notes on personal growth">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="浏览器缓存的全过程 | songs-note">
+      <meta itemprop="description" content="浏览器第一次加载资源，服务器返回 200，浏览器从服务器下载资源文件，并缓存资源文件与 response header，以供下次加载时对比使用">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浏览器缓存的全过程<a href="https://gitee.com/songsnodes/songs-site/tree/master/source/_posts/browser/mechanismCache.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-10-20 16:29:38" itemprop="dateCreated datePublished" datetime="2023-10-20T16:29:38+08:00">2023-10-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/songs-site/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">浏览器</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>343</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
 </div>
 
-</header>
+            <div class="post-description">浏览器第一次加载资源，服务器返回 200，浏览器从服务器下载资源文件，并缓存资源文件与 response header，以供下次加载时对比使用</div>
+        </div>
+      </header>
 
-      
-      
-      <div class="post-body">
-          
-      </div>
-      
-      
-      
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="浏览器缓存的全过程"><a href="#浏览器缓存的全过程" class="headerlink" title="浏览器缓存的全过程"></a>浏览器缓存的全过程</h3><p><img src="https://pic.imgdb.cn/item/65323b8ec458853aef72a6ad.png" alt="浏览器缓存的全过程"></p>
+<p>浏览器第一次加载资源，服务器返回 200，浏览器从服务器下载资源文件，并缓存资源文件与 response header，以供下次加载时对比使用；</p>
+<p>下一次加载资源时，由于强制缓存优先级较高，先比较当前时间与上次返回 200 的时间差，如果没有超过 cache-control 设置的 max-age，则没有过期，并命中强缓存，直接从本地读取数据资源。如果浏览器不支持HTTP1.1，则使用 expires 头判断是否过期；</p>
+<p>如果资源已过期，则标明强制缓存没有被命中，则开始协商缓存，向服务器发送带有 If-None-Match 和 If-Modified-Since 的请求；</p>
+<p>服务器收到请求后，优先根据 Etag 的值判断被请求的文件有没有做修改，Etag 值一致则没有修改，命中协商缓存，返回 304；如果不一致则有改动，直接返回新的资源文件带上新的 Etag 值并返回 200；</p>
+<p>如果服务器收到的请求没有 Etag 值，则将 If-Modified-Since 和被请求文件的最后修改时间作对比，一致则命中协商缓存，返回 304；</p>
+<p>不一致则返回新的 last-modified 和文件并返回200；</p>
+
     </div>
 
     
     
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/songs-site/images/wechat.png" alt="songshao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="/songs-site/images/alipay.png" alt="songshao Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/songs-site/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+              <a href="/songs-site/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 浏览器</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/songs-site/javascript-promise.html" rel="prev" title="编写 Promise 方法">
+                  <i class="fa fa-angle-left"></i> 编写 Promise 方法
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/songs-site/react/fiber/implement.html" rel="next" title="Fiber 架构实现流程">
+                  Fiber 架构实现流程 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
 
 
 </div>
