@@ -3184,3 +3184,6 @@ h6 {
 .archive .collection-title {
   display: none !important;
 }
+.posts-expand .post-header {
+  margin-bottom: 30px;
+}
