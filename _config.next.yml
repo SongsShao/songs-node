@@ -191,7 +191,7 @@ site_state: true
 # Key is the link label showing to end users.
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
-  GitHub: https://gitee.com/batype/songs-site || fab fa-github
+  GitHub: https://gitee.com/batype/songs-note || fab fa-github
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Twitter: https://twitter.com/yourname || fab fa-twitter
@@ -336,7 +336,7 @@ related_posts:
 # Easily browse and edit blog source code online.
 post_edit:
   enable: true
-  url: https://gitee.com/songsnodes/songs-site/tree/master/source/ # Link for view source
+  url: https://gitee.com/songsnodes/songs-note/tree/master/source/ # Link for view source
 
 # ---------------------------------------------------------------
 # Custom Page Settings
@@ -434,7 +434,7 @@ bookmark:
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
   enable: true
-  permalink: https://gitee.com/songsnodes/songs-site.git
+  permalink: https://gitee.com/songsnodes/songs-note.git
 
 # ---------------------------------------------------------------
 # Font Settings
