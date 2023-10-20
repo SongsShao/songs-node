@@ -20,25 +20,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"songsnodes.gitee.io","root":"/songs-note/","images":"/songs-note/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/songs-note/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
 
-    <meta name="description" content="Notes on personal growth">
+    <meta name="description" content="GUI 渲染线程是在 GUI 应用程序中负责界面渲染的线程。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="songs-note">
-<meta property="og:url" content="https://songsnodes.gitee.io/songs-note/categories/react/index.html">
+<meta property="og:title" content="浏览器的渲染进程的线程">
+<meta property="og:url" content="https://songsnodes.gitee.io/songs-note/browser/render/process.html">
 <meta property="og:site_name" content="songs-note">
-<meta property="og:description" content="Notes on personal growth">
+<meta property="og:description" content="GUI 渲染线程是在 GUI 应用程序中负责界面渲染的线程。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic.imgdb.cn/item/6532800ac458853aef6782e0.png">
+<meta property="article:published_time" content="2023-10-20T13:23:26.000Z">
+<meta property="article:modified_time" content="2023-10-20T13:31:05.972Z">
 <meta property="article:author" content="songshao">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="浏览器">
+<meta property="article:tag" content="GUI">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/6532800ac458853aef6782e0.png">
 
 
-<link rel="canonical" href="https://songsnodes.gitee.io/songs-note/categories/react/">
+<link rel="canonical" href="https://songsnodes.gitee.io/songs-note/browser/render/process">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"categories/react/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://songsnodes.gitee.io/songs-note/browser/render/process.html","path":"/browser/render/process.html","title":"浏览器的渲染进程的线程"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Category: react | songs-note</title>
+<title>浏览器的渲染进程的线程 | songs-note</title>
   
 
 
@@ -124,7 +131,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -137,6 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">浏览器的渲染进程的线程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GUI-%E6%B8%B2%E6%9F%93%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.1.</span> <span class="nav-text">GUI 渲染线程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JS-%E5%BC%95%E6%93%8E%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">JS 引擎线程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E8%A7%A6%E5%8F%91%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.3.</span> <span class="nav-text">时间触发线程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E8%A7%A6%E5%8F%91%E8%BF%9B%E7%A8%8B"><span class="nav-number">1.4.</span> <span class="nav-text">定时器触发进程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E6%AD%A5-http-%E8%AF%B7%E6%B1%82%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.5.</span> <span class="nav-text">异步 http 请求线程</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -213,171 +221,183 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">react
-          <small>Category</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://songsnodes.gitee.io/songs-note/browser/render/process.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/songs-note/images/avatar.gif">
+      <meta itemprop="name" content="songshao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="songs-note">
+      <meta itemprop="description" content="Notes on personal growth">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="浏览器的渲染进程的线程 | songs-note">
+      <meta itemprop="description" content="GUI 渲染线程是在 GUI 应用程序中负责界面渲染的线程。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浏览器的渲染进程的线程<a href="https://gitee.com/songsnodes/songs-note/tree/master/source/_posts/browser/renderProcess.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
-    </div>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-20T21:20:45+08:00"
-              content="2023-10-20">
-          10-20
-        </time>
-      </div>
+      <time title="Created: 2023-10-20 21:23:26" itemprop="dateCreated datePublished" datetime="2023-10-20T21:23:26+08:00">2023-10-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">浏览器</span></a>
+        </span>
+    </span>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/songs-note/javascript/async/await.html" itemprop="url">
-          <span itemprop="name">async/await 的理解</span>
-        </a>
-      </div>
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan: </span>
+    
+    <a title="浏览器的渲染进程的线程" href="/songs-note/browser/render/process.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::06ebd15977082384721f06890b76da97" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
 
-      
-    </header>
-  </article>
+            <div class="post-description">GUI 渲染线程是在 GUI 应用程序中负责界面渲染的线程。</div>
+        </div>
+      </header>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-20T16:29:47+08:00"
-              content="2023-10-20">
-          10-20
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/songs-note/react/fiber/implement.html" itemprop="url">
-          <span itemprop="name">Fiber 架构实现流程</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-19T22:14:04+08:00"
-              content="2023-10-19">
-          10-19
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/songs-note/javascript/promise.html" itemprop="url">
-          <span itemprop="name">编写 Promise 方法</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-19T20:12:08+08:00"
-              content="2023-10-19">
-          10-19
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/songs-note/react/fiber.html" itemprop="url">
-          <span itemprop="name">Fiber 架构的起源</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-19T20:12:08+08:00"
-              content="2023-10-19">
-          10-19
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/songs-note/react/fiber/node.html" itemprop="url">
-          <span itemprop="name">FiberNode结构解析</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-19T20:12:08+08:00"
-              content="2023-10-19">
-          10-19
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/songs-note/react/service/time.html" itemprop="url">
-          <span itemprop="name">React 获取服务器端时间</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-18T21:27:49+08:00"
-              content="2023-10-18">
-          10-18
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/songs-note/react/synthetic/event.html" itemprop="url">
-          <span itemprop="name">React 使用合成事件（SyntheticEvent）</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h4 id="浏览器的渲染进程的线程"><a href="#浏览器的渲染进程的线程" class="headerlink" title="浏览器的渲染进程的线程"></a>浏览器的渲染进程的线程</h4><p><img src="https://pic.imgdb.cn/item/6532800ac458853aef6782e0.png" alt="在这里插入图片描述"></p>
+<h5 id="GUI-渲染线程"><a href="#GUI-渲染线程" class="headerlink" title="GUI 渲染线程"></a>GUI 渲染线程</h5><p>GUI 渲染线程是在 GUI 应用程序中负责界面渲染的线程。负责渲染浏览器页面，解析 HTML、CSS，构建DOM 树、构建CSSOM树、构建渲染树和绘制页面；当界面需要重绘或由于某种操作引发回流时，该线程就会执行。</p>
+<p>在许多 GUI 应用程序中，渲染线程通常会在主线程中运行，这可能会导致界面卡顿或响应时间过长。为了避免这种情况，一些框架和库已经实现了将 GUI 渲染线程与主线程分离的机制，例如 Android 中的 UI 线程和渲染线程分离机制。</p>
+<p>当渲染线程与主线程分离时，它可以专注于绘制和更新屏幕上的内容，而主线程则可以处理用户输入和其他逻辑。这样可以提高应用程序的响应速度和用户体验。</p>
+<p><strong>注意</strong>：GUI 渲染线程和 JS 引擎线程是互斥的，当JS 引擎执行时GUI线程会被挂起，GUI 更新会被保存在一个队列中等到JS 引擎空闲时立即被执行。</p>
+<h5 id="JS-引擎线程"><a href="#JS-引擎线程" class="headerlink" title="JS 引擎线程"></a>JS 引擎线程</h5><p>JS 引擎线程也称为 JS 内核，负责处理Javascript 脚本程序，解析Javascript 脚本，运行代码；JS 引擎线程一直等待着任务队列中任务的到来，然后加以处理，一个 Tab 页中无论什么时候都只有一个JS 引擎线程在运行 JS 程序。</p>
+<p>在浏览器环境中，JavaScript 引擎线程负责解释和执行 JavaScript 代码，并将执行结果返回给主线程。JavaScript 引擎线程通常是单线程的，这意味着它只能同时执行一个任务。这就是为什么一些耗时的 JavaScript 代码可以阻止页面的渲染和响应。</p>
+<p>为了解决这个问题，浏览器引入了 Web Workers，使得可以使用多个 JavaScript 引擎线程来执行 JavaScript 代码。这些工作线程可以并行地执行 JavaScript 代码，并在完成任务后将结果返回给主线程，从而防止 JavaScript 代码阻塞页面的渲染和响应。</p>
+<p><strong>注意</strong>：GUI 渲染线程与 JS 引擎线程的互斥关系，所以如果JS 执行的时间过长，会造成页面的渲染不连贯，导致页面渲染加载阻塞。</p>
+<h5 id="时间触发线程"><a href="#时间触发线程" class="headerlink" title="时间触发线程"></a>时间触发线程</h5><p>时间触发线程属于浏览器而不是 JS 引擎，用来控制事件循环；当JS引擎执行代码块如 setTimeOut 时（也可是来自浏览器内核的其他线程,如鼠标点击、AJAX 异步请求等），会将对应任务添加到事件触发线程中；当对应的事件符合触发条件被触发时，该线程会把事件添加到待处理队列的队尾，等待 JS 引擎的处理。</p>
+<p>时间触发线程在浏览器中起着非常重要的作用，因为它们可以帮助网站实现许多不同的功能，包括：</p>
+<ul>
+<li><p>启动定时器：当网页需要执行一些定时任务时，可以使用时间触发线程来启动定时器。</p>
+</li>
+<li><p>处理事件：当用户与网页交互时，例如点击按钮或提交表单，时间触发线程将负责处理这些事件并执行相应的回调函数。</p>
+</li>
+<li><p>处理异步请求：当网页需要从服务器获取数据时，可以使用时间触发线程来处理异步请求并执行回调函数。</p>
+</li>
+</ul>
+<p><strong>注意</strong>：由于 JS 的单线程关系，所以这些待处理队列中的事件都得排队等待 JS 引擎处理（当 JS 引擎空闲时才会去执行）。</p>
+<h5 id="定时器触发进程"><a href="#定时器触发进程" class="headerlink" title="定时器触发进程"></a>定时器触发进程</h5><p>浏览器定时器触发进程是指浏览器中用来触发定时器的进程。在浏览器中，定时器可以使用 JavaScript 的 setTimeout() 和 setInterval() 方法来创建。当设置的时间到达后，浏览器会触发定时器，并执行对应的函数。</p>
+<p>定时器触发进程通常由内核管理，它会在特定时间间隔内不断运行，并检查是否有定时器需要触发。当定时器触发时，该进程会将需要执行的任务推入待执行队列中，然后通知主线程执行。主线程会不断检查待执行队列，如果有任务待执行，则将其取出并执行。</p>
+<p>需要<strong>注意</strong>的是，如果执行的任务需要较长时间才能完成，会导致主线程阻塞，影响页面的响应速度。因此，应该尽可能避免在定时器中执行复杂的任务，或者使用 Web Worker 在后台执行任务，以避免阻塞主线程。</p>
+<p><strong>注意</strong>：W3C 在 HTML 标准中规定，定时器的定时时间不能小于4ms，如果是小于 4ms，则默认为 4ms。</p>
+<h5 id="异步-http-请求线程"><a href="#异步-http-请求线程" class="headerlink" title="异步 http 请求线程"></a>异步 http 请求线程</h5><p>在浏览器中，异步 HTTP 请求线程通常由浏览器内部的 JavaScript 引擎处理。当 JavaScript 代码发起一个异步 HTTP 请求时，浏览器会创建一个新的线程来处理该请求，该线程通常是浏览器的网络线程。在该线程中，浏览器会向服务器发送 HTTP 请求，并等待服务器返回响应。</p>
+<p>在等待服务器响应的同时，JavaScript 引擎会继续执行其他代码，不会被阻塞。当服务器返回响应后，浏览器会将响应数据传递给 JavaScript 引擎，在 JavaScript 线程中执行相应的回调函数，用来处理响应数据。</p>
+<p>需要注意的是，由于浏览器对跨域请求进行了限制，在异步 HTTP 请求线程中发起的跨域请求需要经过浏览器的安全机制进行处理，一般需要设置相关的请求头或者使用 JSONP 等技术来解决。</p>
 
     </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/songs-note/images/wechat.png" alt="songshao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="/songs-note/images/alipay.png" alt="songshao Alipay">
+        <span>Alipay</span>
+      </div>
+
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/songs-note/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+              <a href="/songs-note/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 浏览器</a>
+              <a href="/songs-note/tags/GUI/" rel="tag"><i class="fa fa-tag"></i> GUI</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/songs-note/javascript/async/await.html" rel="prev" title="async/await 的理解">
+                  <i class="fa fa-angle-left"></i> async/await 的理解
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="06ebd15977082384721f06890b76da97"></div>
 </div>
   </main>
 
