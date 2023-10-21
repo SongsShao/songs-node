@@ -523,6 +523,31 @@
   </entry>
   
   <entry>
+    <title>React 获取服务器端时间</title>
+    <link href="https://batype.gitee.io/songs-note/react/service/time.html"/>
+    <id>https://batype.gitee.io/songs-note/react/service/time.html</id>
+    <published>2023-10-19T12:12:08.000Z</published>
+    <updated>2023-10-21T13:57:22.379Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="React-获取服务器端时间"><a href="#React-获取服务器端时间" class="headerlink" title="React 获取服务器端时间"></a>React 获取服务器端时间</h2><p><strong>思路</strong>：React获取服务器端时间，本质上就是给服务器端发送一个请求，然后从返回数据里面的headers里面获取到服务器date，然后更新服务器时间去格式化，获取服务器时间结束。按秒进行数据刷新，其实也很简单，就是使用定时器，进行动态递增即可，直接上代码。</p><span id="more"></span><p>获取服务器时间的方法：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">changeTime = async () =&gt; &#123;</span><br><span class="line">    let leftTime = await axios.get(&#x27;/&#x27;).then(response =&gt; &#123;</span><br><span class="line">        console.log(response.headers)</span><br><span class="line">        return new Date(response.headers.date).getTime()</span><br><span class="line">     &#125;).catch(error =&gt; &#123;</span><br><span class="line">        console.log(error)</span><br><span class="line">        return 0</span><br><span class="line">     &#125;)</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">        time: moment(leftTime).format(&#x27;YYYY-MM-DD HH:mm:ss&#x27;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>自动增加的方法（以秒为单位）:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">addTime = date =&gt; &#123;</span><br><span class="line">      let newDate = new Date(date)</span><br><span class="line">      newDate.setSeconds(newDate.getSeconds() + 1)</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        time: moment(newDate).format(&#x27;YYYY-MM-DD HH:mm:ss&#x27;)</span><br><span class="line">      &#125;)</span><br><span class="line">      window.time = &#123;</span><br><span class="line">        date: this.state.time,</span><br><span class="line">        timestamp: Date.parse(new Date(this.state.time))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>最后根据react  state状态进行页面渲染。</p>]]></content>
+    
+    
+    <summary type="html">本质上就是给服务器端发送一个请求</summary>
+    
+    
+    
+    <category term="React" scheme="https://batype.gitee.io/songs-note/categories/React/"/>
+    
+    
+    <category term="前端" scheme="https://batype.gitee.io/songs-note/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="react" scheme="https://batype.gitee.io/songs-note/tags/react/"/>
+    
+    <category term="JavaScript" scheme="https://batype.gitee.io/songs-note/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title>FiberNode结构解析</title>
     <link href="https://batype.gitee.io/songs-note/react/fiber/node.html"/>
     <id>https://batype.gitee.io/songs-note/react/fiber/node.html</id>
@@ -548,31 +573,6 @@
     <category term="JavaScript" scheme="https://batype.gitee.io/songs-note/tags/JavaScript/"/>
     
     <category term="Fiber" scheme="https://batype.gitee.io/songs-note/tags/Fiber/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React 获取服务器端时间</title>
-    <link href="https://batype.gitee.io/songs-note/react/service/time.html"/>
-    <id>https://batype.gitee.io/songs-note/react/service/time.html</id>
-    <published>2023-10-19T12:12:08.000Z</published>
-    <updated>2023-10-21T13:57:22.379Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="React-获取服务器端时间"><a href="#React-获取服务器端时间" class="headerlink" title="React 获取服务器端时间"></a>React 获取服务器端时间</h2><p><strong>思路</strong>：React获取服务器端时间，本质上就是给服务器端发送一个请求，然后从返回数据里面的headers里面获取到服务器date，然后更新服务器时间去格式化，获取服务器时间结束。按秒进行数据刷新，其实也很简单，就是使用定时器，进行动态递增即可，直接上代码。</p><span id="more"></span><p>获取服务器时间的方法：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">changeTime = async () =&gt; &#123;</span><br><span class="line">    let leftTime = await axios.get(&#x27;/&#x27;).then(response =&gt; &#123;</span><br><span class="line">        console.log(response.headers)</span><br><span class="line">        return new Date(response.headers.date).getTime()</span><br><span class="line">     &#125;).catch(error =&gt; &#123;</span><br><span class="line">        console.log(error)</span><br><span class="line">        return 0</span><br><span class="line">     &#125;)</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">        time: moment(leftTime).format(&#x27;YYYY-MM-DD HH:mm:ss&#x27;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>自动增加的方法（以秒为单位）:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">addTime = date =&gt; &#123;</span><br><span class="line">      let newDate = new Date(date)</span><br><span class="line">      newDate.setSeconds(newDate.getSeconds() + 1)</span><br><span class="line">      this.setState(&#123;</span><br><span class="line">        time: moment(newDate).format(&#x27;YYYY-MM-DD HH:mm:ss&#x27;)</span><br><span class="line">      &#125;)</span><br><span class="line">      window.time = &#123;</span><br><span class="line">        date: this.state.time,</span><br><span class="line">        timestamp: Date.parse(new Date(this.state.time))</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><p>最后根据react  state状态进行页面渲染。</p>]]></content>
-    
-    
-    <summary type="html">本质上就是给服务器端发送一个请求</summary>
-    
-    
-    
-    <category term="React" scheme="https://batype.gitee.io/songs-note/categories/React/"/>
-    
-    
-    <category term="前端" scheme="https://batype.gitee.io/songs-note/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="react" scheme="https://batype.gitee.io/songs-note/tags/react/"/>
-    
-    <category term="JavaScript" scheme="https://batype.gitee.io/songs-note/tags/JavaScript/"/>
     
   </entry>
   
