@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/browser/restful/and/rpc.html</loc>
+    <loc>https://batype.gitee.io/songs-note/browser/restful/and/rpc.html</loc>
     
     <lastmod>2023-10-21</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/about/me.html</loc>
+    <loc>https://batype.gitee.io/songs-note/about/me.html</loc>
     
     <lastmod>2023-10-21</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/browser/render/process.html</loc>
+    <loc>https://batype.gitee.io/songs-note/browser/render/process.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/javascript/async/await.html</loc>
+    <loc>https://batype.gitee.io/songs-note/javascript/async/await.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/browser/tab/to/tab.html</loc>
+    <loc>https://batype.gitee.io/songs-note/browser/tab/to/tab.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/javascript/promise.html</loc>
+    <loc>https://batype.gitee.io/songs-note/javascript/promise.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/react/synthetic/event.html</loc>
+    <loc>https://batype.gitee.io/songs-note/react/synthetic/event.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/react/service/time.html</loc>
+    <loc>https://batype.gitee.io/songs-note/react/service/time.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/browser/mechanism/cache.html</loc>
+    <loc>https://batype.gitee.io/songs-note/browser/mechanism/cache.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/react/fiber.html</loc>
+    <loc>https://batype.gitee.io/songs-note/react/fiber.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/react/fiber/implement.html</loc>
+    <loc>https://batype.gitee.io/songs-note/react/fiber/implement.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/react/fiber/node.html</loc>
+    <loc>https://batype.gitee.io/songs-note/react/fiber/node.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/docs/index.html</loc>
+    <loc>https://batype.gitee.io/songs-note/docs/index.html</loc>
     
     <lastmod>2023-10-19</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/index.html</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/index.html</loc>
     
     <lastmod>2023-10-19</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/categories/index.html</loc>
+    <loc>https://batype.gitee.io/songs-note/categories/index.html</loc>
     
     <lastmod>2023-10-18</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/archives/index.html</loc>
+    <loc>https://batype.gitee.io/songs-note/archives/index.html</loc>
     
     <lastmod>2023-10-18</lastmod>
     
@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/schedule/index.html</loc>
+    <loc>https://batype.gitee.io/songs-note/schedule/index.html</loc>
     
     <lastmod>2023-10-18</lastmod>
     
@@ -156,7 +156,7 @@
   
 
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note</loc>
+    <loc>https://batype.gitee.io/songs-note</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -164,70 +164,70 @@
 
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/RESTful/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/RESTful/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/RPC/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/RPC/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/HTTP/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/HTTP/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/GUI/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/GUI/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/JavaScript/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/JavaScript/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/es6/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/es6/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/react/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/react/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/Fiber/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/Fiber/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -236,14 +236,14 @@
 
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
+    <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/categories/react/</loc>
+    <loc>https://batype.gitee.io/songs-note/categories/react/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
