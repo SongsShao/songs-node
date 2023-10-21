@@ -9,10 +9,10 @@ function updateVersion() {
 
         let package = JSON.parse(data);
         version = package.version;
-        let versionArr = String(package.version).split(',');
+        let versionArr = String(package.version).split('.');
 
         versionArr[versionArr.length - 1] = Number(versionArr[versionArr.length - 1]) + 1;
-        package.version = versionArr.join(',');
+        package.version = versionArr.join('.');
 
         fs.writeFile('package.json', JSON.stringify(package, null, 2), (err, data) => {
             if (err) {
