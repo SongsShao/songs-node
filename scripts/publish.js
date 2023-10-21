@@ -30,6 +30,7 @@ exec(`git add . && git commit -m "update version ${version}"`, (err, data) => {
     if (err) {
         throw new Error(`git commit error: ${err}`);
     }
+    console.log(`git add . && git commit -m "update version ${version}"`);
 });
 
 exec('npm run build && gh-pages -d public', (err, data) => {
