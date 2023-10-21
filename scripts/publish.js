@@ -1,45 +1,30 @@
 const { exec } = require('child_process');
 const fs = require('fs');
 let version;
-function updateVersion() {
+let package;
+function updateVersion(callback) {
     fs.readFile('package.json', 'utf8', (err, data) => {
         if (err) {
           throw new Error(`读取文件时发生错误: ${err}`);
         }
 
-        let package = JSON.parse(data);
+        package = JSON.parse(data);
         version = package.version;
         let versionArr = String(package.version).split('.');
 
         versionArr[versionArr.length - 1] = Number(versionArr[versionArr.length - 1]) + 1;
         package.version = versionArr.join('.');
-
-        fs.writeFile('package.json', JSON.stringify(package, null, 2), (err, data) => {
+        fs.writeFile('package.json', JSON.stringify(package, '', 2), 'utf8', (err) => {
             if (err) {
                 throw new Error(`写入文件时发生错误: ${err}`);
             }
             console.log(`版本从${version}， 更新至${package.version}`);
             version = package.version;
+            callback(null, version);
         });
-      });
+    });
 }
 
-updateVersion();
-
-exec(`git add . && git commit -m "update version ${version}"`, (err, data) => {
-    if (err) {
-        throw new Error(`git commit error: ${err}`);
-    }
-    console.log(`git add . && git commit -m "update version ${version}"`);
-});
-
-exec('npm run build && gh-pages -d public', (err, data) => {
-    if (err) {
-        throw new Error(`npm run release error: ${err}`);
-    }
-    console.log(`版本${version}发布成功！`);
-    updateGiteePages();
-});
 
 function updateGiteePages() {
     
@@ -68,3 +53,24 @@ function updateGiteePages() {
         throw new Error(err);
       })
 }
+
+updateVersion(() => {
+
+    exec(`git add . && git commit -m "update version ${version}" && git push origin master`, (err, data) => {
+        if (err) {
+            throw new Error(`git commit error: ${err}`);
+        }
+        console.log(`git add . && git commit -m "update version ${version}"`);
+    });
+    
+    exec('npm run build && gh-pages -d public', (err, data) => {
+        if (err) {
+            throw new Error(`npm run release error: ${err}`);
+        }
+        console.log(`版本${version}发布成功！`);
+        updateGiteePages();
+    });
+});
+
+
+
