@@ -1,29 +1,29 @@
-const { exec, execSync } = require('child_process');
+const { execSync } = require('child_process');
 const fs = require('fs');
 let version;
 let package;
-function updateVersion() {
-    fs.readFileSync('package.json', 'utf8', (err, data) => {
+
+fs.readFileSync('package.json', 'utf8', (err, data) => {
+    if (err) {
+        throw new Error(`读取文件时发生错误: ${err}`);
+    }
+
+    package = JSON.parse(data);
+    version = package.version;
+    let versionArr = String(package.version).split('.');
+
+    versionArr[versionArr.length - 1] = Number(versionArr[versionArr.length - 1]) + 1;
+    package.version = versionArr.join('.');
+    fs.writeFileSync('package.json', JSON.stringify(package, '', 2), 'utf8', (err) => {
         if (err) {
-          throw new Error(`读取文件时发生错误: ${err}`);
+            throw new Error(`写入文件时发生错误: ${err}`);
         }
-
-        package = JSON.parse(data);
+        console.log(`版本从${version}， 更新至${package.version}`);
         version = package.version;
-        let versionArr = String(package.version).split('.');
-
-        versionArr[versionArr.length - 1] = Number(versionArr[versionArr.length - 1]) + 1;
-        package.version = versionArr.join('.');
-        fs.writeFileSync('package.json', JSON.stringify(package, '', 2), 'utf8', (err) => {
-            if (err) {
-                throw new Error(`写入文件时发生错误: ${err}`);
-            }
-            console.log(`版本从${version}， 更新至${package.version}`);
-            version = package.version;
-            
-        });
+        
     });
-}
+});
+
 
 
 function updateGiteePages() {
@@ -53,8 +53,6 @@ function updateGiteePages() {
         throw new Error(err);
       })
 }
-
-updateVersion();
 
 execSync(`git add . && git commit -m "update version ${version}" && git push origin master`, (err, data) => {
     if (err) {
