@@ -63,7 +63,7 @@ updateVersion(() => {
         console.log(`git add . && git commit -m "update version ${version}"`);
     });
     
-    exec('npm run build && gh-pages -d public', (err, data) => {
+    exec('npm run release', (err, data) => {
         if (err) {
             throw new Error(`npm run release error: ${err}`);
         }
