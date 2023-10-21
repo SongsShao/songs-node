@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/react/fiber/node.html</loc>
+    <loc>https://songsnodes.gitee.io/songs-note/react/fiber/implement.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/react/fiber/implement.html</loc>
+    <loc>https://songsnodes.gitee.io/songs-note/react/fiber/node.html</loc>
     
     <lastmod>2023-10-20</lastmod>
     
@@ -206,13 +206,6 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/react/</loc>
-    <lastmod>2023-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://songsnodes.gitee.io/songs-note/tags/JavaScript/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -220,14 +213,21 @@
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/Fiber/</loc>
+    <loc>https://songsnodes.gitee.io/songs-note/tags/es6/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://songsnodes.gitee.io/songs-note/tags/es6/</loc>
+    <loc>https://songsnodes.gitee.io/songs-note/tags/react/</loc>
+    <lastmod>2023-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://songsnodes.gitee.io/songs-note/tags/Fiber/</loc>
     <lastmod>2023-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
