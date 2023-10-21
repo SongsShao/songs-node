@@ -6,7 +6,8 @@ description: Fiber 架构的实现使得 React 能够在多任务之间动态地
 tag: [前端, react, JavaScript, Fiber]
 comments: true
 categories: 
- - react
+ - React
+ - Fiber
 ---
 
 Fiber 架构是 React 中用于实现虚拟 DOM 的一种算法架构。它的目标是提高渲染性能和用户体验，通过将渲染工作分割成多个小任务，在不阻塞主线程的情况下逐步完成整个渲染过程。

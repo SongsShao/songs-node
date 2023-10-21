@@ -6,7 +6,8 @@ tag: [前端, react, JavaScript, Fiber]
 comments: true
 description: FiberNode（也称为 Fiber 节点）是 React Fiber 架构中的核心概念之一，用于表示组件的层级结构和渲染过程中的任务。
 categories: 
- - react
+ - React
+ - Fiber
 ---
 
 # FiberNode结构解析

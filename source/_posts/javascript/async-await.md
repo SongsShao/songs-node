@@ -6,7 +6,8 @@ description: 单一的 Promise 链并不能发现 async/await 的优势。
 tag: [前端, JavaScript, es6]
 comments: true
 categories: 
- - react
+ - 前端
+ - es6
 ---
 
 

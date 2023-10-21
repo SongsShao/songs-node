@@ -6,7 +6,7 @@ date: 2023-10-18 21:27:49
 tag: [前端, react, JavaScript]
 comments: true
 categories: 
- - react
+ - React
 ---
 
 # React 使用合成事件

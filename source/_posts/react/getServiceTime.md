@@ -6,7 +6,7 @@ description: 本质上就是给服务器端发送一个请求
 tag: [前端, react, JavaScript]
 comments: true
 categories: 
- - react
+ - React
 ---
 
 ## React 获取服务器端时间

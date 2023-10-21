@@ -7,6 +7,7 @@ tag: [前端, 浏览器]
 comments: true
 categories: 
  - 浏览器
+ - 缓存
 ---
 
 ### 浏览器缓存的全过程

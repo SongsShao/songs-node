@@ -7,6 +7,7 @@ tag: [前端, 浏览器, GUI]
 comments: true
 categories: 
  - 浏览器
+ - 渲染
 ---
 
 #### 浏览器的渲染进程的线程

@@ -6,7 +6,8 @@ description: Promise 是异步编程的一种解决方案，它是一个对象�
 tag: [前端, JavaScript, es6]
 comments: true
 categories: 
- - react
+ - 前端
+ - es6
 ---
 
 ##### Promise 是什么？

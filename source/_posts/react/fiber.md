@@ -6,7 +6,8 @@ description: Fiber 架构的引入使得 React 在渲染过程中可以更加灵
 tag: [前端, react, JavaScript, Fiber]
 comments: true
 categories: 
- - react
+ - React
+ - Fiber
 ---
 
 # Fiber 架构的起源

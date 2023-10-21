@@ -16,7 +16,3 @@ quicklink:
   timeout: 3000
   priority: true
 ---
-
-{% centerquote %}Something{% endcenterquote %}
-
-{% pdf https://example.com/sample.pdf %}
