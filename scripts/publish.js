@@ -14,7 +14,7 @@ function updateVersion() {
         versionArr[versionArr.length - 1] = Number(versionArr[versionArr.length - 1]) + 1;
         package.version = versionArr.join(',');
 
-        fs.writeFile('package.json', JSON.stringify(package), (err, data) => {
+        fs.writeFile('package.json', JSON.stringify(package, null, 2), (err, data) => {
             if (err) {
                 throw new Error(`写入文件时发生错误: ${err}`);
             }
