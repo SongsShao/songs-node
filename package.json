@@ -5,7 +5,7 @@
   "scripts": {
     "build": "hexo clean && hexo generate",
     "clean": "hexo clean",
-    "deploy": "npm run build && gh-pages -d public",
+    "release": "npm run build && gh-pages -d public",
     "start": "hexo server -p 8888",
     "create:page": "hexo new page --path about/me `about me`"
   },
