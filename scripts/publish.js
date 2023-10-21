@@ -11,7 +11,7 @@ function updateVersion() {
         version = package.version;
         let versionArr = String(package.version).split(',');
 
-        versionArr[versionArr.length] = Number(versionArr[versionArr.length]) + 1;
+        versionArr[versionArr.length - 1] = Number(versionArr[versionArr.length - 1]) + 1;
         package.version = versionArr.join(',');
 
         fs.writeFile('package.json', JSON.stringify(package), (err, data) => {
