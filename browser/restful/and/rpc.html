@@ -21,31 +21,32 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"songsnodes.gitee.io","root":"/songs-note/","images":"/songs-note/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/songs-note/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
 
-    <meta name="description" content="Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。">
+    <meta name="description" content="RESTful是一种基于HTTP协议，通过URL、HTTP方法和参数等方式来访问和操作资源的设计风格和架构方法。它是一种轻量级的、高效的、无状态的Web服务架构，可以用于设计和开发各种类型的Web应用程序和分布式系统。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Fiber 架构实现流程">
-<meta property="og:url" content="https://songsnodes.gitee.io/songs-note/react/fiber/implement.html">
+<meta property="og:title" content="RESTful和RPC的区别">
+<meta property="og:url" content="https://songsnodes.gitee.io/songs-note/browser/restful/and/rpc.html">
 <meta property="og:site_name" content="songs-note">
-<meta property="og:description" content="Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。">
+<meta property="og:description" content="RESTful是一种基于HTTP协议，通过URL、HTTP方法和参数等方式来访问和操作资源的设计风格和架构方法。它是一种轻量级的、高效的、无状态的Web服务架构，可以用于设计和开发各种类型的Web应用程序和分布式系统。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-10-20T08:29:47.000Z">
-<meta property="article:modified_time" content="2023-10-20T12:39:23.481Z">
+<meta property="article:published_time" content="2023-10-21T06:31:03.000Z">
+<meta property="article:modified_time" content="2023-10-21T06:32:37.032Z">
 <meta property="article:author" content="songshao">
 <meta property="article:tag" content="前端">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="react">
-<meta property="article:tag" content="Fiber">
+<meta property="article:tag" content="浏览器">
+<meta property="article:tag" content="RESTful">
+<meta property="article:tag" content="RPC">
+<meta property="article:tag" content="HTTP">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://songsnodes.gitee.io/songs-note/react/fiber/implement">
+<link rel="canonical" href="https://songsnodes.gitee.io/songs-note/browser/restful/and/rpc">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://songsnodes.gitee.io/songs-note/react/fiber/implement.html","path":"/react/fiber/implement.html","title":"Fiber 架构实现流程"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://songsnodes.gitee.io/songs-note/browser/restful/and/rpc.html","path":"/browser/restful/and/rpc.html","title":"RESTful和RPC的区别"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Fiber 架构实现流程 | songs-note</title>
+<title>RESTful和RPC的区别 | songs-note</title>
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/analytics/baidu-analytics.min.js"></script>
@@ -133,7 +134,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -146,6 +147,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#RESTful"><span class="nav-number">1.</span> <span class="nav-text">RESTful</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RPC%EF%BC%88Remote-Procedure-Call%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">RPC（Remote Procedure Call）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RESTful%E5%92%8CRPC%E6%98%AF%E4%B8%A4%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E8%BF%9C%E7%A8%8B%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%EF%BC%8C%E5%AE%83%E4%BB%AC%E7%9A%84%E5%8C%BA%E5%88%AB%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC%E4%BB%A5%E4%B8%8B%E5%87%A0%E4%B8%AA%E6%96%B9%E9%9D%A2%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">RESTful和RPC是两种不同的远程调用方式，它们的区别主要包括以下几个方面：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%90%86%E5%BF%B5%EF%BC%9A"><span class="nav-number">3.1.</span> <span class="nav-text">设计理念：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E5%8D%8F%E8%AE%AE%EF%BC%9A"><span class="nav-number">3.2.</span> <span class="nav-text">通信协议：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="nav-number">3.3.</span> <span class="nav-text">数据传输格式：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%B0%83%E7%94%A8%E6%96%B9%E5%BC%8F%EF%BC%9A"><span class="nav-number">3.4.</span> <span class="nav-text">调用方式：</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -209,44 +211,6 @@
         </ul>
       </div>
     </div>
-        <div class="sidebar-inner sidebar-post-related">
-          <div class="animated">
-              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
-    Related Posts
-  </div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/songs-note/react/fiber.html" rel="bookmark">
-        <time class="popular-posts-time">2023-10-19</time>
-        <br>
-      Fiber 架构的起源
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/songs-note/react/synthetic/event.html" rel="bookmark">
-        <time class="popular-posts-time">2023-10-18</time>
-        <br>
-      React 使用合成事件（SyntheticEvent）
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/songs-note/react/fiber/node.html" rel="bookmark">
-        <time class="popular-posts-time">2023-10-19</time>
-        <br>
-      FiberNode结构解析
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/songs-note/react/service/time.html" rel="bookmark">
-        <time class="popular-posts-time">2023-10-19</time>
-        <br>
-      React 获取服务器端时间
-      </a>
-    </li>
-  </ul>
-
-          </div>
-        </div>
   </aside>
 
 
@@ -263,7 +227,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://songsnodes.gitee.io/songs-note/react/fiber/implement.html">
+    <link itemprop="mainEntityOfPage" href="https://songsnodes.gitee.io/songs-note/browser/restful/and/rpc.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/songs-note/images/avatar.gif">
@@ -276,12 +240,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Fiber 架构实现流程 | songs-note">
-      <meta itemprop="description" content="Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。">
+      <meta itemprop="name" content="RESTful和RPC的区别 | songs-note">
+      <meta itemprop="description" content="RESTful是一种基于HTTP协议，通过URL、HTTP方法和参数等方式来访问和操作资源的设计风格和架构方法。它是一种轻量级的、高效的、无状态的Web服务架构，可以用于设计和开发各种类型的Web应用程序和分布式系统。">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Fiber 架构实现流程<a href="https://gitee.com/songsnodes/songs-note/tree/master/source/_posts/react/fiberImplement.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          RESTful和RPC的区别<a href="https://gitee.com/songsnodes/songs-note/tree/master/source/_posts/browser/RestFulAndRPC.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -292,7 +256,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-10-20 16:29:47" itemprop="dateCreated datePublished" datetime="2023-10-20T16:29:47+08:00">2023-10-20</time>
+      <time title="Created: 2023-10-21 14:31:03" itemprop="dateCreated datePublished" datetime="2023-10-21T14:31:03+08:00">2023-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -300,7 +264,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/songs-note/categories/react/" itemprop="url" rel="index"><span itemprop="name">react</span></a>
+          <a href="/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">浏览器</span></a>
         </span>
     </span>
 
@@ -320,8 +284,8 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="Fiber 架构实现流程" href="/songs-note/react/fiber/implement.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::21f31354f88e0a6910ab719c600ff8fb" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="RESTful和RPC的区别" href="/songs-note/browser/restful/and/rpc.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::523a60b1ac3cc26c5aca1f0137ab23b0" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -331,41 +295,61 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>467</span>
+      <span>857</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
-            <div class="post-description">Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。</div>
+            <div class="post-description">RESTful是一种基于HTTP协议，通过URL、HTTP方法和参数等方式来访问和操作资源的设计风格和架构方法。它是一种轻量级的、高效的、无状态的Web服务架构，可以用于设计和开发各种类型的Web应用程序和分布式系统。</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Fiber 架构是 React 中用于实现虚拟 DOM 的一种算法架构。它的目标是提高渲染性能和用户体验，通过将渲染工作分割成多个小任务，在不阻塞主线程的情况下逐步完成整个渲染过程。</p>
-<p>下面是 Fiber 架构的简要实现过程：</p>
-<ul>
-<li><p>构建 Fiber 树：在进行首次渲染时，React 会构建一棵 Fiber 树，用于表示组件的层级结构和渲染顺序。每个 Fiber 节点对应一个组件实例，其中包含组件的状态、属性和其他相关信息。</p>
+    <div class="post-body" itemprop="articleBody"><h4 id="RESTful"><a href="#RESTful" class="headerlink" title="RESTful"></a>RESTful</h4><p>RESTful是一种基于HTTP协议，通过URL、HTTP方法和参数等方式来访问和操作资源的设计风格和架构方法。它是一种轻量级的、高效的、无状态的Web服务架构，可以用于设计和开发各种类型的Web应用程序和分布式系统。</p>
+<p>RESTful的核心思想是资源的定义和管理，将系统中的资源抽象为一组URI（统一资源标识符），通过HTTP方法来对资源进行访问和操作。常用的HTTP方法有GET、POST、PUT、DELETE等，它们分别对应着资源的查询、新增、更新和删除操作。</p>
+<p>RESTful的优势在于它简单、灵活、可伸缩、易于维护和扩展。它采用标准的HTTP协议和常见的数据格式（如JSON、XML等），使得开发人员可以快速地开发出高效、可靠的Web服务，并且可以方便地与其他系统进行集成和交互。</p>
+<h4 id="RPC（Remote-Procedure-Call）"><a href="#RPC（Remote-Procedure-Call）" class="headerlink" title="RPC（Remote Procedure Call）"></a>RPC（Remote Procedure Call）</h4><p>RPC（Remote Procedure Call）即远程过程调用，是一种分布式系统中的通信协议。RPC允许一个程序在另一个计算机上运行的程序请求服务，而不需要了解底层网络细节，就像本地调用一样。</p>
+<p>RPC的原理是客户端发送请求给服务端，服务端执行相应的操作并返回结果给客户端。RPC框架隐藏了底层的网络细节和通信协议，使得开发者可以像使用本地函数一样方便地调用远程函数。</p>
+<p>RPC的优势在于它提供了高效、简单、可靠的远程调用机制，使得分布式系统开发更加便捷。同时，RPC框架支持多种编程语言和跨平台，使得开发者可以使用不同的编程语言和技术栈来实现分布式系统。一些常用的RPC框架有gRPC、Apache Thrift、Dubbo等。</p>
+<h4 id="RESTful和RPC是两种不同的远程调用方式，它们的区别主要包括以下几个方面："><a href="#RESTful和RPC是两种不同的远程调用方式，它们的区别主要包括以下几个方面：" class="headerlink" title="RESTful和RPC是两种不同的远程调用方式，它们的区别主要包括以下几个方面："></a>RESTful和RPC是两种不同的远程调用方式，它们的区别主要包括以下几个方面：</h4><ol>
+<li><h5 id="设计理念："><a href="#设计理念：" class="headerlink" title="设计理念："></a>设计理念：</h5><ul>
+<li><p>RESTful：是基于HTTP协议设计的，着重于资源的定义和管理，通过URL、HTTP方法和参数等方式进行资源的访问和操作。</p>
 </li>
-<li><p>初始渲染阶段：React 通过递归遍历 Fiber 树，在每个 Fiber 节点上执行渲染操作，生成对应的虚拟 DOM 元素。</p>
-</li>
-<li><p>任务拆分：在渲染过程中，React 根据时间片（Time Slicing）的概念将渲染任务拆分为多个小任务（Fiber），每个小任务执行时间有限，并且可以中断和恢复。</p>
-</li>
-<li><p>优先级调度：React 使用优先级调度算法确定哪些任务具有更高的优先级，并按照顺序执行这些高优先级的任务，以保证用户界面的流畅度。</p>
-</li>
-<li><p>增量更新：在执行每个小任务时，React 会比较前后两次渲染结果，找出需要更新的部分，并对其进行增量更新。这样可以避免全量重新渲染，提高性能。</p>
-</li>
-<li><p>渲染结果提交：当所有小任务完成后，React 将最终渲染结果提交给浏览器进行绘制，完成整个渲染过程。</p>
+<li><p>RPC：是基于函数调用的，着重于接口的定义和数据传输格式的规范，通过序列化和反序列化来实现远程调用。</p>
 </li>
 </ul>
-<p>Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。这样可以更好地响应用户的交互，提供更流畅的用户体验。</p>
+</li>
+<li><h5 id="通信协议："><a href="#通信协议：" class="headerlink" title="通信协议："></a>通信协议：</h5><ul>
+<li><p>RESTful：使用HTTP协议进行通信，支持GET、POST、PUT、DELETE等HTTP方法。</p>
+</li>
+<li><p>RPC：使用自定义的协议进行通信，可以使用TCP、UDP等网络协议，也可以使用HTTP作为传输协议。</p>
+</li>
+</ul>
+</li>
+<li><h5 id="数据传输格式："><a href="#数据传输格式：" class="headerlink" title="数据传输格式："></a>数据传输格式：</h5><ul>
+<li><p>RESTful：通常使用JSON、XML等文本格式进行数据传输。</p>
+</li>
+<li><p>RPC：通常使用二进制格式进行数据传输，传输效率更高。</p>
+</li>
+</ul>
+</li>
+<li><h5 id="调用方式："><a href="#调用方式：" class="headerlink" title="调用方式："></a>调用方式：</h5><ul>
+<li><p>RESTful：通过HTTP方法进行资源的访问和操作，支持无状态的请求，可以使用缓存等机制提高性能和可伸缩性。</p>
+</li>
+<li><p>RPC：通过函数调用进行接口的访问和操作，需要保持请求和响应之间的状态，不支持缓存等机制。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>综上所述，RESTful更加适用于Web应用程序和分布式系统的开发，而RPC更加适用于高性能和低延迟的系统调用。</p>
 
     </div>
 
@@ -394,23 +378,21 @@
 
           <div class="post-tags">
               <a href="/songs-note/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
-              <a href="/songs-note/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
-              <a href="/songs-note/tags/react/" rel="tag"><i class="fa fa-tag"></i> react</a>
-              <a href="/songs-note/tags/Fiber/" rel="tag"><i class="fa fa-tag"></i> Fiber</a>
+              <a href="/songs-note/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 浏览器</a>
+              <a href="/songs-note/tags/RESTful/" rel="tag"><i class="fa fa-tag"></i> RESTful</a>
+              <a href="/songs-note/tags/RPC/" rel="tag"><i class="fa fa-tag"></i> RPC</a>
+              <a href="/songs-note/tags/HTTP/" rel="tag"><i class="fa fa-tag"></i> HTTP</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/songs-note/browser/mechanism/cache.html" rel="prev" title="浏览器缓存的全过程">
-                  <i class="fa fa-angle-left"></i> 浏览器缓存的全过程
+                <a href="/songs-note/browser/render/process.html" rel="prev" title="浏览器的渲染进程的线程">
+                  <i class="fa fa-angle-left"></i> 浏览器的渲染进程的线程
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/songs-note/browser/tab/to/tab.html" rel="next" title="如何实现浏览器内多个标签页之间的通信?">
-                  如何实现浏览器内多个标签页之间的通信? <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -422,7 +404,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="21f31354f88e0a6910ab719c600ff8fb"></div>
+    <div class="comments" id="SOHUCS" sid="523a60b1ac3cc26c5aca1f0137ab23b0"></div>
 </div>
   </main>
 
