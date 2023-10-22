@@ -21,26 +21,14 @@ function updateVersion() {
             }
             console.log(`版本从${version}， 更新至${package.version}`);
             version = package.version;
-
-            execSync(`git add . && git commit -m "update version ${version}" && git push origin master`, (err, data) => {
-                if (err) {
-                    throw new Error(`git commit error: ${err}`);
-                }
-                console.log(`git add . && git commit -m "update version ${version}"`);
-            });
-            
-            execSync('npm run release', (err, data) => {
-                if (err) {
-                    throw new Error(`npm run release error: ${err}`);
-                }
-                console.log(`版本${version}发布成功！`);
-                updateGiteePages();
-            });
+            updateGiteePages();
         });
     });
 };
 
 updateVersion();
+
+console.log(version);
 
 function updateGiteePages() {
     
@@ -70,7 +58,20 @@ function updateGiteePages() {
       })
 }
 
+execSync(`git add . && git commit -m "update version ${version}" && git push origin master`, (err, data) => {
+    if (err) {
+        throw new Error(`git commit error: ${err}`);
+    }
+    console.log(`git add . && git commit -m "update version ${version}"`);
+});
 
+execSync('npm run release', (err, data) => {
+    if (err) {
+        throw new Error(`npm run release error: ${err}`);
+    }
+    console.log(`版本${version}发布成功！`);
+    updateGiteePages();
+});
 
 
 
