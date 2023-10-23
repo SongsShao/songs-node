@@ -55,7 +55,7 @@ function updateGiteePages() {
       console.log("Gitee update Pages request is OK!");
     })
     .catch((err) => {
-      throw new Error(err);
+      logger.error(err.message);
     });
 }
 
