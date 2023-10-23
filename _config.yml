@@ -108,3 +108,10 @@ deploy:
 search:
   path: search.json
   field: all
+
+plugins:
+  readmore:
+    blogId: 31652-1697970027416-119
+    name: BaType
+    qrcode: https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg
+    keyword: 666

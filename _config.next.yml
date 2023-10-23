@@ -20,6 +20,7 @@ custom_file_path:
   head: source/layout/_partials/head.njk
   #header: source/_data/header.njk
   sidebar: source/layout/_custom/sidebar.njk
+  archive: source/layout/_custom/archive.njk
   #postMeta: source/_data/post-meta.njk
   #postBodyStart: source/_data/post-body-start.njk
   #postBodyEnd: source/_data/post-body-end.njk

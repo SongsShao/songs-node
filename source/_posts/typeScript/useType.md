@@ -77,16 +77,3 @@ categories:
   type UserInfo = User & Job;
 
 ```
-
-
-<script src="https://readmore.openwrite.cn/js/readmore.js" type="text/javascript"></script>
-<script>
-    const btw = new BTWPlugin();
-    btw.init({
-        id: 'container',
-        blogId: '31652-1697970027416-119',
-        name: 'SongCloub',
-        qrcode: 'https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg',
-        keyword: '666',
-    });
-</script>
