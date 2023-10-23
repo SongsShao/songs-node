@@ -1,6 +1,6 @@
 {
   "name": "songs-note",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "private": true,
   "scripts": {
     "build": "hexo clean && hexo generate",
@@ -14,6 +14,7 @@
     "version": "6.3.0"
   },
   "dependencies": {
+    "signale": "^1.4.0",
     "gh-pages": "^6.0.0",
     "hexo": "^6.3.0",
     "hexo-generator-archive": "^2.0.0",
