@@ -520,9 +520,9 @@
     
     <category term="前端" scheme="https://batype.gitee.io/songs-note/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="react" scheme="https://batype.gitee.io/songs-note/tags/react/"/>
-    
     <category term="JavaScript" scheme="https://batype.gitee.io/songs-note/tags/JavaScript/"/>
+    
+    <category term="react" scheme="https://batype.gitee.io/songs-note/tags/react/"/>
     
     <category term="Fiber" scheme="https://batype.gitee.io/songs-note/tags/Fiber/"/>
     
