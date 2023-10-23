@@ -308,7 +308,7 @@ symbols_count_time:
   awl: 4 # 平均字长
   wpm: 275 # 每分钟的平均单词数
   suffix: "mins."
-  separated_meta: false # 以分隔线显示单词计数和估计读取时间
+  separated_meta: true # 以分隔线显示单词计数和估计读取时间
   item_text_post: true # 显示单词计数和估计阅读时间的文本描述
   item_text_total: false
 

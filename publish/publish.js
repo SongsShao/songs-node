@@ -31,18 +31,21 @@ function updateVersion() {
 updateVersion();
 
 function updateGiteePages() {
-  const request = fetch("https://gitee.com/batype/songs-note/pages/rebuild", {
-    method: "POST", // 设置请求方法为POST
-    headers: {
-      "Content-Type": "application/json", // 设置请求头信息
-    },
-    body: JSON.stringify({
-      branch: "gh-pages",
-      build_directory: "",
-      force_https: true,
-      auto_update: false,
-    }), // 将要发送的数据转换为JSON字符串
-  });
+  const request = fetch(
+    `https://gitee.com/api/v5/repos/batype/songs-note/pages/builds`,
+    {
+      method: "POST", // 设置请求方法为POST
+      headers: {
+        "Content-Type": "application/json", // 设置请求头信息
+      },
+      body: JSON.stringify({
+        access_token:
+          "3245df0f69a7217c87eebcea53f52ee63245df0f69a7217c87eebcea53f52ee6",
+        source: "gh-pages",
+        publish_source: "gh-pages",
+      }), // 将要发送的数据转换为JSON字符串
+    }
+  );
 
   request
     .then((response) => {
