@@ -91,8 +91,6 @@
     
     <category term="前端" scheme="https://batype.gitee.io/songs-note/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="TypeScript" scheme="https://batype.gitee.io/songs-note/tags/TypeScript/"/>
-    
     <category term="浏览器" scheme="https://batype.gitee.io/songs-note/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
     
     <category term="cookies" scheme="https://batype.gitee.io/songs-note/tags/cookies/"/>
@@ -100,6 +98,8 @@
     <category term="localStorage" scheme="https://batype.gitee.io/songs-note/tags/localStorage/"/>
     
     <category term="sessionStorage" scheme="https://batype.gitee.io/songs-note/tags/sessionStorage/"/>
+    
+    <category term="TypeScript" scheme="https://batype.gitee.io/songs-note/tags/TypeScript/"/>
     
   </entry>
   
