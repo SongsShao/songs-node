@@ -46,13 +46,14 @@ function updateGiteePages() {
 
   request
     .then((response) => {
+      logger.info(response);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       return response.json(); // 解析响应数据为JSON对象
     })
     .then((res) => {
-      console.log("Gitee update Pages request is OK!");
+      logger.info("Gitee update Pages request is OK!");
     })
     .catch((err) => {
       logger.error(err.message);
@@ -70,7 +71,7 @@ function updateGiteePages() {
       }
     );
     versionData = true;
-    console.log(`git add . && git commit -m "update version ${version}"`);
+    logger.info(`git add . && git commit -m "update version ${version}"`);
   } catch (error) {
     logger.error(e.message);
     process.exit(0);
