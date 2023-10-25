@@ -21,31 +21,37 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"batype.gitee.io","root":"/songs-note/","images":"/songs-note/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/songs-note/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
 
-    <meta name="description" content="Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。">
+    <meta name="description" content="在&#96;React&#96;中最多会同时存在两棵&#96;Fiber树&#96;。当前屏幕上显示内容对应的&#96;Fiber树&#96;称为&#96;current Fiber树&#96;，正在内存中构建的&#96;Fiber树&#96;称为&#96;workInProgress Fiber树&#96;。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Fiber 架构实现流程">
-<meta property="og:url" content="https://batype.gitee.io/songs-note/react/fiber/implement.html">
+<meta property="og:title" content="Fiber架构工作原理">
+<meta property="og:url" content="https://batype.gitee.io/songs-note/react/fiber/works.html">
 <meta property="og:site_name" content="songs-note">
-<meta property="og:description" content="Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。">
+<meta property="og:description" content="在&#96;React&#96;中最多会同时存在两棵&#96;Fiber树&#96;。当前屏幕上显示内容对应的&#96;Fiber树&#96;称为&#96;current Fiber树&#96;，正在内存中构建的&#96;Fiber树&#96;称为&#96;workInProgress Fiber树&#96;。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-10-20T08:29:47.000Z">
-<meta property="article:modified_time" content="2023-10-23T01:55:15.577Z">
+<meta property="og:image" content="https://react.iamkasong.com/img/rootfiber.png">
+<meta property="og:image" content="https://react.iamkasong.com/img/workInProgressFiber.png">
+<meta property="og:image" content="https://react.iamkasong.com/img/wipTreeFinish.png">
+<meta property="og:image" content="https://react.iamkasong.com/img/wipTreeUpdate.png">
+<meta property="og:image" content="https://react.iamkasong.com/img/currentTreeUpdate.png">
+<meta property="article:published_time" content="2023-10-25T10:12:49.000Z">
+<meta property="article:modified_time" content="2023-10-25T10:12:51.300Z">
 <meta property="article:author" content="songshao">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="react">
 <meta property="article:tag" content="Fiber">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://react.iamkasong.com/img/rootfiber.png">
 
 
-<link rel="canonical" href="https://batype.gitee.io/songs-note/react/fiber/implement">
+<link rel="canonical" href="https://batype.gitee.io/songs-note/react/fiber/works">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://batype.gitee.io/songs-note/react/fiber/implement.html","path":"/react/fiber/implement.html","title":"Fiber 架构实现流程"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://batype.gitee.io/songs-note/react/fiber/works.html","path":"/react/fiber/works.html","title":"Fiber架构工作原理"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Fiber 架构实现流程 | songs-note</title>
+<title>Fiber架构工作原理 | songs-note</title>
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/analytics/baidu-analytics.min.js"></script>
@@ -135,7 +141,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -148,6 +154,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E2%80%9C%E5%8F%8C%E7%BC%93%E5%AD%98%E2%80%9D%EF%BC%9F"><span class="nav-number">1.</span> <span class="nav-text">什么是“双缓存”？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E7%BC%93%E5%AD%98Fiber%E6%A0%91"><span class="nav-number">2.</span> <span class="nav-text">双缓存Fiber树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mount%E6%97%B6"><span class="nav-number">3.</span> <span class="nav-text">mount时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#update%E6%97%B6"><span class="nav-number">4.</span> <span class="nav-text">update时</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -231,17 +238,10 @@
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/songs-note/react/synthetic/event.html" rel="bookmark">
-        <time class="popular-posts-time">2023-10-18</time>
+      <a class="popular-posts-link" href="/songs-note/react/fiber/implement.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-20</time>
         <br>
-      React 使用合成事件（SyntheticEvent）
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/songs-note/react/fiber/works.html" rel="bookmark">
-        <time class="popular-posts-time">2023-10-25</time>
-        <br>
-      Fiber架构工作原理
+      Fiber 架构实现流程
       </a>
     </li>
     <li class="popular-posts-item">
@@ -249,13 +249,6 @@
         <time class="popular-posts-time">2023-10-19</time>
         <br>
       FiberNode结构解析
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/songs-note/react/service/time.html" rel="bookmark">
-        <time class="popular-posts-time">2023-10-19</time>
-        <br>
-      React 获取服务器端时间
       </a>
     </li>
   </ul>
@@ -278,7 +271,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://batype.gitee.io/songs-note/react/fiber/implement.html">
+    <link itemprop="mainEntityOfPage" href="https://batype.gitee.io/songs-note/react/fiber/works.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
@@ -291,12 +284,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Fiber 架构实现流程 | songs-note">
-      <meta itemprop="description" content="Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。">
+      <meta itemprop="name" content="Fiber架构工作原理 | songs-note">
+      <meta itemprop="description" content="在`React`中最多会同时存在两棵`Fiber树`。当前屏幕上显示内容对应的`Fiber树`称为`current Fiber树`，正在内存中构建的`Fiber树`称为`workInProgress Fiber树`。">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Fiber 架构实现流程<a href="https://gitee.com/batype/songs-note/tree/master/source/_posts/react/fiberImplement.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          Fiber架构工作原理<a href="https://gitee.com/batype/songs-note/tree/master/source/_posts/react/fiberWorksHow.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -307,7 +300,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-10-20 16:29:47" itemprop="dateCreated datePublished" datetime="2023-10-20T16:29:47+08:00">2023-10-20</time>
+      <time title="Created: 2023-10-25 18:12:49" itemprop="dateCreated datePublished" datetime="2023-10-25T18:12:49+08:00">2023-10-25</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -339,8 +332,8 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="Fiber 架构实现流程" href="/songs-note/react/fiber/implement.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::21f31354f88e0a6910ab719c600ff8fb" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="Fiber架构工作原理" href="/songs-note/react/fiber/works.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::0e32edba150396bad819b460f4145bf5" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -351,41 +344,72 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>467</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
+      <span>4 mins.</span>
     </span>
 </div>
 
-            <div class="post-description">Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。</div>
+            <div class="post-description">在`React`中最多会同时存在两棵`Fiber树`。当前屏幕上显示内容对应的`Fiber树`称为`current Fiber树`，正在内存中构建的`Fiber树`称为`workInProgress Fiber树`。</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><div id="vip-container"><p>Fiber 架构是 React 中用于实现虚拟 DOM 的一种算法架构。它的目标是提高渲染性能和用户体验，通过将渲染工作分割成多个小任务，在不阻塞主线程的情况下逐步完成整个渲染过程。</p>
-<p>下面是 Fiber 架构的简要实现过程：</p>
-<ul>
-<li><p>构建 Fiber 树：在进行首次渲染时，React 会构建一棵 Fiber 树，用于表示组件的层级结构和渲染顺序。每个 Fiber 节点对应一个组件实例，其中包含组件的状态、属性和其他相关信息。</p>
+    <div class="post-body" itemprop="articleBody"><div id="vip-container"><h2 id="什么是“双缓存”？"><a href="#什么是“双缓存”？" class="headerlink" title="什么是“双缓存”？"></a>什么是“双缓存”？</h2><p>“双缓存”是一种常见的图形处理技术，用于在图像渲染中实现平滑的、无闪烁的更新效果。它通过使用两个缓冲区（即两块内存区域）来完成。其中一个缓冲区用于显示图像，而另一个缓冲区则用于在后台进行图像的更新和绘制。当更新完成后，通过交换两个缓冲区的引用，以实现无缝的切换和更新。</p>
+<p>在图形处理中使用双缓存的好处包括：</p>
+<ol>
+<li>无闪烁：通过在后台缓冲区进行绘制，然后将绘制结果一次性地切换到显示缓冲区，可以避免在图像更新过程中的闪烁问题。这对于实时图形、动画和视频等应用非常重要。</li>
+<li>平滑更新：使用双缓冲可以实现平滑的更新效果。在后台缓冲区进行绘制和更新，然后在更新完成后将其切换到显示缓冲区，可以避免直接在显示缓冲区上进行绘制和修改，从而减少了可能出现的可见的渲染中间状态。</li>
+<li>减少渲染延迟：使用双缓冲可以减少渲染延迟。由于绘制和更新发生在后台缓冲区，因此可以在绘制完成后立即切换到显示缓冲区，从而减少了等待绘制完成的时间，提高了渲染效率和响应时间。</li>
+</ol>
+<p>双缓存技术在图形处理、动画、视频播放和游戏开发等领域得到广泛应用。在图形库、操作系统和桌面应用程序中，双缓存被用于实现平滑的图像渲染和交互效果。在前端开发中，双缓存也被广泛应用于图形绘制和动画效果的实现，以提供更好的用户体验。</p>
+<p><code>React</code>使用“双缓存”来完成<code>Fiber树</code>的构建与替换——对应着<code>DOM树</code>的创建与更新。</p>
+<h2 id="双缓存Fiber树"><a href="#双缓存Fiber树" class="headerlink" title="双缓存Fiber树"></a>双缓存Fiber树</h2><p>在<code>React</code>中最多会同时存在两棵<code>Fiber树</code>。当前屏幕上显示内容对应的<code>Fiber树</code>称为<code>current Fiber树</code>，正在内存中构建的<code>Fiber树</code>称为<code>workInProgress Fiber树</code>。</p>
+<p><code>current Fiber树</code>中的<code>Fiber节点</code>被称为<code>current fiber</code>，<code>workInProgress Fiber树</code>中的<code>Fiber节点</code>被称为<code>workInProgress fiber</code>，他们通过<code>alternate</code>属性连接。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">currentFiber.<span class="property">alternate</span> === workInProgressFiber;</span><br><span class="line">workInProgressFiber.<span class="property">alternate</span> === currentFiber;</span><br></pre></td></tr></table></figure>
+
+<p><code>React </code>应用的根节点通过使 <code>current </code> 指针在不同 <code>Fiber树</code> 的 <code>rootFiber</code> 间切换来完成 <code>current Fiber</code> 树指向的切换。</p>
+<p>即当 <code>workInProgress Fiber树</code> 构建完成交给 <code>Renderer</code> 渲染在页面上后，应用根节点的 <code>current</code> 指针指向 <code>workInProgress Fiber树</code> ，此时<code>workInProgress Fiber树</code>就变为<code>current Fiber树</code>。</p>
+<p>每次状态更新都会产生新的<code>workInProgress Fiber树</code>，通过<code>current</code>与<code>workInProgress</code>的替换，完成<code>DOM</code>更新。</p>
+<p>接下来我们以具体例子讲解<code>mount时</code>、<code>update时</code>的构建&#x2F;替换流程。</p>
+<h2 id="mount时"><a href="#mount时" class="headerlink" title="mount时"></a>mount时</h2><p>考虑如下例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [num, add] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> add(num + 1)&#125;&gt;&#123;num&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span>/&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>首次执行<code>ReactDOM.render</code>会创建<code>fiberRootNode</code>（源码中叫<code>fiberRoot</code>）和<code>rootFiber</code>。其中<code>fiberRootNode</code>是整个应用的根节点，<code>rootFiber</code>是<code>&lt;App/&gt;</code>所在组件树的根节点。</li>
+</ol>
+<p>之所以要区分<code>fiberRootNode</code>与<code>rootFiber</code>，是因为在应用中我们可以多次调用<code>ReactDOM.render</code>渲染不同的组件树，他们会拥有不同的<code>rootFiber</code>。但是整个应用的根节点只有一个，那就是<code>fiberRootNode</code>。</p>
+<p><code>fiberRootNode</code>的<code>current</code>会指向当前页面上已渲染内容对应<code>Fiber树</code>，即<code>current Fiber树</code>。</p>
+<p><img src="https://react.iamkasong.com/img/rootfiber.png" alt="rootFiber"></p>
+<p><code>fiberRootNode.current = rootFiber;</code></p>
+<p>由于是首屏渲染，页面中还没有挂载任何<code>DOM</code>，所以<code>fiberRootNode.current</code>指向的<code>rootFiber</code>没有任何<code>子Fiber节点</code>（即<code>current Fiber树</code>为空）。</p>
+<ol start="2">
+<li>接下来进入<code>render阶段</code>，根据组件返回的<code>JSX</code>在内存中依次创建<code>Fiber节点</code>并连接在一起构建<code>Fiber树</code>，被称为<code>workInProgress Fiber树</code>。（下图中右侧为内存中构建的树，左侧为页面显示的树）</li>
+</ol>
+<p>在构建<code>workInProgress Fiber树</code>时会尝试复用<code>current Fiber树</code>中已有的<code>Fiber节点</code>内的属性，在<code>首屏渲染</code>时只有<code>rootFiber</code>存在对应的<code>current fiber</code>（即<code>rootFiber.alternate</code>）。</p>
+<p><img src="https://react.iamkasong.com/img/workInProgressFiber.png"></p>
+<ol start="3">
+<li>图中右侧已构建完的<code>workInProgress Fiber树</code>在<code>commit阶段</code>渲染到页面。</li>
+</ol>
+<p>此时<code>DOM</code>更新为右侧树对应的样子。<code>fiberRootNode</code>的<code>current</code>指针指向<code>workInProgress Fiber树</code>使其变为<code>current Fiber 树</code>。</p>
+<p><img src="https://react.iamkasong.com/img/wipTreeFinish.png"></p>
+<h2 id="update时"><a href="#update时" class="headerlink" title="update时"></a>update时</h2><ol>
+<li><p>接下来我们点击<code>p节点</code>触发状态改变，这会开启一次新的<code>render阶段</code>并构建一棵新的<code>workInProgress Fiber 树</code>。</p>
+<p><img src="https://react.iamkasong.com/img/wipTreeUpdate.png"></p>
 </li>
-<li><p>初始渲染阶段：React 通过递归遍历 Fiber 树，在每个 Fiber 节点上执行渲染操作，生成对应的虚拟 DOM 元素。</p>
-</li>
-<li><p>任务拆分：在渲染过程中，React 根据时间片（Time Slicing）的概念将渲染任务拆分为多个小任务（Fiber），每个小任务执行时间有限，并且可以中断和恢复。</p>
-</li>
-<li><p>优先级调度：React 使用优先级调度算法确定哪些任务具有更高的优先级，并按照顺序执行这些高优先级的任务，以保证用户界面的流畅度。</p>
-</li>
-<li><p>增量更新：在执行每个小任务时，React 会比较前后两次渲染结果，找出需要更新的部分，并对其进行增量更新。这样可以避免全量重新渲染，提高性能。</p>
-</li>
-<li><p>渲染结果提交：当所有小任务完成后，React 将最终渲染结果提交给浏览器进行绘制，完成整个渲染过程。</p>
-</li>
-</ul>
-<p>Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。这样可以更好地响应用户的交互，提供更流畅的用户体验。</p>
+</ol>
+<p>和<code>mount</code>时一样，<code>workInProgress fiber</code>的创建可以复用<code>current Fiber树</code>对应的节点数据。</p>
+<ol start="2">
+<li><code>workInProgress Fiber 树</code>在<code>render阶段</code>完成构建后进入<code>commit阶段</code>渲染到页面上。渲染完毕后，<code>workInProgress Fiber 树</code>变为<code>current Fiber 树</code>。</li>
+</ol>
+<p><img src="https://react.iamkasong.com/img/currentTreeUpdate.png"></p>
 </div>
 
 			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
@@ -439,14 +463,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/songs-note/browser/mechanism/cache.html" rel="prev" title="浏览器缓存的全过程">
-                  <i class="fa fa-angle-left"></i> 浏览器缓存的全过程
+                <a href="/songs-note/react/components/unstate-next.html" rel="prev" title="unstate-next 的使用">
+                  <i class="fa fa-angle-left"></i> unstate-next 的使用
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/songs-note/browser/tab/to/tab.html" rel="next" title="如何实现浏览器内多个标签页之间的通信?">
-                  如何实现浏览器内多个标签页之间的通信? <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -458,7 +479,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="21f31354f88e0a6910ab719c600ff8fb"></div>
+    <div class="comments" id="SOHUCS" sid="0e32edba150396bad819b460f4145bf5"></div>
 </div>
   </main>
 
@@ -551,7 +572,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://batype.gitee.io/songs-note/react/fiber/implement.html"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://batype.gitee.io/songs-note/react/fiber/works.html"}</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/quicklink.min.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cywWcj4BR","appkey":"a30428fc71ec317dbe68d573c2f4ce31","count":true}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/comments/changyan.min.js"></script>
