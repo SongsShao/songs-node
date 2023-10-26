@@ -1,6 +1,6 @@
 ---
 title: unstate-next 的使用
-permalink: /react/components/unstate-next.html
+permalink: /react/components/unstate-next-use.html
 date: 2023-10-25 16:42:53
 description: unstated-next 的使用可以简化react state manager，可以替换React 原有的useContext 方法, 亦可以管理全局状态信息。
 tag: [前端, react, TypeScript, unstate-next]
@@ -8,6 +8,7 @@ comments: true
 categories: 
  - React
  - components
+ - unstate-next
 ---
 
 #### Install
