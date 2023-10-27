@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/songs-note/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/songs-note/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/songs-note/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/songs-note/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="true">
+
+<link rel="stylesheet" href="/songs-note/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic%7CMontserrat:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"batype.gitee.io","root":"/songs-note/","images":"/songs-note/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/songs-note/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
+
+    <meta name="description" content="Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="React 实现原理">
+<meta property="og:url" content="https://batype.gitee.io/songs-note/react/implement.html">
+<meta property="og:site_name" content="songs-note">
+<meta property="og:description" content="Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b2718c458853aef75775a.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b2a66c458853aef7f6122.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b2e66c458853aef8a195c.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b551cc458853aef02aa5f.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b55d2c458853aef05059f.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b55f9c458853aef0589a3.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b2a66c458853aef7f6122.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b5beac458853aef1a1a12.jpg">
+<meta property="article:published_time" content="2023-10-27T02:58:50.000Z">
+<meta property="article:modified_time" content="2023-10-27T09:02:16.589Z">
+<meta property="article:author" content="songshao">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="JSX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/653b2718c458853aef75775a.jpg">
+
+
+<link rel="canonical" href="https://batype.gitee.io/songs-note/react/implement">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://batype.gitee.io/songs-note/react/implement.html","path":"/react/implement.html","title":"React 实现原理"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>React 实现原理 | songs-note</title>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/analytics/baidu-analytics.min.js"></script>
+  <script async src="https://hm.baidu.com/hm.js?2fcafa6a01c310c04e321127a9c9f932"></script>
+
+
+
+
+
+
+<meta name="baidu-site-verification" content="codeva-FGOmThcUjz" />
+  <noscript>
+    <link rel="stylesheet" href="/songs-note/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/songs-note/atom.xml" title="songs-note" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/songs-note/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">songs-note</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/songs-note/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/songs-note/about/me" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/songs-note/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/songs-note/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/songs-note/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">34</span></a></li><li class="menu-item menu-item-schedule"><a href="/songs-note/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/songs-note/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0jsx"><span class="nav-number">1.</span> <span class="nav-text">实现jsx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%90%8E"><span class="nav-number">2.</span> <span class="nav-text">编译后</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.</span> <span class="nav-text">如何实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B9%E8%8A%82%E7%82%B9%E5%92%8C%E6%A0%B9fiber"><span class="nav-number">4.</span> <span class="nav-text">根节点和根fiber</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%B9%E8%8A%82%E7%82%B9"><span class="nav-number">4.1.</span> <span class="nav-text">创建根节点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0createRoot"><span class="nav-number">4.2.</span> <span class="nav-text">实现createRoot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fiber"><span class="nav-number">4.3.</span> <span class="nav-text">fiber</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%9C%89fiber%EF%BC%9F"><span class="nav-number">4.4.</span> <span class="nav-text">为什么需要有fiber？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFfiber%EF%BC%9F"><span class="nav-number">4.5.</span> <span class="nav-text">什么是fiber？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%B9fiber"><span class="nav-number">4.6.</span> <span class="nav-text">创建根fiber</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="songshao"
+      src="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
+  <p class="site-author-name" itemprop="name">songshao</p>
+  <div class="site-description" itemprop="description">Notes on personal growth</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/songs-note/archives/">
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/songs-note/categories/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/songs-note/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/batype/songs-note" title="GitHub → https:&#x2F;&#x2F;gitee.com&#x2F;batype&#x2F;songs-note" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/songs-note/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/songs-note/sitemap.xml" title="Sitemap → &#x2F;sitemap.xml" rel="noopener me"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="sidebar-inner sidebar-blogroll">
+      <div class="links-of-blogroll animated">
+        <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+          Links
+        </div>
+        <ul class="links-of-blogroll-list">
+            <li class="links-of-blogroll-item">
+              <a href="https://batype.gitee.io/songs-note" title="https:&#x2F;&#x2F;batype.gitee.io&#x2F;songs-note">algorithm-note</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://mukang.net.cn/" title="https:&#x2F;&#x2F;mukang.net.cn" rel="noopener" target="_blank">mukang</a>
+            </li>
+            <li class="links-of-blogroll-item">
+              <a href="https://blog.csdn.net/qq_35490191" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_35490191" rel="noopener" target="_blank">csdn</a>
+            </li>
+        </ul>
+      </div>
+    </div>
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    Related Posts
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/songs-note/react/fiber.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-19</time>
+        <br>
+      Fiber 架构的起源
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/songs-note/react/fiber/implement.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-20</time>
+        <br>
+      Fiber 架构实现流程
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/songs-note/react/fiber/works.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-25</time>
+        <br>
+      Fiber架构工作原理
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/songs-note/react/synthetic/event.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-18</time>
+        <br>
+      React 使用合成事件（SyntheticEvent）
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/songs-note/react/fiber/node.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-19</time>
+        <br>
+      FiberNode结构解析
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://batype.gitee.io/songs-note/react/implement.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
+      <meta itemprop="name" content="songshao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="songs-note">
+      <meta itemprop="description" content="Notes on personal growth">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="React 实现原理 | songs-note">
+      <meta itemprop="description" content="Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          React 实现原理<a href="https://gitee.com/batype/songs-note/tree/master/source/_posts/react/reactImplement.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-10-27 10:58:50" itemprop="dateCreated datePublished" datetime="2023-10-27T10:58:50+08:00">2023-10-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/songs-note/categories/React/" itemprop="url" rel="index"><span itemprop="name">React</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan: </span>
+    
+    <a title="React 实现原理" href="/songs-note/react/implement.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::4ea43a79b3f28ab6d19c954b28e14047" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description">Fiber 架构的实现使得 React 能够在多任务之间动态地切换，并根据任务的优先级和时间片进行灵活的调度。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div id="vip-container"><h3 id="实现jsx"><a href="#实现jsx" class="headerlink" title="实现jsx"></a>实现jsx</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> element = (</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    hello<span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color:</span> &quot;<span class="attr">red</span>&quot; &#125;&#125;&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(element);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="编译后"><a href="#编译后" class="headerlink" title="编译后"></a>编译后</h3><p><img src="https://pic.imgdb.cn/item/653b2718c458853aef75775a.jpg" alt="jsx 编译之后"></p>
+<h3 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h3><ol>
+<li>jsx-dev-runtime.js</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123; jsxDEV &#125; <span class="keyword">from</span> <span class="string">&quot;./jsx/ReactJSXElement&quot;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>ReactJSXElement.js</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hasOwnProperty <span class="keyword">from</span> <span class="string">&#x27;../shared/hasOwnProperty&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// dom 类型</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="variable constant_">REACT_ELEMENT_TYPE</span>  &#125; <span class="keyword">from</span> <span class="string">&#x27;../shared/ReactSymbols&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="variable constant_">RESERVED_PROPS</span> = &#123;</span><br><span class="line">    <span class="attr">key</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">ref</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">__self</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">__source</span>: <span class="literal">true</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hasValidKey</span>(<span class="params">config</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> config.<span class="property">key</span> !== <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">hasValidRef</span>(<span class="params">config</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> config.<span class="property">ref</span> !== <span class="literal">undefined</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ReactElement 创建</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ReactElement</span>(<span class="params">type, key, ref, props, owner</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="comment">// 这个标签允许我们唯一地将其标识为React元素</span></span><br><span class="line">        <span class="attr">$$typeof</span>: <span class="variable constant_">REACT_ELEMENT_TYPE</span>,</span><br><span class="line">        type,</span><br><span class="line">        key,</span><br><span class="line">        ref,</span><br><span class="line">        props,</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">jsxDEV</span>(<span class="params">type, config</span>) &#123;</span><br><span class="line">    <span class="comment">// 提取保留名称</span></span><br><span class="line">    <span class="keyword">const</span> props = &#123;&#125;;</span><br><span class="line">    <span class="keyword">let</span> key = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">let</span> ref = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="title function_">hasValidKey</span>(config)) &#123;</span><br><span class="line">        key = config.<span class="property">key</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(<span class="title function_">hasValidRef</span>(config)) &#123;</span><br><span class="line">        ref = config.<span class="property">ref</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> propName <span class="keyword">in</span> config) &#123;</span><br><span class="line">        <span class="keyword">if</span>(hasOwnProperty.<span class="title function_">call</span>(config, propName) &amp;&amp;</span><br><span class="line">        !<span class="variable constant_">RESERVED_PROPS</span>.<span class="title function_">hasOwnProperty</span>(propName)</span><br><span class="line">        ) &#123;</span><br><span class="line">            props[propName] = config[propName];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">ReactElement</span>(type, key, ref, props)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>hasOwnProperty.js</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; hasOwnProperty &#125; = <span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> hasOwnProperty;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>ReactSymbols.js</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用于标记类似 ReactElement 类型的符号。</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="variable constant_">REACT_ELEMENT_TYPE</span> = <span class="title class_">Symbol</span>.<span class="title function_">for</span>(<span class="string">&#x27;react.element&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="根节点和根fiber"><a href="#根节点和根fiber" class="headerlink" title="根节点和根fiber"></a>根节点和根fiber</h3><ul>
+<li>需要给react提供一个根节点，之后每个节点都是渲染在根节点内部的。</li>
+</ul>
+<p><code>const root = createRoot(document.getElementById(&#39;root&#39;))</code></p>
+<ul>
+<li>根fiber可以通俗理解为一个装着所有虚拟dom的容器，每个虚拟dom又单独对应一个fiber，</li>
+<li>渲染可以以单个fiber为单位暂停 &#x2F; 恢复。</li>
+<li>需要创建两个根 <code>fiber</code> 去相互替换展示。</li>
+</ul>
+<h4 id="创建根节点"><a href="#创建根节点" class="headerlink" title="创建根节点"></a>创建根节点</h4><p>更改main.jsx</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createRoot &#125; <span class="keyword">from</span> <span class="string">&quot;react-dom/client&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> element = (</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color:</span> &#x27;<span class="attr">red</span>&#x27; &#125;&#125;&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = <span class="title function_">createRoot</span>(<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(root)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>首先要建一个<code>FiberRootNode</code>根节点，也就是所有DOM的根，本质就是 <code>div#root</code>。</p>
+<p>根节点和<code>fiber</code>关系：</p>
+<p><img src="https://pic.imgdb.cn/item/653b2a66c458853aef7f6122.jpg" alt="根节点和`fiber`关系"></p>
+<p><code>FiberRootNode</code> 和 <code>HostRootFiber</code> 中间使用 <code>current</code> 相连；</p>
+<p><code>HostRootFiber</code> 和 <code>FiberRootNode</code> 中间使用 <code>stateNode</code> 相连。</p>
+<h4 id="实现createRoot"><a href="#实现createRoot" class="headerlink" title="实现createRoot"></a>实现createRoot</h4><p>分这么多文件的主要是因为很多其他逻辑要处理，暂时都给省略了。虽然比较绕，但其实本质就是把<code>div#root</code>做了几层包装。</p>
+<ol>
+<li>client.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123; createRoot &#125; <span class="keyword">from</span> <span class="string">&quot;./src/client/ReactDOMRoot&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>ReactDOMRoot.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createContainer &#125; <span class="keyword">from</span> <span class="string">&quot;react-reconciler/src/ReactFiberReconciler&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">ReactDOMRoot</span>(<span class="params">internalRoot</span>) &#123;</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">_internalRoot</span> = internalRoot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 创建一个根 实际就是一个被包装过的真实DOM节点</span></span><br><span class="line"><span class="comment">// container: div#root</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">createRoot</span>(<span class="params">container</span>) &#123;</span><br><span class="line"><span class="comment">// 1. 创建容器   6. 接收到有#root的容器</span></span><br><span class="line"><span class="keyword">const</span> root = <span class="title function_">createContainer</span>(container);</span><br><span class="line"><span class="comment">// 7. 容器传给 ReactDOMRoot</span></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ReactDOMRoot</span>(root);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>ReactFiberReconciler.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createFiberRoot &#125; <span class="keyword">from</span> <span class="string">&quot;./ReactFiberRoot&quot;</span>;</span><br><span class="line"><span class="comment">// 创建容器 containerInfo: 容器信息</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">createContainer</span>(<span class="params">containerInfo</span>) &#123;</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="keyword">return</span> <span class="title function_">createFiberRoot</span>(containerInfo);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>ReactFiberRoot.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">FiberRootNode</span>(<span class="params">containerInfo</span>) &#123;</span><br><span class="line"><span class="comment">// 4. 把DOM节点放到容器</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">containerInfo</span> = containerInfo</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">createFiberRoot</span>(<span class="params">containerInfo</span>) &#123;</span><br><span class="line"><span class="comment">// 3. 创建根容器</span></span><br><span class="line"><span class="keyword">const</span> root = <span class="keyword">new</span> <span class="title class_">FiberRootNode</span>(containerInfo);</span><br><span class="line"><span class="comment">// 这个位置在下一步要创建 FiberRoot</span></span><br><span class="line"><span class="comment">// 5. 把容器返回出去</span></span><br><span class="line"><span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>现在根节点<code>FiberRootNode</code>创建好了，最后<code>root</code>的打印结果：</p>
+<p><img src="https://pic.imgdb.cn/item/653b2e66c458853aef8a195c.jpg" alt="FiberRootNode"></p>
+<h4 id="fiber"><a href="#fiber" class="headerlink" title="fiber"></a>fiber</h4><p>在创建根fiber之前先了解一下fiber</p>
+<h4 id="为什么需要有fiber？"><a href="#为什么需要有fiber？" class="headerlink" title="为什么需要有fiber？"></a>为什么需要有fiber？</h4><ul>
+<li>react以前没有fiber整个计算过程不能暂停，会导致时间过长</li>
+<li>浏览器刷新频率为 60Hz,大概 16.6 毫秒渲染一次，而 JS 线程和渲染线程是互斥的，所以如果 JS 线程执行任务时间超过 16.6ms 的话，就会导致掉帧、卡顿，解决方案就是 React 利用空闲的时间进行更新，不影响渲染进行的渲染</li>
+<li>把一个耗时任务切分成一个个小任务，分布在每一帧里。这个的方式就叫时间切片</li>
+</ul>
+<p>我们需要把渲染变成一个可中断，可暂停，可恢复的过程。<br>注：可以去搜一下 requestIdleCallback API ，react封装了一个类似的方法让每帧时间固定 5ms。</p>
+<h4 id="什么是fiber？"><a href="#什么是fiber？" class="headerlink" title="什么是fiber？"></a>什么是fiber？</h4><ul>
+<li><p>Fiber 是一个执行单元</p>
+<p>  Fiber 是一个执行单元,每次执行完一个执行单元，React 就会检查现在还剩多少时间，如果没有时间就将控制权让出去。</p>
+<p>  react 中一帧的过程：</p>
+<p>  <img src="https://pic.imgdb.cn/item/653b551cc458853aef02aa5f.jpg" alt="react 中一帧的过程"></p>
+</li>
+<li><p>Fiber 是一种数据结构<br>  React 目前的做法是使用链表, 每个虚拟节点内部表示为一个Fiber<br>  从顶点开始遍历<br>  如果有第一个儿子，先遍历第一个儿子<br>  如果没有第一个儿子，标志着此节点遍历完成<br>  如果有弟弟遍历弟弟<br>  如果有没有下一个弟弟，返回父节点标识完成父节点遍历，如果有叔叔遍历叔叔<br>  没有父节点遍历结束</p>
+<p>  遍历结构：<br>  <img src="https://pic.imgdb.cn/item/653b55d2c458853aef05059f.jpg" alt="遍历结构"></p>
+<p>  遍历过程：<br>  <img src="https://pic.imgdb.cn/item/653b55f9c458853aef0589a3.jpg" alt="遍历过程"></p>
+</li>
+</ul>
+<h4 id="创建根fiber"><a href="#创建根fiber" class="headerlink" title="创建根fiber"></a>创建根fiber</h4><p>真实DOM需要一个根容器，<code>fiber</code>同样需要一个根<code>fiber</code>。</p>
+<p>相当于每个虚拟DOM都会创建一个对应的<code>Fiber</code>，再创建真实DOM</p>
+<p>虚拟DOM &#x3D;&gt; Fiber &#x3D;&gt; 真实DOM</p>
+<p>在刚刚创建FiberRootNode的函数里去创建<code>HostRootFiber</code>并互相指向对方。</p>
+<p><img src="https://pic.imgdb.cn/item/653b2a66c458853aef7f6122.jpg" alt="根节点和`fiber`关系"></p>
+<ol>
+<li>ReactFiberRoot.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createHostRootFiber &#125; <span class="keyword">from</span> <span class="string">&quot;./ReactFiber&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">FiberRootNode</span>(<span class="params">containerInfo</span>) &#123;</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">containerInfo</span> = containerInfo;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">createFiberRoot</span>(<span class="params">containerInfo</span>) &#123;</span><br><span class="line"><span class="comment">// 之前创建的根节点容器</span></span><br><span class="line"><span class="keyword">const</span> root = <span class="keyword">new</span> <span class="title class_">FiberRootNode</span>(containerInfo);</span><br><span class="line"><span class="comment">// 1. 创建根fiber. hostRoot就是根节点dev#root</span></span><br><span class="line"><span class="comment">// 未初始化的fiber</span></span><br><span class="line"><span class="keyword">const</span> uninitializedFiber = <span class="title function_">createHostRootFiber</span>();</span><br><span class="line"><span class="comment">// 当前渲染页面的fiber.</span></span><br><span class="line"><span class="comment">// 6. 根容器的current指向当前的根fiber</span></span><br><span class="line">root.<span class="property">current</span> = uninitializedFiber;</span><br><span class="line">uninitializedFiber.<span class="property">stateNode</span> = root;</span><br><span class="line"><span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>ReactFiber.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 3. 工作标签</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">HostRoot</span> &#125; <span class="keyword">from</span> <span class="string">&quot;./ReactWorkTags&quot;</span>;</span><br><span class="line"><span class="comment">// 5. 副作用标识</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">NoFlags</span> &#125; <span class="keyword">from</span> <span class="string">&quot;./ReactFiberFlags&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">FiberNode</span>(<span class="params">tag, pendingProps, key</span>) &#123;</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">tag</span> = tag;</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">key</span> = key;</span><br><span class="line"><span class="variable language_">this</span>.<span class="property">type</span> = <span class="literal">null</span>; <span class="comment">// fiber类型, 来自于虚拟DOM节点的type   (span h1 p)</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">stateNode</span> = <span class="literal">null</span>; <span class="comment">// 此fiber对应的真实DOM节点</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">return</span> = <span class="literal">null</span>; <span class="comment">// 指向父节点</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">child</span> = <span class="literal">null</span>; <span class="comment">// 指向第一个子节点</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">sibling</span> = <span class="literal">null</span>; <span class="comment">// 指向弟弟</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">pendingProps</span> = pendingProps; <span class="comment">// 等待生效的属性</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">memoizedProps</span> = <span class="literal">null</span>; <span class="comment">// 已经生效的属性</span></span><br><span class="line"><span class="comment">// 虚拟DOM会提供pendingProps给创建fiber的属性，等处理完复制给memoizedProps</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 每个fiber还会有自己的状态，每一种fiber状态存的类型都不一样</span></span><br><span class="line"><span class="comment">// 比如：类组件对应的fiber存的就是实例的状态，HostRoot存的就是要渲染的元素</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">memoizedState</span> = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 每个fiber可能还有自己的更新队列</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">updateQueue</span> = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 5. &quot;./ReactFiberFlags&quot;</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">flags</span> = <span class="title class_">NoFlags</span>; <span class="comment">// 副作用标识，表示对此fiber节点进行何种操作</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">subtreeFlags</span> = <span class="title class_">NoFlags</span>; <span class="comment">// 子节点对应的副作用标识</span></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">alternate</span> = <span class="literal">null</span>; <span class="comment">// 轮替 (缓存了另一个fiber节点实例) diff时用</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">createFiberNode</span>(<span class="params">tag, pendingProps, key</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">FiberNode</span>(tag, pendingProps, key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">createHostRootFiber</span>(<span class="params"></span>) &#123;</span><br><span class="line"><span class="keyword">return</span> <span class="title function_">createFiberNode</span>(<span class="title class_">HostRoot</span>, <span class="literal">null</span>, <span class="literal">null</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>ReactWorkTags.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 每种虚拟DOM都会对应自己的fiber的类型</span></span><br><span class="line"><span class="comment">// 根Fiber的Tag</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">HostRoot</span> = <span class="number">3</span>; <span class="comment">// 根节点</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">HostComponent</span> = <span class="number">5</span>; <span class="comment">// 原生节点 span div p</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">HostText</span> = <span class="number">6</span>; <span class="comment">// 纯文本节点</span></span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>ReactFiberFlags.js</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 没有任何操作</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">NoFlags</span> = <span class="number">0b000000000000000000000000000000</span>;</span><br><span class="line"><span class="comment">// 插入</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Placement</span> = <span class="number">0b000000000000000000000000000010</span>;</span><br><span class="line"><span class="comment">// 更新</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title class_">Update</span> = <span class="number">0b000000000000000000000000000100</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>看最后root的打印结果：根fiber和节点容器互相指向</p>
+<p><img src="https://pic.imgdb.cn/item/653b5beac458853aef1a1a12.jpg"></p>
+</div>
+
+			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+			<script>
+			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+			if (!isMobile) {
+			    var btw = new BTWPlugin();
+			    btw.init({
+			        "id": "vip-container",
+			        "blogId": "31652-1697970027416-119",
+			        "name": "BaType",
+			        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",
+			        "keyword": "666"
+			    });
+			}
+			</script>
+		
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/songs-note/images/wechat.png" alt="songshao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="/songs-note/images/alipay.png" alt="songshao Alipay">
+        <span>Alipay</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/songs-note/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+              <a href="/songs-note/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+              <a href="/songs-note/tags/react/" rel="tag"><i class="fa fa-tag"></i> react</a>
+              <a href="/songs-note/tags/JSX/" rel="tag"><i class="fa fa-tag"></i> JSX</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/songs-note/react/components/unstate-next-implement.html" rel="prev" title="unstate-next 的实现原理">
+                  <i class="fa fa-angle-left"></i> unstate-next 的实现原理
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="4ea43a79b3f28ab6d19c954b28e14047"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">songshao</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Word count total">24k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:27</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://gitee.com/batype/songs-note.git" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/comments.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/motion.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/next-boot.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/bookmark.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/search/local-search.min.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.12/pdfobject.min.js","integrity":"sha256-g2xji1rlE3KsGVClvuxTbcR0Kn2+wtQADSff2Tbb4zA="},"url":"/songs-note/lib/pdf/web/viewer.html"}</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/tags/pdf.min.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.5.0/mermaid.min.js","integrity":"sha256-K7oJiQlDulzl24ZUFOywuYme1JqBBvQzK6m8qHjt9Gk="}}</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/tags/mermaid.min.js"></script>
+
+  <script class="next-config" data-name="wavedrom" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.3.0/wavedrom.min.js","integrity":"sha256-IRMDzTC+wK5stMucZ/XSXkeS5VNtxZ+/Bm8Mcqfoxdo="}}</script>
+  <script class="next-config" data-name="wavedrom_skin" type="application/json">{"enable":true,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/wavedrom/3.3.0/skins/default.js","integrity":"sha256-fduc/Zszk5ezWws2uInY/ALWVmIrmV6VTgXbsYSReFI="}}</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/tags/wavedrom.min.js"></script>
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://batype.gitee.io/songs-note/react/implement.html"}</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/quicklink.min.js"></script>
+<script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cywWcj4BR","appkey":"a30428fc71ec317dbe68d573c2f4ce31","count":true}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/comments/changyan.min.js"></script>
+
+</body>
+</html>

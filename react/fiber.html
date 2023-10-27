@@ -28,14 +28,16 @@
 <meta property="og:site_name" content="songs-note">
 <meta property="og:description" content="Fiber 架构的引入使得 React 在渲染过程中可以更加灵活地响应用户交互，提供更好的用户体验。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b551cc458853aef02aa5f.jpg">
 <meta property="article:published_time" content="2023-10-19T12:12:08.000Z">
-<meta property="article:modified_time" content="2023-10-23T01:55:15.575Z">
+<meta property="article:modified_time" content="2023-10-27T06:15:06.588Z">
 <meta property="article:author" content="songshao">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="react">
 <meta property="article:tag" content="Fiber">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/653b551cc458853aef02aa5f.jpg">
 
 
 <link rel="canonical" href="https://batype.gitee.io/songs-note/react/fiber">
@@ -84,7 +86,6 @@
       <p class="site-title">songs-note</p>
       <i class="logo-line"></i>
     </a>
-      <img class="custom-logo-image" src="/songs-note/images/favicon-32x32-next.png" alt="songs-note">
   </div>
 
   <div class="site-nav-right">
@@ -97,7 +98,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/songs-note/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/songs-note/about/me" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/songs-note/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/songs-note/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/songs-note/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">33</span></a></li><li class="menu-item menu-item-schedule"><a href="/songs-note/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/songs-note/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/songs-note/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/songs-note/about/me" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/songs-note/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/songs-note/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/songs-note/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">34</span></a></li><li class="menu-item menu-item-schedule"><a href="/songs-note/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/songs-note/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -163,7 +164,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/songs-note/archives/">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -174,7 +175,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/songs-note/tags/">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -232,10 +233,10 @@
       </a>
     </li>
     <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/songs-note/react/fiber/works.html" rel="bookmark">
-        <time class="popular-posts-time">2023-10-25</time>
+      <a class="popular-posts-link" href="/songs-note/react/implement.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-27</time>
         <br>
-      Fiber架构工作原理
+      React 实现原理
       </a>
     </li>
     <li class="popular-posts-item">
@@ -246,17 +247,17 @@
       </a>
     </li>
     <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/songs-note/react/fiber/works.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-25</time>
+        <br>
+      Fiber架构工作原理
+      </a>
+    </li>
+    <li class="popular-posts-item">
       <a class="popular-posts-link" href="/songs-note/react/fiber/node.html" rel="bookmark">
         <time class="popular-posts-time">2023-10-19</time>
         <br>
       FiberNode结构解析
-      </a>
-    </li>
-    <li class="popular-posts-item">
-      <a class="popular-posts-link" href="/songs-note/react/service/time.html" rel="bookmark">
-        <time class="popular-posts-time">2023-10-19</time>
-        <br>
-      React 获取服务器端时间
       </a>
     </li>
   </ul>
@@ -391,6 +392,7 @@
 <li><p>增量更新：Fiber 架构支持增量更新，即仅更新发生变化的部分，而不需要重新渲染整个组件树。通过对比 Fiber 树的两个状态，React 可以确定哪些组件需要更新，并且可以跳过不需要更新的部分，从而提高渲染性能。</p>
 </li>
 </ul>
+<p><img src="https://pic.imgdb.cn/item/653b551cc458853aef02aa5f.jpg" alt="react 中一帧的过程"></p>
 </div>
 
 			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
@@ -444,8 +446,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/songs-note/react/service/time.html" rel="prev" title="React 获取服务器端时间">
-                  <i class="fa fa-angle-left"></i> React 获取服务器端时间
+                <a href="/songs-note/react/fiber/node.html" rel="prev" title="FiberNode结构解析">
+                  <i class="fa fa-angle-left"></i> FiberNode结构解析
                 </a>
             </div>
             <div class="post-nav-item">
@@ -483,13 +485,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">22k</span>
+    <span title="Word count total">24k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:21</span>
+    <span title="Reading time total">1:27</span>
   </span>
 </div>
 <div class="busuanzi-count">

@@ -28,20 +28,20 @@
 <meta property="og:site_name" content="songs-note">
 <meta property="og:description" content="在&#96;React&#96;中最多会同时存在两棵&#96;Fiber树&#96;。当前屏幕上显示内容对应的&#96;Fiber树&#96;称为&#96;current Fiber树&#96;，正在内存中构建的&#96;Fiber树&#96;称为&#96;workInProgress Fiber树&#96;。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://react.iamkasong.com/img/rootfiber.png">
-<meta property="og:image" content="https://react.iamkasong.com/img/workInProgressFiber.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b2a66c458853aef7f6122.jpg">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b55d2c458853aef05059f.jpg">
 <meta property="og:image" content="https://react.iamkasong.com/img/wipTreeFinish.png">
 <meta property="og:image" content="https://react.iamkasong.com/img/wipTreeUpdate.png">
-<meta property="og:image" content="https://react.iamkasong.com/img/currentTreeUpdate.png">
+<meta property="og:image" content="https://pic.imgdb.cn/item/653b55f9c458853aef0589a3.jpg">
 <meta property="article:published_time" content="2023-10-25T10:12:49.000Z">
-<meta property="article:modified_time" content="2023-10-25T10:12:51.300Z">
+<meta property="article:modified_time" content="2023-10-27T06:22:12.355Z">
 <meta property="article:author" content="songshao">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="react">
 <meta property="article:tag" content="Fiber">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://react.iamkasong.com/img/rootfiber.png">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/653b2a66c458853aef7f6122.jpg">
 
 
 <link rel="canonical" href="https://batype.gitee.io/songs-note/react/fiber/works">
@@ -90,7 +90,6 @@
       <p class="site-title">songs-note</p>
       <i class="logo-line"></i>
     </a>
-      <img class="custom-logo-image" src="/songs-note/images/favicon-32x32-next.png" alt="songs-note">
   </div>
 
   <div class="site-nav-right">
@@ -103,7 +102,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/songs-note/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/songs-note/about/me" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/songs-note/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/songs-note/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/songs-note/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">33</span></a></li><li class="menu-item menu-item-schedule"><a href="/songs-note/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/songs-note/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/songs-note/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/songs-note/about/me" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/songs-note/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/songs-note/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/songs-note/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">34</span></a></li><li class="menu-item menu-item-schedule"><a href="/songs-note/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/songs-note/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -169,7 +168,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/songs-note/archives/">
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">34</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -180,7 +179,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/songs-note/tags/">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">32</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -235,6 +234,13 @@
         <time class="popular-posts-time">2023-10-19</time>
         <br>
       Fiber 架构的起源
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/songs-note/react/implement.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-27</time>
+        <br>
+      React 实现原理
       </a>
     </li>
     <li class="popular-posts-item">
@@ -380,21 +386,21 @@
 <p>每次状态更新都会产生新的<code>workInProgress Fiber树</code>，通过<code>current</code>与<code>workInProgress</code>的替换，完成<code>DOM</code>更新。</p>
 <p>接下来我们以具体例子讲解<code>mount时</code>、<code>update时</code>的构建&#x2F;替换流程。</p>
 <h2 id="mount时"><a href="#mount时" class="headerlink" title="mount时"></a>mount时</h2><p>考虑如下例子：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [num, add] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> add(num + 1)&#125;&gt;&#123;num&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span>/&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>hello<span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">color:</span> &#x27;<span class="attr">red</span>&#x27; &#125;&#125;&gt;</span>world<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">App</span>/&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;root&#x27;</span>));</span><br></pre></td></tr></table></figure>
 
 <ol>
 <li>首次执行<code>ReactDOM.render</code>会创建<code>fiberRootNode</code>（源码中叫<code>fiberRoot</code>）和<code>rootFiber</code>。其中<code>fiberRootNode</code>是整个应用的根节点，<code>rootFiber</code>是<code>&lt;App/&gt;</code>所在组件树的根节点。</li>
 </ol>
 <p>之所以要区分<code>fiberRootNode</code>与<code>rootFiber</code>，是因为在应用中我们可以多次调用<code>ReactDOM.render</code>渲染不同的组件树，他们会拥有不同的<code>rootFiber</code>。但是整个应用的根节点只有一个，那就是<code>fiberRootNode</code>。</p>
 <p><code>fiberRootNode</code>的<code>current</code>会指向当前页面上已渲染内容对应<code>Fiber树</code>，即<code>current Fiber树</code>。</p>
-<p><img src="https://react.iamkasong.com/img/rootfiber.png" alt="rootFiber"></p>
+<p><img src="https://pic.imgdb.cn/item/653b2a66c458853aef7f6122.jpg" alt="fiberRootNode"></p>
 <p><code>fiberRootNode.current = rootFiber;</code></p>
 <p>由于是首屏渲染，页面中还没有挂载任何<code>DOM</code>，所以<code>fiberRootNode.current</code>指向的<code>rootFiber</code>没有任何<code>子Fiber节点</code>（即<code>current Fiber树</code>为空）。</p>
 <ol start="2">
 <li>接下来进入<code>render阶段</code>，根据组件返回的<code>JSX</code>在内存中依次创建<code>Fiber节点</code>并连接在一起构建<code>Fiber树</code>，被称为<code>workInProgress Fiber树</code>。（下图中右侧为内存中构建的树，左侧为页面显示的树）</li>
 </ol>
 <p>在构建<code>workInProgress Fiber树</code>时会尝试复用<code>current Fiber树</code>中已有的<code>Fiber节点</code>内的属性，在<code>首屏渲染</code>时只有<code>rootFiber</code>存在对应的<code>current fiber</code>（即<code>rootFiber.alternate</code>）。</p>
-<p><img src="https://react.iamkasong.com/img/workInProgressFiber.png"></p>
+<p><img src="https://pic.imgdb.cn/item/653b55d2c458853aef05059f.jpg"></p>
 <ol start="3">
 <li>图中右侧已构建完的<code>workInProgress Fiber树</code>在<code>commit阶段</code>渲染到页面。</li>
 </ol>
@@ -409,7 +415,7 @@
 <ol start="2">
 <li><code>workInProgress Fiber 树</code>在<code>render阶段</code>完成构建后进入<code>commit阶段</code>渲染到页面上。渲染完毕后，<code>workInProgress Fiber 树</code>变为<code>current Fiber 树</code>。</li>
 </ol>
-<p><img src="https://react.iamkasong.com/img/currentTreeUpdate.png"></p>
+<p><img src="https://pic.imgdb.cn/item/653b55f9c458853aef0589a3.jpg" alt="渲染过程"></p>
 </div>
 
 			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
@@ -502,13 +508,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">22k</span>
+    <span title="Word count total">24k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:21</span>
+    <span title="Reading time total">1:27</span>
   </span>
 </div>
 <div class="busuanzi-count">
