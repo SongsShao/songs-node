@@ -49,9 +49,8 @@ workInProgressFiber.alternate === currentFiber;
 
 ```js
 function App() {
-  const [num, add] = useState(0);
   return (
-    <p onClick={() => add(num + 1)}>{num}</p>
+    <h1>hello<span style={{ color: 'red' }}>world</span></h1>
   )
 }
 
@@ -64,7 +63,7 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 `fiberRootNode`的`current`会指向当前页面上已渲染内容对应`Fiber树`，即`current Fiber树`。
 
-![rootFiber](https://react.iamkasong.com/img/rootfiber.png)
+![fiberRootNode](https://pic.imgdb.cn/item/653b2a66c458853aef7f6122.jpg)
 
 `fiberRootNode.current = rootFiber;`
 
@@ -74,7 +73,7 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 在构建`workInProgress Fiber树`时会尝试复用`current Fiber树`中已有的`Fiber节点`内的属性，在`首屏渲染`时只有`rootFiber`存在对应的`current fiber`（即`rootFiber.alternate`）。
 
-![](https://react.iamkasong.com/img/workInProgressFiber.png)
+![](https://pic.imgdb.cn/item/653b55d2c458853aef05059f.jpg)
 
 3. 图中右侧已构建完的`workInProgress Fiber树`在`commit阶段`渲染到页面。
 
@@ -92,5 +91,4 @@ ReactDOM.render(<App/>, document.getElementById('root'));
 
 2. `workInProgress Fiber 树`在`render阶段`完成构建后进入`commit阶段`渲染到页面上。渲染完毕后，`workInProgress Fiber 树`变为`current Fiber 树`。
 
-![](https://react.iamkasong.com/img/currentTreeUpdate.png)
-
+![渲染过程](https://pic.imgdb.cn/item/653b55f9c458853aef0589a3.jpg)
