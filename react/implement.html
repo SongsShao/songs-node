@@ -42,7 +42,7 @@
 <meta property="og:image" content="https://pic.imgdb.cn/item/653e496bc458853aef00deb1.jpg">
 <meta property="og:image" content="https://pic.imgdb.cn/item/653e4d86c458853aef11c6ea.jpg">
 <meta property="article:published_time" content="2023-10-27T02:58:50.000Z">
-<meta property="article:modified_time" content="2023-10-29T13:48:54.434Z">
+<meta property="article:modified_time" content="2023-10-29T15:05:57.491Z">
 <meta property="article:author" content="songshao">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="JavaScript">
@@ -361,14 +361,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>4.1k</span>
+      <span>21k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>15 mins.</span>
+      <span>19 mins.</span>
     </span>
 </div>
 
@@ -600,6 +600,11 @@
 <ol start="2">
 <li>ReactChildFiber.js</li>
 </ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createFiberFromElement &#125; <span class="keyword">from</span> <span class="string">&#x27;./ReactFiber&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="variable constant_">REACT_ELEMENT_TYPE</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;../../shared/ReactSymbols&#x27;</span>;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">*</span>&#125; shouldTrackSideEffect 是否跟踪副作用</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@returns</span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createChildReconciler</span>(<span class="params">shouldTrackSideEffect</span>) &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">reconcileSingElement</span>(<span class="params">returnFiber, currentFirstFiber, element</span>) &#123;</span><br><span class="line">        <span class="comment">// 因为我们实现的是初次挂载, 老节点currentFirstFiber是没有的, </span></span><br><span class="line">        <span class="comment">// 所以可以直接根据虚拟dom创建fiber节点</span></span><br><span class="line">        <span class="keyword">const</span> created = <span class="title function_">createFiberFromElement</span>(element);</span><br><span class="line">        created.<span class="property">return</span> = returnFiber;</span><br><span class="line">        <span class="keyword">return</span> created;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 比较子fiber  (DOM-DIFF) 就是用老的fiber链表和新的虚拟dom进行比较</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">*</span>&#125; returnFiber 新父fiber</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">*</span>&#125; currentFirstFiber 当前的第一个子fiber(老fiber的第一个儿子)</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">*</span>&#125; newChild 新的子虚拟dom</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">reconcileChildFibers</span>(<span class="params">returnFiber, currentFirstFiber, newChild</span>) &#123;</span><br><span class="line">        <span class="comment">// 现在暂时只考虑新的节点只有一个的情况</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">typeof</span> newChild === <span class="string">&#x27;object&#x27;</span> &amp;&amp; newChild !== <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">switch</span> (newChild.<span class="property">$$typeof</span>) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="attr">REACT_ELEMENT_TYPE</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="title function_">reconcileSingElement</span>(</span><br><span class="line">                        returnFiber,</span><br><span class="line">                        currentFirstFiber,</span><br><span class="line">                        newChild</span><br><span class="line">                    );</span><br><span class="line">                <span class="attr">default</span>:</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> reconcileChildFibers;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 有老父fiber 更新</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> reconcileChildFibers = <span class="title function_">createChildReconciler</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="comment">// 没有老的父fiber 更新</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> mountChildFibers = <span class="title function_">createChildReconciler</span>(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>ReactFiber.js<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">createFiberFromElement</span>(<span class="params">element</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> type = element.<span class="property">type</span>;</span><br><span class="line">    <span class="keyword">const</span> key = element.<span class="property">key</span>;</span><br><span class="line">    <span class="keyword">const</span> pendingProps = element.<span class="property">props</span>;</span><br><span class="line">    <span class="keyword">const</span> fiber = <span class="title function_">createFiberFromTypeAndProps</span>(</span><br><span class="line">        type,</span><br><span class="line">        key,</span><br><span class="line">        pendingProps</span><br><span class="line">    );</span><br><span class="line">    <span class="keyword">return</span> fiber;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">createFiberFromTypeAndProps</span>(<span class="params">type, key, pendingProps</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> fiberTag = <span class="title class_">IndeterminateComponent</span>;</span><br><span class="line">    <span class="keyword">const</span> fiber = <span class="title function_">createFiberNode</span>(fiberTag, pendingProps, key);</span><br><span class="line">    fiber.<span class="property">type</span> = type;</span><br><span class="line">    <span class="keyword">return</span> fiber;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
 </div>
 
 			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
@@ -689,13 +694,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">26k</span>
+    <span title="Word count total">77k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:36</span>
+    <span title="Reading time total">1:10</span>
   </span>
 </div>
 <div class="busuanzi-count">
