@@ -3,4 +3,5 @@
 export const HostRoot = 3; // 根节点
 export const HostComponent = 5; // 原生节点 span div p
 export const HostText = 6; // 纯文本节点
+export const IndeterminateComponent = 2; // 在我们知道它是函数还是 class 之前
 // ...

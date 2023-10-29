@@ -1,5 +1,5 @@
 // 3. 工作标签
-import { HostRoot } from "./ReactWorkTags";
+import { HostRoot, IndeterminateComponent } from "./ReactWorkTags";
 // 5. 副作用标识
 import { NoFlags } from "./ReactFiberFlags";
 
@@ -36,4 +36,55 @@ export function createFiberNode(tag, pendingProps, key) {
 
 export function createHostRootFiber() {
   return createFiberNode(HostRoot, null, null);
+}
+
+/**
+ * 根据老fiber和新的属性构建新fiber
+ * @param {*} current 老fiber
+ * @param {*} pendingProps 新的属性
+ */
+export function creatWorkInProgress(current, pendingProps) {
+  // 3. 拿到老fiber的轮替 第一次没有 (初始化)
+  let workInProgress = current.alternate;
+  if(workInProgress === null) {
+    workInProgress = createFiberNode(current.tag, pendingProps, current.key);
+    workInProgress.type = current.type;
+    workInProgress.stateNode = current.stateNode;
+
+    workInProgress.stateNode = current;
+    current.alternate =  workInProgress;
+  } else {
+    // 如果有，说明是更新，只能改属性就可以复用
+    workInProgress.pendingProps = current.pendingProps;
+    workInProgress.type = current.type;
+    workInProgress.flags = current.flags;
+    workInProgress.subtreeFlags = NoFlags;
+  }
+  // 复制属性
+  workInProgress.child = current.child;
+  workInProgress.memoizedProps = current.memoizedProps;
+  workInProgress.memoizedState = current.memoizedState;
+  workInProgress.updateQueue = current.updateQueue;
+  workInProgress.sibling = current.sibling;
+  workInProgress.index = current.index;
+  return workInProgress;
+}
+
+export function createFiberFromElement(element) {
+  const type = element.type;
+  const key = element.key;
+  const pendingProps = element.props;
+  const fiber = createFiberFromTypeAndProps(
+    type,
+    key,
+    pendingProps
+  );
+  return fiber;
+}
+
+export function createFiberFromTypeAndProps(type, key, pendingProps) {
+  let fiberTag = IndeterminateComponent;
+  const fiber = createFiberNode(fiberTag, pendingProps, key);
+  fiber.type = type;
+  return fiber;
 }

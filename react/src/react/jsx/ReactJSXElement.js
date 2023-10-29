@@ -1,7 +1,7 @@
-import hasOwnProperty from '../shared/hasOwnProperty';
+import hasOwnProperty from '../../shared/hasOwnProperty';
 
 // dom 类型
-import { REACT_ELEMENT_TYPE  } from '../shared/ReactSymbols';
+import { REACT_ELEMENT_TYPE  } from '../../shared/ReactSymbols';
 
 const RESERVED_PROPS = {
     key: true,
