@@ -13,7 +13,7 @@
   <url>
     <loc>https://batype.gitee.io/songs-note/react/fiber/implement.html</loc>
     
-    <lastmod>2023-11-01</lastmod>
+    <lastmod>2023-10-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -38,6 +38,24 @@
   </url>
   
   <url>
+    <loc>https://batype.gitee.io/songs-note/web/npm/nvm.html</loc>
+    
+    <lastmod>2023-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/web/npm/nrm.html</loc>
+    
+    <lastmod>2023-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://batype.gitee.io/songs-note/react/components/unstate-next-implement.html</loc>
     
     <lastmod>2023-10-26</lastmod>
@@ -56,27 +74,18 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/web/npm/nvm.html</loc>
+    <loc>https://batype.gitee.io/songs-note/hexo/config/pagination.html</loc>
     
-    <lastmod>2023-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/web/webpack/hot/module/replacement.html</loc>
-    
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/javascript/var/let/const.html</loc>
+    <loc>https://batype.gitee.io/songs-note/archives/index.html</loc>
     
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,25 +94,25 @@
   <url>
     <loc>https://batype.gitee.io/songs-note/javascript/prototype.html</loc>
     
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/hexo/config/pagination.html</loc>
+    <loc>https://batype.gitee.io/songs-note/web/webpack/hot/module/replacement.html</loc>
     
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/web/npm/nrm.html</loc>
+    <loc>https://batype.gitee.io/songs-note/javascript/var/let/const.html</loc>
     
-    <lastmod>2023-10-25</lastmod>
+    <lastmod>2023-10-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -128,9 +137,9 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/index.html</loc>
+    <loc>https://batype.gitee.io/songs-note/browser/session/cookies.html</loc>
     
-    <lastmod>2023-10-23</lastmod>
+    <lastmod>2023-10-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -139,70 +148,7 @@
   <url>
     <loc>https://batype.gitee.io/songs-note/about/me.html</loc>
     
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/web/webpack/perform.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/web/reflux/and/redrawing.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/web/lazy/loading.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/web/lodash/dubounce.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/web/cross/site/script.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/web/image/perform.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/web/security/question.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
+    <lastmod>2023-10-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -211,106 +157,25 @@
   <url>
     <loc>https://batype.gitee.io/songs-note/web/cross/site/request/forgeries.html</loc>
     
-    <lastmod>2023-10-23</lastmod>
+    <lastmod>2023-10-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/react/synthetic/event.html</loc>
+    <loc>https://batype.gitee.io/songs-note/web/security/question.html</loc>
     
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/react/service/time.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
+    <lastmod>2023-10-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/react/fiber/node.html</loc>
+    <loc>https://batype.gitee.io/songs-note/web/cross/site/script.html</loc>
     
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/javascript/promise.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/javascript/async/await.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/hexo/config/rss.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/browser/tab/to/tab.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/browser/session/cookies.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/browser/mechanism/cache.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/browser/render/process.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/browser/restful/and/rpc.html</loc>
-    
-    <lastmod>2023-10-23</lastmod>
+    <lastmod>2023-10-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -319,7 +184,151 @@
   <url>
     <loc>https://batype.gitee.io/songs-note/browser/network/hijack.html</loc>
     
-    <lastmod>2023-10-23</lastmod>
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/javascript/async/await.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/web/webpack/perform.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/web/reflux/and/redrawing.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/web/lodash/dubounce.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/web/lazy/loading.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/web/image/perform.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/react/service/time.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/react/synthetic/event.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/react/fiber/node.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/javascript/promise.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/browser/tab/to/tab.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/browser/restful/and/rpc.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/browser/render/process.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/browser/mechanism/cache.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/hexo/config/rss.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/index.html</loc>
+    
+    <lastmod>2023-10-21</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -335,27 +344,18 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/schedule/index.html</loc>
-    
-    <lastmod>2023-10-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://batype.gitee.io/songs-note/categories/index.html</loc>
     
-    <lastmod>2023-10-19</lastmod>
+    <lastmod>2023-10-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/archives/index.html</loc>
+    <loc>https://batype.gitee.io/songs-note/schedule/index.html</loc>
     
-    <lastmod>2023-10-19</lastmod>
+    <lastmod>2023-10-18</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -378,14 +378,77 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/JavaScript/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/es6/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/GUI/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/RESTful/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/RPC/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/HTTP/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/cookies/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/localStorage/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/sessionStorage/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/TypeScript/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -420,77 +483,35 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/JavaScript/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/RESTful/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/es6/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/RPC/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/react/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/HTTP/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/Fiber/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/tags/GUI/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/tags/cookies/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/tags/localStorage/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/tags/sessionStorage/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/tags/TypeScript/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/JSX/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -539,27 +560,6 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/react/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/tags/Fiber/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/tags/JSX/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://batype.gitee.io/songs-note/tags/npm/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -567,14 +567,14 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/nvm/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/nrm/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/tags/nrm/</loc>
+    <loc>https://batype.gitee.io/songs-note/tags/nvm/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -597,56 +597,7 @@
 
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/es6/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/TypeScript/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/Hexo/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/categories/React/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -667,28 +618,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B8%B2%E6%9F%93/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/WebPack/</loc>
+    <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/Cache/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -702,7 +632,42 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/Cache/</loc>
+    <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B8%B2%E6%9F%93/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/categories/React/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/TypeScript/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -716,7 +681,42 @@
   </url>
   
   <url>
+    <loc>https://batype.gitee.io/songs-note/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/es6/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/WebPack/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://batype.gitee.io/songs-note/categories/React/Fiber/</loc>
+    <lastmod>2023-11-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://batype.gitee.io/songs-note/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/Hexo/</loc>
     <lastmod>2023-11-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
