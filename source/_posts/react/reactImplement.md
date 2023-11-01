@@ -10,7 +10,6 @@ categories:
 ---
 
 ### 实现jsx
-
 ```jsx
     let element = (
     <h1>
@@ -28,14 +27,12 @@ categories:
 ### 如何实现
 
 1. jsx-dev-runtime.js
-
 ```jsx
     export { jsxDEV } from "./jsx/ReactJSXElement";
 
 ```
 
 2. ReactJSXElement.js
-
 ```jsx
     import hasOwnProperty from '../../shared/hasOwnProperty';
 
@@ -97,7 +94,6 @@ categories:
 ```
 
 3. hasOwnProperty.js
-
 ```jsx
     const { hasOwnProperty } = Object.prototype;
 
@@ -105,7 +101,6 @@ categories:
 ```
 
 4. ReactSymbols.js
-
 ```jsx
     // 用于标记类似 ReactElement 类型的符号。
     export const REACT_ELEMENT_TYPE = Symbol.for('react.element');
@@ -115,7 +110,9 @@ categories:
 
 - 需要给react提供一个根节点，之后每个节点都是渲染在根节点内部的。
 
-`const root = createRoot(document.getElementById('root'))`
+```js
+const root = createRoot(document.getElementById('root'))
+```
 
 - 根fiber可以通俗理解为一个装着所有虚拟dom的容器，每个虚拟dom又单独对应一个fiber，
 - 渲染可以以单个fiber为单位暂停 / 恢复。
@@ -124,7 +121,6 @@ categories:
 #### 创建根节点
 
 更改main.jsx
-
 ```jsx
     import { createRoot } from "react-dom/client"
 
@@ -152,13 +148,11 @@ categories:
 分这么多文件的主要是因为很多其他逻辑要处理，暂时都给省略了。虽然比较绕，但其实本质就是把`div#root`做了几层包装。
 
 1. client.js
-
 ```js
     export { createRoot } from "./src/client/ReactDOMRoot";
 ```
 
 2. ReactDOMRoot.js
-
 ```js
     import { createContainer } from "react-reconciler/src/ReactFiberReconciler";
     function ReactDOMRoot(internalRoot) {
@@ -175,7 +169,6 @@ categories:
 ```
 
 3. ReactFiberReconciler.js
-
 ```js
     import { createFiberRoot } from "./ReactFiberRoot";
     // 创建容器 containerInfo: 容器信息
@@ -186,7 +179,6 @@ categories:
 ```
 
 4. ReactFiberRoot.js
-
 ```js
     function FiberRootNode(containerInfo) {
     // 4. 把DOM节点放到容器
@@ -256,7 +248,6 @@ categories:
 ![根节点和`fiber`关系](https://pic.imgdb.cn/item/653b2a66c458853aef7f6122.jpg)
 
 1. ReactFiberRoot.js
-
 ```js
     import { createHostRootFiber } from "./ReactFiber";
 
@@ -279,7 +270,6 @@ categories:
 ```
 
 2. ReactFiber.js
-
 ```js
     // 3. 工作标签
     import { HostRoot } from "./ReactWorkTags";
@@ -324,7 +314,6 @@ categories:
 ```
 
 3. ReactWorkTags.js
-
 ```js
     // 每种虚拟DOM都会对应自己的fiber的类型
     // 根Fiber的Tag
@@ -336,7 +325,6 @@ categories:
 ```
 
 4. ReactFiberFlags.js
-
 ```js
     // 没有任何操作
     export const NoFlags = 0b000000000000000000000000000000;
@@ -360,7 +348,6 @@ react采用了双缓存区的技术，可以把将要显示的图片绘制在缓
 打开ReactFiberRoot.js文件，在return root之前加一行代码，给根fiber加上一个更新队列，之后更新渲染任务都是放到这个队列里面。
 
 1. ReactFiberRoot.js
-
 ```js
     + import { initialUpdateQueue } from "./ReactFiberClassUpdateQueue";
     ...
@@ -369,7 +356,6 @@ react采用了双缓存区的技术，可以把将要显示的图片绘制在缓
 ```
 
 2. ReactFiberClassUpdateQueue.js
-
 ```js
     export function initialUpdateQueue(fiber) {
         // 创建一个更新队列
@@ -408,7 +394,6 @@ react采用了双缓存区的技术，可以把将要显示的图片绘制在缓
 ```
 
 在以前没有用fiber渲染是这样的，这个渲染方式是递归渲染如果数据很多就可能会卡顿。
-
 ```js
     let vDom = {
         "type": "div",
@@ -462,7 +447,6 @@ react采用了双缓存区的技术，可以把将要显示的图片绘制在缓
 ```
 
 下面是fiber的渲染方式，可以中断、暂停、恢复渲染。深度优先
-
 ```js
     // 把虚拟DOM构建成Fiber树
     let A1 = { type: 'div', props: { className: 'A1' } };
@@ -532,13 +516,11 @@ react采用了双缓存区的技术，可以把将要显示的图片绘制在缓
 #### 队列的单向链表
 
 1. 在main.js 中增加下面代码
-
 ```js
 root.render(element)
 ```
 
 2. ReactDOMRoot.js
-
 ```js
     import { updateContainer } from '../react-reconciler/src/ReactFiberReconciler';
     ...
@@ -550,7 +532,6 @@ root.render(element)
 ```
 
 3. ReactFiberReconciler.js
-
 ```js
     import { createUpdate, enqueueUpdate } from './ReactFiberClassUpdateQueue';
     ...
@@ -575,7 +556,6 @@ root.render(element)
 4. ReactFiberClassUpdateQueue.js
 
 ![ReactFiberClassUpdateQueue.js](https://pic.imgdb.cn/item/653e40f6c458853aefe48306.jpg)
-
 ```js
     import { markUpdateLaneFromFiberToRoot } from './ReactFiberConcurrentUpdate'
     ...
@@ -612,8 +592,8 @@ root.render(element)
 ```
 
 #### 冒泡获取根节点容器 
-ReactFiberConcurrentUpdate.js
 
+ReactFiberConcurrentUpdate.js
 ```js
     import { HostRoot } from './ReactWorkTags';
 
@@ -649,7 +629,6 @@ ReactFiberConcurrentUpdate.js
 到目前为止更新对象已经添加到了根fiber的更新队列上，现在需要开始进行调度更新。
 
 1. ReactFiberReconciler.js
-
 ```js
     import { scheduleUpdateOnFiber } from './ReactFiberWorkLoop'
     ...
@@ -661,7 +640,6 @@ ReactFiberConcurrentUpdate.js
 ```
 
 2. ReactFiberWorkLoop.js
-
 ```js
     import { scheduleCallback } from './scheduler';
 
@@ -685,13 +663,13 @@ ReactFiberConcurrentUpdate.js
 ```
 
 4. src/forks/Scheduler.js
-
 ```js
     // 此处后面会实现优先级队列
     export function scheduleCallback(callback) {
     requestIdleCallback(callback);
     }
 ```
+
 5. 打印FiberRootNode
 
 ![输出的FiberRootNode](https://pic.imgdb.cn/item/653e496bc458853aef00deb1.jpg)
@@ -707,7 +685,6 @@ ReactFiberConcurrentUpdate.js
 #### 建立新的hostRootFiber
 
 1. ReactFiberWorkLoop.js
-
 ```js
     import { creatWorkInProgress } from "./ReactFiber";
 
@@ -739,7 +716,6 @@ ReactFiberConcurrentUpdate.js
 ```
 
 2. ReactFiber.js
-
 ```js
     /**
      * 根据老fiber和新的属性构建新fiber
@@ -779,7 +755,6 @@ ReactFiberConcurrentUpdate.js
 然后在新的根fiber里构建更新fiber树
 
 1. ReactFiberWorkLoop.js
-
 ```js
     import { beginWork } from "./ReactFiberBeginWork";
     ...
@@ -817,7 +792,6 @@ ReactFiberConcurrentUpdate.js
 ```
 
 2. ReactFiberBeginWork.js
-
 ```js
     import { HostComponent, HostRoot, HostText } from "./ReactWorkTags";
     import { processUpdateQueue } from './ReactFiberClassUpdateQueue';
@@ -863,7 +837,6 @@ ReactFiberConcurrentUpdate.js
 写上一步引入的`processUpdateQueue`方法
 
 1. ReactFiberClassUpdateQueue.js
-
 ```js
     import { markUpdateLaneFromFiberToRoot } from './ReactFiberConcurrentUpdate'
 
@@ -961,7 +934,6 @@ ReactFiberConcurrentUpdate.js
 上上步还有一个`reconcileChildren`没有定义
 
 1. ReactFiberBeginWork.js
-
 ```js
     import { mountChildFibers, reconcileChildFibers } from "./ReactChildFiber";
 
@@ -989,7 +961,6 @@ ReactFiberConcurrentUpdate.js
 ```
 
 2. ReactChildFiber.js
-
 ```js
     import { createFiberFromElement } from './ReactFiber';
     import { REACT_ELEMENT_TYPE } from '../../shared/ReactSymbols';
@@ -1058,5 +1029,47 @@ ReactFiberConcurrentUpdate.js
         const fiber = createFiberNode(fiberTag, pendingProps, key);
         fiber.type = type;
         return fiber;
+    }
+```
+
+### 完成工作单元
+
+1. ReactFiberWorkLoop.js
+```js
+    function completeUnitOfWork(unitOfWork) {
+        ...
+        if (next === null) {
+        // 说明已经完成
+        // 完成工作单元
+        + completeUnitOfWork(unitOfWork); // 这个方法之后写 先模拟一下完成工作
+            // workInProgress = null;
+        } else {
+            // 如果有子节点就成为下一个工作单元
+            workInProgress = next;
+        }
+    }
+    function completeUnitOfWork(unitOfWork) {
+        let completeWork = unitOfWork;
+        do {
+            // 拿到他的父节点和当前节点RootFiber
+            const current = completeWork.alternate;
+            const returnFiber = completeWork.return;
+            let next = completeWork(current, completeWork);
+            // 如果下一个节点不为空
+            if(next !== null) {
+            workInProgress = next;
+            return;
+            }
+            
+            const siblingFiber = completeWork.sibling;
+            // 如果兄弟节点不为空
+            if(siblingFiber !== null) {
+            workInProgress = siblingFiber;
+            return;
+            }
+            // 返回父节点
+            completeWork = returnFiber;
+
+        } while(completeWork !== null);
     }
 ```
