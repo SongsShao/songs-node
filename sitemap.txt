@@ -18,11 +18,11 @@ https://batype.gitee.io/tags/index.html
 https://batype.gitee.io/about/me.html
 https://batype.gitee.io/web/webpack/perform.html
 https://batype.gitee.io/web/reflux/and/redrawing.html
-https://batype.gitee.io/web/lazy/loading.html
 https://batype.gitee.io/web/lodash/dubounce.html
+https://batype.gitee.io/web/lazy/loading.html
 https://batype.gitee.io/web/cross/site/script.html
-https://batype.gitee.io/web/security/question.html
 https://batype.gitee.io/web/image/perform.html
+https://batype.gitee.io/web/security/question.html
 https://batype.gitee.io/web/cross/site/request/forgeries.html
 https://batype.gitee.io/react/synthetic/event.html
 https://batype.gitee.io/react/service/time.html
@@ -38,8 +38,8 @@ https://batype.gitee.io/browser/restful/and/rpc.html
 https://batype.gitee.io/browser/network/hijack.html
 https://batype.gitee.io/docs/index.html
 https://batype.gitee.io/schedule/index.html
-https://batype.gitee.io/categories/index.html
 https://batype.gitee.io/archives/index.html
+https://batype.gitee.io/categories/index.html
 https://batype.gitee.io/
 https://batype.gitee.io/tags/%E5%89%8D%E7%AB%AF/
 https://batype.gitee.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/
