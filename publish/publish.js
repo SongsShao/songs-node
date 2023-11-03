@@ -32,7 +32,13 @@ updateVersion();
 
 function updateGiteePages() {
   // "scp -r public/ root@47.108.140.70:/home/html/
-  const scp = spawn("scp", ["-r", "public/", "root@47.108.140.70:/home/html/"]);
+  const scp = spawn(
+    "scp",
+    ["-r", "public/", "root@47.108.140.70:/home/html/"],
+    {
+      stdio: ["pipe", "pipe", "pipe"],
+    }
+  );
   scp.stdin.write(`${`96515@ss.com`}\n`);
   scp.stdin.end();
 }
