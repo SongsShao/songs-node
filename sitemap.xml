@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/lodash/dubounce.html</loc>
+    <loc>https://batype.gitee.io/web/lazy/loading.html</loc>
     
     <lastmod>2023-10-23</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/lazy/loading.html</loc>
+    <loc>https://batype.gitee.io/web/lodash/dubounce.html</loc>
     
     <lastmod>2023-10-23</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/image/perform.html</loc>
+    <loc>https://batype.gitee.io/web/security/question.html</loc>
     
     <lastmod>2023-10-23</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/security/question.html</loc>
+    <loc>https://batype.gitee.io/web/image/perform.html</loc>
     
     <lastmod>2023-10-23</lastmod>
     
@@ -480,14 +480,14 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/Pagination/</loc>
+    <loc>https://batype.gitee.io/tags/ReadMore/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/ReadMore/</loc>
+    <loc>https://batype.gitee.io/tags/Pagination/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -578,6 +578,13 @@
   </url>
   
   <url>
+    <loc>https://batype.gitee.io/tags/WebPack/</loc>
+    <lastmod>2023-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://batype.gitee.io/tags/npm/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -593,13 +600,6 @@
   
   <url>
     <loc>https://batype.gitee.io/tags/nvm/</loc>
-    <lastmod>2023-11-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://batype.gitee.io/tags/WebPack/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -713,14 +713,14 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
+    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/WebPack/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/WebPack/</loc>
+    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
     <lastmod>2023-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
