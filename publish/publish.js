@@ -31,36 +31,13 @@ function updateVersion() {
 updateVersion();
 
 function updateGiteePages() {
-  const request = fetch(
-    `https://gitee.com/api/v5/repos/batype/songs-note/pages/builds`,
-    {
-      method: "POST", // 设置请求方法为POST
-      headers: {
-        "Content-Type": "application/json", // 设置请求头信息
-      },
-      body: JSON.stringify({
-        access_token:
-          "3245df0f69a7217c87eebcea53f52ee63245df0f69a7217c87eebcea53f52ee6",
-        source: "gh-pages",
-        publish_source: "gh-pages",
-      }), // 将要发送的数据转换为JSON字符串
-    }
-  );
-
-  request
-    .then((response) => {
-      logger.info(response);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      return response.json(); // 解析响应数据为JSON对象
-    })
-    .then((res) => {
-      logger.info("Gitee update Pages request is OK!");
-    })
-    .catch((err) => {
-      logger.error(err.message);
-    });
+  execSync("scp -r public/ root@47.108.140.70:/home/html/", {
+    stdio: [0, 1, 2],
+  });
+  execSync("96515@ss.com", {
+    stdio: [0, 1, 2],
+  });
+  execSync("ssh roo");
 }
 
 (async () => {
@@ -83,6 +60,6 @@ function updateGiteePages() {
     execSync("npm run release", {
       stdio: [0, 1, 2],
     });
-    updateGiteePages();
   }
+  updateGiteePages();
 })();
