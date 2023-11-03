@@ -1,6 +1,6 @@
 {
   "name": "songs-note",
-  "version": "0.0.49",
+  "version": "0.0.50",
   "private": true,
   "scripts": {
     "build": "hexo clean && hexo generate",
@@ -14,7 +14,7 @@
     "version": "6.3.0"
   },
   "dependencies": {
-    "signale": "^1.4.0",
+    "expect": "^29.7.0",
     "gh-pages": "^6.0.0",
     "hexo": "^6.3.0",
     "hexo-generator-archive": "^2.0.0",
@@ -33,6 +33,7 @@
     "hexo-symbols-count-time": "^0.7.1",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-next": "^8.18.2",
-    "hexo-word-counter": "^0.1.0"
+    "hexo-word-counter": "^0.1.0",
+    "signale": "^1.4.0"
   }
 }

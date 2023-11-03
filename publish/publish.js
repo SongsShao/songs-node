@@ -1,7 +1,8 @@
-const { execSync } = require("child_process");
+const { execSync, spawn } = require("child_process");
 const fs = require("fs");
 const { Signale } = require("signale");
 const path = require("path");
+const expect = require("expect");
 
 const logger = new Signale();
 let version;
@@ -31,13 +32,9 @@ function updateVersion() {
 updateVersion();
 
 function updateGiteePages() {
-  execSync("scp -r public/ root@47.108.140.70:/home/html/", {
-    stdio: [0, 1, 2],
-  });
-  execSync("96515@ss.com", {
-    stdio: [0, 1, 2],
-  });
-  execSync("ssh roo");
+  // "scp -r public/ root@47.108.140.70:/home/html/
+  const scp = spawn("scp", ["-r", "public/", "root@47.108.140.70:/home/html/"]);
+  expect.spawn(scp, []).expect("password:").sendLine("96515@ss.com").run();
 }
 
 (async () => {
