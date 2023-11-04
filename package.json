@@ -1,6 +1,6 @@
 {
   "name": "songs-note",
-  "version": "0.0.60",
+  "version": "0.0.61",
   "private": true,
   "scripts": {
     "build": "hexo clean && hexo generate",
@@ -34,6 +34,7 @@
     "hexo-theme-landscape": "^1.0.0",
     "hexo-theme-next": "^8.18.2",
     "hexo-word-counter": "^0.1.0",
-    "signale": "^1.4.0"
+    "signale": "^1.4.0",
+    "ssh2": "^1.14.0"
   }
 }

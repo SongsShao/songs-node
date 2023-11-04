@@ -2,7 +2,7 @@ const { execSync, spawn } = require("child_process");
 const fs = require("fs");
 const { Signale } = require("signale");
 const path = require("path");
-const expect = require("expect");
+const Client = require('ssh2').Client;
 
 const logger = new Signale();
 let version;
@@ -31,10 +31,25 @@ function updateVersion() {
 
 updateVersion();
 
-function updateGiteePages() {
-  // "scp -r public/ root@47.108.140.70:/home/html/
-  const scp = spawn("scp", ["-r", "public/", "root@47.108.140.70:/home/html/"]);
-  expect.spawn(scp, []).expect("password:").sendLine("96515@ss.com").run();
+
+function updateFixService() {
+  const conn = new Client();
+  conn.on('ready', function() {
+    console.log('Client :: ready');
+    conn.scp('/public', 'root@47.108.140.70:/home/html', {recursive: true}, function(err, status) {
+      if (err) {
+        console.log('Error :: ', err);
+        conn.end();
+      } else {
+        console.log('SCP :: Finished');
+        conn.end();
+      }
+    });
+  }).connect({
+    host: '47.108.140.70',
+    username: 'root',
+    password: '96515@ss.com' // you can also use private keys with 'key' path
+  });
 }
 
 (async () => {
@@ -58,5 +73,5 @@ function updateGiteePages() {
       stdio: [0, 1, 2],
     });
   }
-  updateGiteePages();
+  updateFixService();
 })();
