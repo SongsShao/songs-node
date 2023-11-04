@@ -3,6 +3,8 @@ const fs = require("fs");
 const { Signale } = require("signale");
 const path = require("path");
 const Client = require('ssh2').Client;
+const sftp = require('ssh2-sftp-client');
+
 
 const logger = new Signale();
 let version;
@@ -36,13 +38,20 @@ function updateFixService() {
   const conn = new Client();
   conn.on('ready', function() {
     console.log('Client :: ready');
-    conn.scp('/public', 'root@47.108.140.70:/home/html', {recursive: true}, function(err, status) {
+    const sftpClient = conn.sftp(function(err) {
       if (err) {
-        console.log('Error :: ', err);
+        console.error('Error connecting to SFTP:', err);
         conn.end();
       } else {
-        console.log('SCP :: Finished');
-        conn.end();
+        console.log('SFTP :: Finished');
+        sftpClient.end(); // Close SFTP connection
+      }
+    });
+    sftpClient.fastPut('/public', '/home/html', { recursive: true }, function(err) {
+      if (err) {
+        console.error('Error copying file:', err);
+      } else {
+        console.log('File transferred successfully!');
       }
     });
   }).connect({
