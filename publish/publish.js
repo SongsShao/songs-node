@@ -37,20 +37,22 @@ function updateFixService() {
   conn.on('ready', function() {
     console.log('Client :: ready');
     const sftpClient = conn.sftp(function(err, sftp) {
-      sftp.fastPut('/public', '/home/html', { recursive: true }, function(err) {
-        if (err) {
-          console.error('Error copying file:', err);
-        } else {
-          console.log('File transferred successfully!');
-        }
-      });
       if (err) {
         console.error('Error connecting to SFTP:', err);
         conn.end();
       } else {
         console.log('SFTP :: Finished');
-        sftpClient.end(); // Close SFTP connection
+        sftp.fastPut('./public', '/home/html', { recursive: true }, function(err) {
+          if (err) {
+            console.error('Error copying file:', err);
+          } else {
+            console.log('File transferred successfully!');
+          }
+        });
       }
+
+      sftpClient.end();
+      
     });
     
   }).connect({
