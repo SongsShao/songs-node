@@ -44,10 +44,10 @@ https://batype.gitee.io/
 https://batype.gitee.io/tags/%E5%89%8D%E7%AB%AF/
 https://batype.gitee.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/
 https://batype.gitee.io/tags/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/
+https://batype.gitee.io/tags/GUI/
 https://batype.gitee.io/tags/RESTful/
 https://batype.gitee.io/tags/RPC/
 https://batype.gitee.io/tags/HTTP/
-https://batype.gitee.io/tags/GUI/
 https://batype.gitee.io/tags/cookies/
 https://batype.gitee.io/tags/localStorage/
 https://batype.gitee.io/tags/sessionStorage/
@@ -74,13 +74,13 @@ https://batype.gitee.io/tags/nvm/
 https://batype.gitee.io/tags/WebPack/
 https://batype.gitee.io/tags/unstate-next/
 https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/
-https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B8%B2%E6%9F%93/
+https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%8D%8F%E8%AE%AE/
 https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/
 https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/Cache/
 https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E9%80%9A%E8%AE%AF/
 https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BC%93%E5%AD%98/
 https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/
-https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%8D%8F%E8%AE%AE/
+https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B8%B2%E6%9F%93/
 https://batype.gitee.io/categories/React/
 https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/
 https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/TypeScript/
