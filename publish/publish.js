@@ -31,10 +31,35 @@ function updateVersion() {
 
 updateVersion();
 
+// 解压部署操作
+function Shell(conn, name) {
+  conn.shell((err,stream)=>{
+      stream.end(
+          `
+           cd /home/html
+           mv songs-note back/songs-note.$(date "+%Y%m%d%H%M%")
+           tar zxvf ${name}.tar.gz
+           mv ${name} songs-note
+           rm -rf ${name}.tar.gz
+           exit
+          `
+          //进入服务器暂存地址
+          //上传前先备份原始项目
+          //解压上传的压缩包
+          //移动解压后的文件到发布目录
+          //删除压缩包
+          //退出
+      ).on('data',data=>{
+          console.log(data.toString())
+      }).on('close',()=>{
+          conn.end()
+      })
+  })
+}
 
 function updateFixService(version) {
-  let name = `songs-note.${version}.tar.gz`;
-  execSync(`tar zcvf ${name} ./public`, {
+  let name = `songs-note.${version}`;
+  execSync(`tar zcvf ${name}.tar.gz ./public`, {
     stdio: [0, 1, 2],
   });
 
@@ -44,11 +69,12 @@ function updateFixService(version) {
     conn.sftp((err, sftp)=> {
       
       console.log('SFTP :: Finished');
-      sftp.fastPut(`./${name}`, `/home/html/${name}`, {}, function(err) {
+      sftp.fastPut(`./${name}.tar.gz`, `/home/html/${name}.tar.gz`, {}, function(err) {
         if (err) {
           console.error('Error copying file:', err);
         } else {
           console.log('File transferred successfully!');
+          Shell(conn, name);
         }
       });
       
