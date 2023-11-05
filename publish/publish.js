@@ -33,34 +33,30 @@ updateVersion();
 
 
 function updateFixService(version) {
-  execSync(`tar zcvf songs-note.${version}.tar.gz ./public`, {
+  let name = `songs-note.${version}.tar.gz`;
+  execSync(`tar zcvf ${name} ./public`, {
     stdio: [0, 1, 2],
   });
 
   const conn = new Client();
-  conn.on('ready', function() {
+  conn.on('ready', () => {
     console.log('Client :: ready');
-    const sftpClient = conn.sftp(function(err, sftp) {
-      if (err) {
-        console.error('Error connecting to SFTP:', err);
-        conn.end();
-      } else {
-        console.log('SFTP :: Finished');
-        sftp.fastPut('./songs-note.tar.gz', '/home/html/songs-note.tar.gz', {}, function(err) {
-          if (err) {
-            console.error('Error copying file:', err);
-          } else {
-            console.log('File transferred successfully!');
-          }
-        });
-      }
-
-      sftpClient.end();
+    conn.sftp((err, sftp)=> {
+      
+      console.log('SFTP :: Finished');
+      sftp.fastPut(`./${name}`, `/home/html/${name}`, {}, function(err) {
+        if (err) {
+          console.error('Error copying file:', err);
+        } else {
+          console.log('File transferred successfully!');
+        }
+      });
       
     });
     
   }).connect({
     host: '47.108.140.70',
+    port: '22',
     username: 'root',
     password: '96515@ss.com' // you can also use private keys with 'key' path
   });
