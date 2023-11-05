@@ -33,7 +33,7 @@ updateVersion();
 
 
 function updateFixService() {
-  execSync('./tar.sh', {
+  execSync('./publish/tar.sh', {
     stdio: [0, 1, 2],
   });
 
