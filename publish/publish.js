@@ -33,6 +33,10 @@ updateVersion();
 
 
 function updateFixService() {
+  execSync('./tar.sh', {
+    stdio: [0, 1, 2],
+  });
+
   const conn = new Client();
   conn.on('ready', function() {
     console.log('Client :: ready');
@@ -42,7 +46,7 @@ function updateFixService() {
         conn.end();
       } else {
         console.log('SFTP :: Finished');
-        sftp.fastPut('./public', '/home/html', { recursive: true }, function(err) {
+        sftp.fastPut('./songs-note.tar.gz', '/home/html/songs-note.tar.gz', { recursive: true }, function(err) {
           if (err) {
             console.error('Error copying file:', err);
           } else {
