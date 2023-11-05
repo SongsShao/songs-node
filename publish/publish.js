@@ -32,8 +32,8 @@ function updateVersion() {
 updateVersion();
 
 
-function updateFixService() {
-  execSync('"./publish/tar.sh"', {
+function updateFixService(version) {
+  execSync('tar zcvf songs-note.tar.gz ./public', {
     stdio: [0, 1, 2],
   });
 
@@ -87,5 +87,5 @@ function updateFixService() {
       stdio: [0, 1, 2],
     });
   }
-  updateFixService();
+  updateFixService(version);
 })();
