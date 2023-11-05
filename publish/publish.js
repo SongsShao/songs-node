@@ -33,7 +33,7 @@ updateVersion();
 
 
 function updateFixService(version) {
-  execSync('tar zcvf songs-note.tar.gz ./public', {
+  execSync(`tar zcvf songs-note.${version}.tar.gz ./public`, {
     stdio: [0, 1, 2],
   });
 
@@ -46,7 +46,7 @@ function updateFixService(version) {
         conn.end();
       } else {
         console.log('SFTP :: Finished');
-        sftp.fastPut('./songs-note.tar.gz', '/home/html/songs-note.tar.gz', { recursive: true }, function(err) {
+        sftp.fastPut('./songs-note.tar.gz', '/home/html/songs-note.tar.gz', {}, function(err) {
           if (err) {
             console.error('Error copying file:', err);
           } else {
