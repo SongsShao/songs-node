@@ -1,5 +1,5 @@
 ---
-title: Linux docker install
+title: Docker 的安装和使用
 permalink: /linux/install/docker.html
 date: 2023-11-2 21:24:32
 description: 单一的 Promise 链并不能发现 async/await 的优势。
