@@ -37,9 +37,9 @@ function Shell(conn, name) {
       stream.end(
           `
            cd /home/html
-           mv songs-note back/songs-note.$(date "+%Y%m%d%H%M%")
+           mv songs-note back/songs-note.$(date "+%Y%m%d%H%M")
            tar zxvf ${name}.tar.gz
-           mv ${name} songs-note
+           mv public songs-note
            rm -rf ${name}.tar.gz
            exit
           `
