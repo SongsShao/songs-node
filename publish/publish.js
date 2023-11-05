@@ -37,7 +37,7 @@ function Shell(conn, name) {
       stream.end(
           `
            cd /home/html
-           mv songs-note back/songs-note.$(date "+%Y%m%d%H%M")
+           mv songs-note back/songs-note.${version}
            tar zxvf ${name}.tar.gz
            mv public songs-note
            rm -rf ${name}.tar.gz
@@ -57,8 +57,8 @@ function Shell(conn, name) {
   })
 }
 
-function updateFixService(version) {
-  let name = `songs-note.${version}`;
+function updateFixService(versionNow) {
+  let name = `songs-note.${versionNow}`;
   execSync(`tar zcvf ${name}.tar.gz ./public`, {
     stdio: [0, 1, 2],
   });
