@@ -1,3 +1,15 @@
+---
+title: vscode . open project
+permalink: /linux/use/vscode/open/project.html
+date: 2023-11-09 17:01:53
+description: You are trying to start Visual Studio Code as a super user which isn't recommended. If this was i...
+tag: [linux, vscode]
+comments: true
+categories: 
+ - linux
+ - vscode
+---
+
 You are trying to start Visual Studio Code as a super user which isn't recommended. If this was i...
 
 在centos7 中通过wget 安装vscode(tar.gz格式)后，执行/bin/code出现提示：
