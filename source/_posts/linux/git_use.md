@@ -124,3 +124,13 @@ git reset 命令用于回退版本，可以指定退回某一次提交的版本�
 ```shell
     git config --global credential.helper store
 ```
+
+11. 当前 Git 仓库关联的远程仓库的 URL配置
+
+```shell
+    git remote add     origin <url> # 添加 origin 地址
+    git remote set-url origin <url> # 更新 origin 地址
+    git remote get-url origin       # 获取 origin 地址
+    git remote remove  origin       # 移除 origin 地址
+```
+
