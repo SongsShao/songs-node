@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://batype.gitee.io/schedule/index.html</loc>
+    <loc>https://note.batype.com/schedule/index.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/index.html</loc>
+    <loc>https://note.batype.com/tags/index.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/docs/index.html</loc>
+    <loc>https://note.batype.com/docs/index.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/index.html</loc>
+    <loc>https://note.batype.com/categories/index.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/archives/index.html</loc>
+    <loc>https://note.batype.com/archives/index.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/webpack/perform.html</loc>
+    <loc>https://note.batype.com/web/webpack/perform.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/about/me.html</loc>
+    <loc>https://note.batype.com/about/me.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/webpack/hot/module/replacement.html</loc>
+    <loc>https://note.batype.com/web/webpack/hot/module/replacement.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/reflux/and/redrawing.html</loc>
+    <loc>https://note.batype.com/web/reflux/and/redrawing.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/npm/nvm.html</loc>
+    <loc>https://note.batype.com/web/npm/nvm.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/npm/nrm.html</loc>
+    <loc>https://note.batype.com/web/npm/nrm.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/lazy/loading.html</loc>
+    <loc>https://note.batype.com/web/lazy/loading.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/lodash/dubounce.html</loc>
+    <loc>https://note.batype.com/web/lodash/dubounce.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/security/question.html</loc>
+    <loc>https://note.batype.com/web/image/perform.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/image/perform.html</loc>
+    <loc>https://note.batype.com/web/security/question.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -137,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/cross/site/request/forgeries.html</loc>
+    <loc>https://note.batype.com/web/cross/site/request/forgeries.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/web/cross/site/script.html</loc>
+    <loc>https://note.batype.com/web/cross/site/script.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/typescript/use/type.html</loc>
+    <loc>https://note.batype.com/react/implement.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/react/implement.html</loc>
+    <loc>https://note.batype.com/typescript/use/type.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/react/service/time.html</loc>
+    <loc>https://note.batype.com/react/service/time.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/react/synthetic/event.html</loc>
+    <loc>https://note.batype.com/react/synthetic/event.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/react/fiber/works.html</loc>
+    <loc>https://note.batype.com/react/fiber/works.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/react/fiber/node.html</loc>
+    <loc>https://note.batype.com/react/fiber/node.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -209,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/react/fiber.html</loc>
+    <loc>https://note.batype.com/react/fiber.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/react/fiber/implement.html</loc>
+    <loc>https://note.batype.com/react/fiber/implement.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/react/components/unstate-next-use.html</loc>
+    <loc>https://note.batype.com/react/components/unstate-next-use.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -236,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/react/components/unstate-next-implement.html</loc>
+    <loc>https://note.batype.com/react/components/unstate-next-implement.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -245,7 +245,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/linux/install/scp.html</loc>
+    <loc>https://note.batype.com/linux/install/scp.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -254,7 +254,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/2023/11/09/linux/vscode/</loc>
+    <loc>https://note.batype.com/2023/11/09/linux/vscode/</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -263,7 +263,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/linux/install/docker.html</loc>
+    <loc>https://note.batype.com/linux/install/docker.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -272,7 +272,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/linux/config/git.html</loc>
+    <loc>https://note.batype.com/linux/config/git.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -281,7 +281,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/javascript/prototype.html</loc>
+    <loc>https://note.batype.com/javascript/prototype.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -290,7 +290,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/javascript/var/let/const.html</loc>
+    <loc>https://note.batype.com/javascript/var/let/const.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -299,7 +299,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/javascript/promise.html</loc>
+    <loc>https://note.batype.com/javascript/promise.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -308,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/javascript/async/await.html</loc>
+    <loc>https://note.batype.com/hexo/config/rss.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/hexo/config/rss.html</loc>
+    <loc>https://note.batype.com/javascript/async/await.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -326,7 +326,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/hexo/config/readmore.html</loc>
+    <loc>https://note.batype.com/hexo/config/readmore.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -335,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/hexo/config/pagination.html</loc>
+    <loc>https://note.batype.com/hexo/config/pagination.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -344,7 +344,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/browser/session/cookies.html</loc>
+    <loc>https://note.batype.com/browser/session/cookies.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -353,7 +353,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/browser/tab/to/tab.html</loc>
+    <loc>https://note.batype.com/browser/tab/to/tab.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -362,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/browser/render/process.html</loc>
+    <loc>https://note.batype.com/browser/render/process.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -371,7 +371,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/browser/restful/and/rpc.html</loc>
+    <loc>https://note.batype.com/browser/restful/and/rpc.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -380,7 +380,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/browser/mechanism/cache.html</loc>
+    <loc>https://note.batype.com/browser/mechanism/cache.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -389,7 +389,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/browser/network/hijack.html</loc>
+    <loc>https://note.batype.com/browser/network/hijack.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -398,7 +398,7 @@
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/baidu_verify_codeva-jKkQAuILnU.html</loc>
+    <loc>https://note.batype.com/baidu_verify_codeva-jKkQAuILnU.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -408,7 +408,7 @@
   
 
   <url>
-    <loc>https://batype.gitee.io/</loc>
+    <loc>https://note.batype.com/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -416,224 +416,224 @@
 
   
   <url>
-    <loc>https://batype.gitee.io/tags/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
+    <loc>https://note.batype.com/tags/Hexo/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://note.batype.com/tags/Pagination/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/GUI/</loc>
+    <loc>https://note.batype.com/tags/ReadMore/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/RESTful/</loc>
+    <loc>https://note.batype.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/RPC/</loc>
+    <loc>https://note.batype.com/tags/RSS/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/HTTP/</loc>
+    <loc>https://note.batype.com/tags/GUI/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/cookies/</loc>
+    <loc>https://note.batype.com/tags/cookies/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/localStorage/</loc>
+    <loc>https://note.batype.com/tags/localStorage/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/sessionStorage/</loc>
+    <loc>https://note.batype.com/tags/sessionStorage/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/TypeScript/</loc>
+    <loc>https://note.batype.com/tags/TypeScript/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
+    <loc>https://note.batype.com/tags/RESTful/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/JavaScript/</loc>
+    <loc>https://note.batype.com/tags/RPC/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/es6/</loc>
+    <loc>https://note.batype.com/tags/HTTP/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/Hexo/</loc>
+    <loc>https://note.batype.com/tags/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/Pagination/</loc>
+    <loc>https://note.batype.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/ReadMore/</loc>
+    <loc>https://note.batype.com/tags/react/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/RSS/</loc>
+    <loc>https://note.batype.com/tags/JavaScript/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/react/</loc>
+    <loc>https://note.batype.com/tags/Fiber/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/Fiber/</loc>
+    <loc>https://note.batype.com/tags/JSX/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/JSX/</loc>
+    <loc>https://note.batype.com/tags/es6/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://note.batype.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/CSRF/</loc>
+    <loc>https://note.batype.com/tags/CSRF/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/XSS/</loc>
+    <loc>https://note.batype.com/tags/XSS/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/Webpack/</loc>
+    <loc>https://note.batype.com/tags/Webpack/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/%E5%9B%BE%E7%89%87/</loc>
+    <loc>https://note.batype.com/tags/%E5%9B%BE%E7%89%87/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/%E6%8F%92%E4%BB%B6/</loc>
+    <loc>https://note.batype.com/tags/%E6%8F%92%E4%BB%B6/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/npm/</loc>
+    <loc>https://note.batype.com/tags/npm/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/nrm/</loc>
+    <loc>https://note.batype.com/tags/nvm/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/nvm/</loc>
+    <loc>https://note.batype.com/tags/unstate-next/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/WebPack/</loc>
+    <loc>https://note.batype.com/tags/nrm/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/tags/unstate-next/</loc>
+    <loc>https://note.batype.com/tags/WebPack/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -642,140 +642,140 @@
 
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%8D%8F%E8%AE%AE/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BC%93%E5%AD%98/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/Cache/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E9%80%9A%E8%AE%AF/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BC%93%E5%AD%98/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E9%80%9A%E8%AE%AF/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/</loc>
+    <loc>https://note.batype.com/categories/React/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B8%B2%E6%9F%93/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/Hexo/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/React/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B8%B2%E6%9F%93/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/es6/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/Cache/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/es6/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%8D%8F%E8%AE%AE/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/TypeScript/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/WebPack/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/TypeScript/</loc>
+    <loc>https://note.batype.com/categories/React/Fiber/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/React/Fiber/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/React/components/</loc>
+    <loc>https://note.batype.com/categories/React/components/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/Hexo/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/WebPack/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://batype.gitee.io/categories/React/components/unstate-next/</loc>
+    <loc>https://note.batype.com/categories/React/components/unstate-next/</loc>
     <lastmod>2023-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
