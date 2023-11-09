@@ -99,7 +99,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/me" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">38</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/me" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">24</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">38</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -170,12 +170,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -234,7 +234,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://note.batype.com/2023/11/09/linux/vscode/">
+    <link itemprop="mainEntityOfPage" href="https://note.batype.com/linux/use/vscode/open/project.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
@@ -252,7 +252,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/11/09/linux/vscode/" class="post-title-link" itemprop="url">Untitled</a>
+          <a href="/linux/use/vscode/open/project.html" class="post-title-link" itemprop="url">vscode . open project</a>
         </h2>
 
         <div class="post-meta-container">
@@ -263,7 +263,20 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-11-09 11:19:13" itemprop="dateCreated datePublished" datetime="2023-11-09T11:19:13+08:00">2023-11-09</time>
+      <time title="Created: 2023-11-09 17:01:53" itemprop="dateCreated datePublished" datetime="2023-11-09T17:01:53+08:00">2023-11-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/vscode/" itemprop="url" rel="index"><span itemprop="name">vscode</span></a>
+        </span>
     </span>
 
   
@@ -275,8 +288,8 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="" href="/2023/11/09/linux/vscode/#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::efe74d206ce7ce054c4a7dc94372826f" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="vscode . open project" href="/linux/use/vscode/open/project.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::f5415e9ba4e6ef168b04f40a2c114832" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -305,35 +318,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <div id="vip-container"><p>You are trying to start Visual Studio Code as a super user which isn’t recommended. If this was i…</p>
-<p>在centos7 中通过wget 安装vscode(tar.gz格式)后，执行&#x2F;bin&#x2F;code出现提示：</p>
-<p>You are trying to start Visual Studio Code as a super user which isn’t recommended. If this was intended, please add the argument –no-sandbox and specify an alternate user data directory using the –user-data-dir argument.<br>您正试图以超级用户身份启动Visual Studio代码，这是不推荐的。如果是这样，请添加参数“–no sandbox”，并使用“–user data dir”参数指定备用用户数据目录。</p>
-<p>解决方法：<br>方法一：修改 ~&#x2F;.bashrc</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.bashrc</span><br></pre></td></tr></table></figure>
-
-<p>添加一行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">whereis code </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">code: /usr/bin/code /usr/share/code</span></span><br><span class="line">alias code=&#x27;/usr/share/code/code . --no-sandbox --unity-launch&#x27;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
-</div>
-
-			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
-			<script>
-			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
-			if (!isMobile) {
-			    var btw = new BTWPlugin();
-			    btw.init({
-			        "id": "vip-container",
-			        "blogId": "31652-1697970027416-119",
-			        "name": "BaType",
-			        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",
-			        "keyword": "666"
-			    });
-			}
-			</script>
-		
+          <p>You are trying to start Visual Studio Code as a super user which isn't recommended. If this was i...</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/linux/use/vscode/open/project.html">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -377,7 +370,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/linux/config/git.html" class="post-title-link" itemprop="url">Git</a>
+          <a href="/linux/config/git.html" class="post-title-link" itemprop="url">Git 使用</a>
         </h2>
 
         <div class="post-meta-container">
@@ -396,11 +389,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/es6/" itemprop="url" rel="index"><span itemprop="name">es6</span></a>
+          <a href="/categories/linux/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
         </span>
     </span>
 
@@ -413,7 +406,7 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="Git" href="/linux/config/git.html#SOHUCS" itemprop="discussionUrl">
+    <a title="Git 使用" href="/linux/config/git.html#SOHUCS" itemprop="discussionUrl">
       <span id="sourceId::5b5a508129f8a78693bd60ea7b67c510" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
@@ -425,14 +418,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>12</span>
+      <span>470</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>2 mins.</span>
     </span>
 </div>
 
@@ -443,7 +436,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>单一的 Promise 链并不能发现 async/await 的优势。</p>
+          <p>Git 是一个分布式版本控制系统，用于跟踪文件的变化并协作开发。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/linux/config/git.html">
@@ -595,7 +588,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://note.batype.com/linux/install/scp.html">
+    <link itemprop="mainEntityOfPage" href="https://note.batype.com/linux/use/scp.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
@@ -613,7 +606,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/linux/install/scp.html" class="post-title-link" itemprop="url">Scp</a>
+          <a href="/linux/use/scp.html" class="post-title-link" itemprop="url">Scp 复制文件到服务器</a>
         </h2>
 
         <div class="post-meta-container">
@@ -632,11 +625,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/es6/" itemprop="url" rel="index"><span itemprop="name">es6</span></a>
+          <a href="/categories/linux/scp/" itemprop="url" rel="index"><span itemprop="name">scp</span></a>
         </span>
     </span>
 
@@ -649,8 +642,8 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="Scp" href="/linux/install/scp.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::c49aabd92b8c122b94d3ca9b4e9f872a" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="Scp 复制文件到服务器" href="/linux/use/scp.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::79533d92f5ba9543f5bf6a8564249729" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -661,7 +654,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>318</span>
+      <span>22</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -679,10 +672,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>单一的 Promise 链并不能发现 async/await 的优势。</p>
+          <p>Scp 复制文件到服务器。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/linux/install/scp.html">
+              <a class="btn" href="/linux/use/scp.html">
                 Read more &raquo;
               </a>
             </div>
@@ -1446,7 +1439,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:52</span>
+    <span title="Reading time total">1:53</span>
   </span>
 </div>
 <div class="busuanzi-count">

@@ -6,7 +6,7 @@
   <link href="https://note.batype.com/atom.xml" rel="self"/>
   
   <link href="https://note.batype.com/"/>
-  <updated>2023-11-09T03:19:13.298Z</updated>
+  <updated>2023-11-09T09:02:22.149Z</updated>
   <id>https://note.batype.com/</id>
   
   <author>
@@ -17,50 +17,54 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
-    <link href="https://note.batype.com/2023/11/09/linux/vscode/"/>
-    <id>https://note.batype.com/2023/11/09/linux/vscode/</id>
-    <published>2023-11-09T03:19:13.298Z</published>
-    <updated>2023-11-09T03:19:13.298Z</updated>
+    <title>vscode . open project</title>
+    <link href="https://note.batype.com/linux/use/vscode/open/project.html"/>
+    <id>https://note.batype.com/linux/use/vscode/open/project.html</id>
+    <published>2023-11-09T09:01:53.000Z</published>
+    <updated>2023-11-09T09:02:22.149Z</updated>
     
     <content type="html"><![CDATA[<div id="vip-container"><p>You are trying to start Visual Studio Code as a super user which isn’t recommended. If this was i…</p><p>在centos7 中通过wget 安装vscode(tar.gz格式)后，执行&#x2F;bin&#x2F;code出现提示：</p><p>You are trying to start Visual Studio Code as a super user which isn’t recommended. If this was intended, please add the argument –no-sandbox and specify an alternate user data directory using the –user-data-dir argument.<br>您正试图以超级用户身份启动Visual Studio代码，这是不推荐的。如果是这样，请添加参数“–no sandbox”，并使用“–user data dir”参数指定备用用户数据目录。</p><p>解决方法：<br>方法一：修改 ~&#x2F;.bashrc</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.bashrc</span><br></pre></td></tr></table></figure><p>添加一行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">whereis code </span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">code: /usr/bin/code /usr/share/code</span></span><br><span class="line">alias code=&#x27;/usr/share/code/code . --no-sandbox --unity-launch&#x27;</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;div id=&quot;vip-container&quot;&gt;&lt;p&gt;You are trying to start Visual Studio Code as a super user which isn’t recommended. If this was i…&lt;/p&gt;
-&lt;p&gt;在centos</summary>
-      
+    <summary type="html">You are trying to start Visual Studio Code as a super user which isn&#39;t recommended. If this was i...</summary>
     
     
     
+    <category term="linux" scheme="https://note.batype.com/categories/linux/"/>
+    
+    <category term="vscode" scheme="https://note.batype.com/categories/linux/vscode/"/>
+    
+    
+    <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
+    
+    <category term="vscode" scheme="https://note.batype.com/tags/vscode/"/>
     
   </entry>
   
   <entry>
-    <title>Git</title>
+    <title>Git 使用</title>
     <link href="https://note.batype.com/linux/config/git.html"/>
     <id>https://note.batype.com/linux/config/git.html</id>
     <published>2023-11-07T13:40:32.000Z</published>
-    <updated>2023-11-09T03:19:13.297Z</updated>
+    <updated>2023-11-09T09:13:43.273Z</updated>
     
-    <content type="html"><![CDATA[<div id="vip-container"><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;batype&quot;</span><br><span class="line">git config --global user.email 1175715363@qq.com</span><br></pre></td></tr></table></figure></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
-    
-    
-    <summary type="html">单一的 Promise 链并不能发现 async/await 的优势。</summary>
+    <content type="html"><![CDATA[<div id="vip-container"><p>Git 是一个分布式版本控制系统，用于跟踪文件的变化并协作开发。以下是使用 Git 的基本步骤：</p><ol><li><p>安装 Git：首先，你需要在本地计算机上安装 Git。你可以从 Git 官方网站（<a href="https://git-scm.com/%EF%BC%89%E4%B8%8B%E8%BD%BD%E5%B9%B6%E6%8C%89%E7%85%A7%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97%E8%BF%9B%E8%A1%8C%E5%AE%89%E8%A3%85%E3%80%82">https://git-scm.com/）下载并按照安装指南进行安装。</a></p></li><li><p>创建一个 Git 仓库：进入你的项目文件夹，并使用以下命令初始化一个新的 Git 仓库：</p></li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><ol start="3"><li>添加文件到暂存区：将需要进行版本控制的文件添加到 Git 的暂存区，使用以下命令：</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;文件名&gt;</span><br></pre></td></tr></table></figure><ol start="4"><li>提交文件：将暂存区的文件提交到 Git 仓库，使用以下命令：</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;提交说明&quot;</span><br></pre></td></tr></table></figure><ol start="5"><li>分支管理：Git 使用分支来管理不同的版本和功能。可以使用以下命令创建和切换分支：</li></ol><ul><li>创建新分支：</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;分支名&gt;</span><br></pre></td></tr></table></figure><ul><li>切换到分支：</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;分支名&gt;</span><br></pre></td></tr></table></figure><ul><li>查看分支列表：</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure><ol start="6"><li>远程仓库：Git 还提供了远程仓库的功能，可以将本地仓库与远程仓库进行同步和协作。常用的远程仓库服务有 GitHub、GitLab 和 Bitbucket。可以使用以下命令与远程仓库进行交互：</li></ol><ul><li>添加远程仓库：</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;远程仓库地址&gt;</span><br></pre></td></tr></table></figure><ul><li>将本地分支推送到远程仓库：</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin &lt;分支名&gt;</span><br></pre></td></tr></table></figure><ul><li>从远程仓库拉取最新代码：</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin &lt;分支名&gt;</span><br></pre></td></tr></table></figure><p>这些是 Git 的基本用法，还有更多高级的用法和命令可以根据实际需要进行学习和掌握。你可以参考 Git 的官方文档或查找其他教程来深入了解 Git 的更多功能和用法。</p><ol start="7"><li>配置全局用户信息</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;batype&quot;</span><br><span class="line">git config --global user.email 1175715363@qq.com</span><br></pre></td></tr></table></figure></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
     
     
+    <summary type="html">Git 是一个分布式版本控制系统，用于跟踪文件的变化并协作开发。</summary>
     
-    <category term="前端" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="es6" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/es6/"/>
+    
+    <category term="linux" scheme="https://note.batype.com/categories/linux/"/>
+    
+    <category term="git" scheme="https://note.batype.com/categories/linux/git/"/>
     
     
     <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="JavaScript" scheme="https://note.batype.com/tags/JavaScript/"/>
+    <category term="Git" scheme="https://note.batype.com/tags/Git/"/>
     
-    <category term="es6" scheme="https://note.batype.com/tags/es6/"/>
+    <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
     
   </entry>
   
@@ -92,29 +96,27 @@
   </entry>
   
   <entry>
-    <title>Scp</title>
-    <link href="https://note.batype.com/linux/install/scp.html"/>
-    <id>https://note.batype.com/linux/install/scp.html</id>
+    <title>Scp 复制文件到服务器</title>
+    <link href="https://note.batype.com/linux/use/scp.html"/>
+    <id>https://note.batype.com/linux/use/scp.html</id>
     <published>2023-11-02T13:24:32.000Z</published>
-    <updated>2023-11-09T03:19:13.298Z</updated>
+    <updated>2023-11-09T09:04:39.841Z</updated>
     
-    <content type="html"><![CDATA[<div id="vip-container"><h4 id="复制文件夹到服务器"><a href="#复制文件夹到服务器" class="headerlink" title="复制文件夹到服务器"></a>复制文件夹到服务器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r key root@47.108.140.70:/etc/nginx/conf.d/cert</span><br></pre></td></tr></table></figure><p>ssh <a href="mailto:&#x72;&#111;&#111;&#x74;&#x40;&#52;&#x37;&#46;&#x31;&#48;&#x38;&#46;&#x31;&#x34;&#x30;&#x2e;&#x37;&#x30;">&#x72;&#111;&#111;&#x74;&#x40;&#52;&#x37;&#46;&#x31;&#48;&#x38;&#46;&#x31;&#x34;&#x30;&#x2e;&#x37;&#x30;</a></p><p>scp -r public&#x2F; <a href="mailto:&#114;&#x6f;&#x6f;&#x74;&#x40;&#x34;&#55;&#46;&#x31;&#48;&#x38;&#x2e;&#49;&#52;&#48;&#46;&#x37;&#x30;">&#114;&#x6f;&#x6f;&#x74;&#x40;&#x34;&#55;&#46;&#x31;&#48;&#x38;&#x2e;&#49;&#52;&#48;&#46;&#x37;&#x30;</a>:&#x2F;home&#x2F;html&#x2F;songs-note&#x2F;</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    server_name www.batype.com;</span><br><span class="line">    ssl_certificate /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.pem;</span><br><span class="line">    </span><br><span class="line">    ssl_certificate_key /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.key;</span><br><span class="line">    root         /home/html/songs-note;</span><br><span class="line">    location / &#123;</span><br><span class="line">        index index.html index.htm;</span><br><span class="line">        try_files $uri $uri/ =404;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.batype.com;</span><br><span class="line">    #http转https(前提是已经配置nginx ssl证书)</span><br><span class="line">    rewrite ^/(.*)$ https://www.batype.com/$1 permanent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    # HTTPS</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name www.batype.com;                         #网站域名</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.pem;         #(证书公钥)</span><br><span class="line">    ssl_certificate_key /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.key;             #(证书私钥)</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    #ssl_protocols SSLv2 SSLv3 TLSv1;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    #ssl_ciphers HIGH:!aNULL:!MD5;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    location / &#123;</span><br><span class="line">        gzip_static on;</span><br><span class="line">        root /home/html/songs-note;; #html访问路径</span><br><span class="line">        index index.html;</span><br><span class="line">        try_files $uri $uri/ /index.html;</span><br><span class="line">    &#125;</span><br><span class="line">    # location /admin &#123;</span><br><span class="line">    #     proxy_pass http://127.0.0.1:6060/admin;</span><br><span class="line">    #     proxy_read_timeout 300s;</span><br><span class="line">    #     proxy_set_header Host $host;</span><br><span class="line">    #     proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    #     proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    #     proxy_set_header Connection $connection_upgrade;</span><br><span class="line">    #     proxy_http_version 1.1;</span><br><span class="line">    # &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  batype.mukang.net;</span><br><span class="line">      location / &#123;</span><br><span class="line">        gzip_static on;</span><br><span class="line">        root /home/html/songs-note; #html访问路径</span><br><span class="line">        index index.html;</span><br><span class="line">        try_files $uri $uri/ /index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    # HTTPS</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name https://batype.mukang.net; #www.batype.com;   #网站域名</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.pem;         #(证书公钥)</span><br><span class="line">    ssl_certificate_key /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.key;             #(证书私钥)</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    #ssl_protocols SSLv2 SSLv3 TLSv1;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    #ssl_ciphers HIGH:!aNULL:!MD5;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">  </span><br><span class="line">    # location /admin &#123;</span><br><span class="line">    #     proxy_pass http://127.0.0.1:6060/admin;</span><br><span class="line">    #     proxy_read_timeout 300s;</span><br><span class="line">    #     proxy_set_header Host $host;</span><br><span class="line">    #     proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    #     proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    #     proxy_set_header Connection $connection_upgrade;</span><br><span class="line">    #     proxy_http_version 1.1;</span><br><span class="line">    # &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
-    
-    
-    <summary type="html">单一的 Promise 链并不能发现 async/await 的优势。</summary>
+    <content type="html"><![CDATA[<div id="vip-container"><h4 id="复制文件夹到服务器"><a href="#复制文件夹到服务器" class="headerlink" title="复制文件夹到服务器"></a>复制文件夹到服务器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r key root@4*.1*8.1*0.70:/etc/nginx/conf.d/cert</span><br></pre></td></tr></table></figure></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
     
     
-    
-    <category term="前端" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="es6" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/es6/"/>
+    <summary type="html">Scp 复制文件到服务器。</summary>
     
     
-    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="JavaScript" scheme="https://note.batype.com/tags/JavaScript/"/>
+    <category term="linux" scheme="https://note.batype.com/categories/linux/"/>
     
-    <category term="es6" scheme="https://note.batype.com/tags/es6/"/>
+    <category term="scp" scheme="https://note.batype.com/categories/linux/scp/"/>
+    
+    
+    <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
+    
+    <category term="scp" scheme="https://note.batype.com/tags/scp/"/>
     
   </entry>
   

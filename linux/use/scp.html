@@ -21,30 +21,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"note.batype.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
 
-    <meta name="description" content="单一的 Promise 链并不能发现 async&#x2F;await 的优势。">
+    <meta name="description" content="Scp 复制文件到服务器。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="Scp">
-<meta property="og:url" content="https://note.batype.com/linux/install/scp.html">
+<meta property="og:title" content="Scp 复制文件到服务器">
+<meta property="og:url" content="https://note.batype.com/linux/use/scp.html">
 <meta property="og:site_name" content="songs-note">
-<meta property="og:description" content="单一的 Promise 链并不能发现 async&#x2F;await 的优势。">
+<meta property="og:description" content="Scp 复制文件到服务器。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-11-02T13:24:32.000Z">
-<meta property="article:modified_time" content="2023-11-09T03:19:13.298Z">
+<meta property="article:modified_time" content="2023-11-09T09:04:39.841Z">
 <meta property="article:author" content="songshao">
-<meta property="article:tag" content="前端">
-<meta property="article:tag" content="JavaScript">
-<meta property="article:tag" content="es6">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="scp">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://note.batype.com/linux/install/scp">
+<link rel="canonical" href="https://note.batype.com/linux/use/scp">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://note.batype.com/linux/install/scp.html","path":"/linux/install/scp.html","title":"Scp"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://note.batype.com/linux/use/scp.html","path":"/linux/use/scp.html","title":"Scp 复制文件到服务器"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Scp | songs-note</title>
+<title>Scp 复制文件到服务器 | songs-note</title>
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/analytics/baidu-analytics.min.js"></script>
@@ -104,7 +103,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/me" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">32</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">38</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/me" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">24</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">38</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -176,12 +175,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -241,7 +240,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://note.batype.com/linux/install/scp.html">
+    <link itemprop="mainEntityOfPage" href="https://note.batype.com/linux/use/scp.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
@@ -254,12 +253,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Scp | songs-note">
-      <meta itemprop="description" content="单一的 Promise 链并不能发现 async/await 的优势。">
+      <meta itemprop="name" content="Scp 复制文件到服务器 | songs-note">
+      <meta itemprop="description" content="Scp 复制文件到服务器。">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Scp<a href="https://gitee.com/batype/songs-note/tree/master/source/_posts/linux/scp.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+          Scp 复制文件到服务器<a href="https://gitee.com/batype/songs-note/tree/master/source/_posts/linux/scp.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
 
         <div class="post-meta-container">
@@ -278,11 +277,11 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E5%89%8D%E7%AB%AF/es6/" itemprop="url" rel="index"><span itemprop="name">es6</span></a>
+          <a href="/categories/linux/scp/" itemprop="url" rel="index"><span itemprop="name">scp</span></a>
         </span>
     </span>
 
@@ -302,8 +301,8 @@
       </span>
       <span class="post-meta-item-text">Changyan: </span>
     
-    <a title="Scp" href="/linux/install/scp.html#SOHUCS" itemprop="discussionUrl">
-      <span id="sourceId::c49aabd92b8c122b94d3ca9b4e9f872a" class="cy_cmt_count" itemprop="commentCount"></span>
+    <a title="Scp 复制文件到服务器" href="/linux/use/scp.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::79533d92f5ba9543f5bf6a8564249729" class="cy_cmt_count" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -314,7 +313,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>318</span>
+      <span>22</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -325,23 +324,15 @@
     </span>
 </div>
 
-            <div class="post-description">单一的 Promise 链并不能发现 async/await 的优势。</div>
+            <div class="post-description">Scp 复制文件到服务器。</div>
         </div>
       </header>
 
     
     
     
-    <div class="post-body" itemprop="articleBody"><div id="vip-container"><h4 id="复制文件夹到服务器"><a href="#复制文件夹到服务器" class="headerlink" title="复制文件夹到服务器"></a>复制文件夹到服务器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r key root@47.108.140.70:/etc/nginx/conf.d/cert</span><br></pre></td></tr></table></figure>
-
-<p>ssh <a href="mailto:&#x72;&#111;&#111;&#x74;&#x40;&#52;&#x37;&#46;&#x31;&#48;&#x38;&#46;&#x31;&#x34;&#x30;&#x2e;&#x37;&#x30;">&#x72;&#111;&#111;&#x74;&#x40;&#52;&#x37;&#46;&#x31;&#48;&#x38;&#46;&#x31;&#x34;&#x30;&#x2e;&#x37;&#x30;</a></p>
-<p>scp -r public&#x2F; <a href="mailto:&#114;&#x6f;&#x6f;&#x74;&#x40;&#x34;&#55;&#46;&#x31;&#48;&#x38;&#x2e;&#49;&#52;&#48;&#46;&#x37;&#x30;">&#114;&#x6f;&#x6f;&#x74;&#x40;&#x34;&#55;&#46;&#x31;&#48;&#x38;&#x2e;&#49;&#52;&#48;&#46;&#x37;&#x30;</a>:&#x2F;home&#x2F;html&#x2F;songs-note&#x2F;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    server_name www.batype.com;</span><br><span class="line">    ssl_certificate /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.pem;</span><br><span class="line">    </span><br><span class="line">    ssl_certificate_key /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.key;</span><br><span class="line">    root         /home/html/songs-note;</span><br><span class="line">    location / &#123;</span><br><span class="line">        index index.html index.htm;</span><br><span class="line">        try_files $uri $uri/ =404;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  www.batype.com;</span><br><span class="line">    #http转https(前提是已经配置nginx ssl证书)</span><br><span class="line">    rewrite ^/(.*)$ https://www.batype.com/$1 permanent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    # HTTPS</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name www.batype.com;                         #网站域名</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.pem;         #(证书公钥)</span><br><span class="line">    ssl_certificate_key /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.key;             #(证书私钥)</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    #ssl_protocols SSLv2 SSLv3 TLSv1;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    #ssl_ciphers HIGH:!aNULL:!MD5;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">    location / &#123;</span><br><span class="line">        gzip_static on;</span><br><span class="line">        root /home/html/songs-note;; #html访问路径</span><br><span class="line">        index index.html;</span><br><span class="line">        try_files $uri $uri/ /index.html;</span><br><span class="line">    &#125;</span><br><span class="line">    # location /admin &#123;</span><br><span class="line">    #     proxy_pass http://127.0.0.1:6060/admin;</span><br><span class="line">    #     proxy_read_timeout 300s;</span><br><span class="line">    #     proxy_set_header Host $host;</span><br><span class="line">    #     proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    #     proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    #     proxy_set_header Connection $connection_upgrade;</span><br><span class="line">    #     proxy_http_version 1.1;</span><br><span class="line">    # &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  batype.mukang.net;</span><br><span class="line">      location / &#123;</span><br><span class="line">        gzip_static on;</span><br><span class="line">        root /home/html/songs-note; #html访问路径</span><br><span class="line">        index index.html;</span><br><span class="line">        try_files $uri $uri/ /index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    # HTTPS</span><br><span class="line">server &#123;</span><br><span class="line">    listen 443;</span><br><span class="line">    server_name https://batype.mukang.net; #www.batype.com;   #网站域名</span><br><span class="line">    ssl on;</span><br><span class="line">    ssl_certificate /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.pem;         #(证书公钥)</span><br><span class="line">    ssl_certificate_key /etc/nginx/conf.d/cert/www.batype.com/www.batype.com.key;             #(证书私钥)</span><br><span class="line">    ssl_session_timeout 5m;</span><br><span class="line">    #ssl_protocols SSLv2 SSLv3 TLSv1;</span><br><span class="line">    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">    #ssl_ciphers HIGH:!aNULL:!MD5;</span><br><span class="line">    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;</span><br><span class="line">    ssl_prefer_server_ciphers on;</span><br><span class="line">  </span><br><span class="line">    # location /admin &#123;</span><br><span class="line">    #     proxy_pass http://127.0.0.1:6060/admin;</span><br><span class="line">    #     proxy_read_timeout 300s;</span><br><span class="line">    #     proxy_set_header Host $host;</span><br><span class="line">    #     proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">    #     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">    #     proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">    #     proxy_set_header Connection $connection_upgrade;</span><br><span class="line">    #     proxy_http_version 1.1;</span><br><span class="line">    # &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+    <div class="post-body" itemprop="articleBody"><div id="vip-container"><h4 id="复制文件夹到服务器"><a href="#复制文件夹到服务器" class="headerlink" title="复制文件夹到服务器"></a>复制文件夹到服务器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r key root@4*.1*8.1*0.70:/etc/nginx/conf.d/cert</span><br></pre></td></tr></table></figure>
+</div>
 
 			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
 			<script>
@@ -384,9 +375,8 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
-              <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
-              <a href="/tags/es6/" rel="tag"><i class="fa fa-tag"></i> es6</a>
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/scp/" rel="tag"><i class="fa fa-tag"></i> scp</a>
           </div>
 
         
@@ -412,7 +402,7 @@
 
 
 
-    <div class="comments" id="SOHUCS" sid="c49aabd92b8c122b94d3ca9b4e9f872a"></div>
+    <div class="comments" id="SOHUCS" sid="79533d92f5ba9543f5bf6a8564249729"></div>
 </div>
   </main>
 
@@ -438,7 +428,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:52</span>
+    <span title="Reading time total">1:53</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -505,7 +495,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/linux/install/scp.html"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/linux/use/scp.html"}</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/quicklink.min.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cywWcj4BR","appkey":"a30428fc71ec317dbe68d573c2f4ce31","count":true}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/comments/changyan.min.js"></script>
