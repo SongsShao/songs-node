@@ -1,6 +1,6 @@
 {
   "name": "songs-note",
-  "version": "0.0.86",
+  "version": "0.0.87",
   "private": true,
   "scripts": {
     "build": "hexo clean && hexo generate",
