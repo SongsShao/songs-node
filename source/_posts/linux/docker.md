@@ -2,12 +2,12 @@
 title: Docker 的安装和使用
 permalink: /linux/install/docker.html
 date: 2023-11-2 21:24:32
-description: 单一的 Promise 链并不能发现 async/await 的优势。
-tag: [前端, JavaScript, es6]
+description: 当Docker容器运行的时候，会产生一系列的数据文件，这些数据文件会在关闭Docker容器时，直接消失的。但是其中产生部分的数据内容，我们是希望能够把它给保存起来，另作它用的。。
+tag: [前端, linux, docker]
 comments: true
 categories: 
- - 前端
- - es6
+ - linux
+ - docker
 ---
 
 #### Linux上安装Docker分为以下几步：
