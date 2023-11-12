@@ -1,3 +1,4 @@
+https://note.batype.com/linux/use/zip.html
 https://note.batype.com/linux/install/wechat.html
 https://note.batype.com/linux/install/deb.html
 https://note.batype.com/linux/install/docker.html
@@ -68,6 +69,7 @@ https://note.batype.com/tags/linux/
 https://note.batype.com/tags/deb/
 https://note.batype.com/tags/docker/
 https://note.batype.com/tags/scp/
+https://note.batype.com/tags/zip/
 https://note.batype.com/tags/vscode/
 https://note.batype.com/tags/react/
 https://note.batype.com/tags/Fiber/
@@ -104,6 +106,7 @@ https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/WebPack/
 https://note.batype.com/categories/linux/docker/
 https://note.batype.com/categories/linux/git/
 https://note.batype.com/categories/linux/scp/
+https://note.batype.com/categories/linux/zip/
 https://note.batype.com/categories/linux/vscode/
 https://note.batype.com/categories/React/Fiber/
 https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/Hexo/

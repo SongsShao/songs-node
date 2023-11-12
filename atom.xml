@@ -6,7 +6,7 @@
   <link href="https://note.batype.com/atom.xml" rel="self"/>
   
   <link href="https://note.batype.com/"/>
-  <updated>2023-11-11T09:51:15.212Z</updated>
+  <updated>2023-11-12T11:25:07.413Z</updated>
   <id>https://note.batype.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ubuntu解压Zip文件命令详解</title>
+    <link href="https://note.batype.com/linux/use/zip.html"/>
+    <id>https://note.batype.com/linux/use/zip.html</id>
+    <published>2023-11-12T11:22:59.000Z</published>
+    <updated>2023-11-12T11:25:07.413Z</updated>
+    
+    <content type="html"><![CDATA[<div id="vip-container"><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>Ubuntu解压Zip文件的命令是“unzip”，它可以解压几乎所有的Zip文件。其基本的语法为：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip [option] filename.zip</span><br></pre></td></tr></table></figure><p>其中，filename.zip表示要解压的Zip文件名，option参数是可选的，用来控制解压的行为，常用的option参数如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-d：指定解压到的目录，例如：unzip -d /home/user/untitled filename.zip，即将filename.zip解压到/home/user/untitled目录；</span><br><span class="line">-q：不显示详细信息，即不显示每个文件的解压进度信息；</span><br><span class="line">-o：覆盖目标文件，即如果目标文件存在就覆盖它；</span><br><span class="line">-P：指定Zip文件的密码。</span><br></pre></td></tr></table></figure><h3 id="解压Zip文件到当前路径"><a href="#解压Zip文件到当前路径" class="headerlink" title="解压Zip文件到当前路径"></a>解压Zip文件到当前路径</h3><p>解压一个Zip文件到当前路径很简单，只要在终端中输入“unzip filename.zip”即可。比如：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip archive.zip</span><br></pre></td></tr></table></figure><p>上述命令将会将“archive.zip”文件解压到当前路径中。如果你希望将Zip文件解压到另外一个路径，可以使用“-d”参数，如下所示：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip archive.zip -d /home/user/some_folder</span><br></pre></td></tr></table></figure><p>上述命令将会将“archive.zip”文件解压到“&#x2F;home&#x2F;user&#x2F;some_folder”路径中。</p><h3 id="解压指定的文件"><a href="#解压指定的文件" class="headerlink" title="解压指定的文件"></a>解压指定的文件</h3><p>有时候我们只需要解压Zip文件中的某些文件，而不是全部文件，这时候可以使用“unzip -j”命令。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -j archive.zip file.txt</span><br></pre></td></tr></table></figure><p>上述命令将会将“archive.zip”文件中的“file.txt”文件解压到当前路径中。</p><h3 id="解压时覆盖已存在的文件"><a href="#解压时覆盖已存在的文件" class="headerlink" title="解压时覆盖已存在的文件"></a>解压时覆盖已存在的文件</h3><p>默认情况下，如果解压的目标文件已经存在，unzip命令会提示是否覆盖。如果你希望不进行提示，强制覆盖已经存在的文件，可以使用“-o”参数。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -o archive.zip</span><br></pre></td></tr></table></figure><p>上述命令将会解压“archive.zip”文件到当前路径中，如果有重名的文件会强制覆盖。</p><h3 id="解压时保留目录结构"><a href="#解压时保留目录结构" class="headerlink" title="解压时保留目录结构"></a>解压时保留目录结构</h3><p>默认情况下，unzip命令会将Zip文件中的所有文件解压到当前路径中，不管其原来所在的目录结构。如果你希望保留原来的目录结构，可以使用“unzip -j”命令，如下所示：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip archive.zip -d /home/user/some_folder</span><br></pre></td></tr></table></figure><p>上述命令将会将“archive.zip”文件解压到“&#x2F;home&#x2F;user&#x2F;some_folder”路径中，并保留原来的目录结构。</p><h3 id="解压时指定密码"><a href="#解压时指定密码" class="headerlink" title="解压时指定密码"></a>解压时指定密码</h3><p>如果Zip文件设置了密码，那么我们需要在解压时指定密码。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -P secretPassword archive.zip</span><br></pre></td></tr></table></figure><p>上述命令将会解压“archive.zip”文件，并使用“secretPassword”作为密码。</p></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
+    
+    
+    <summary type="html">Ubuntu解压Zip文件的命令是“unzip”，它可以解压几乎所有的Zip文件。。</summary>
+    
+    
+    
+    <category term="linux" scheme="https://note.batype.com/categories/linux/"/>
+    
+    <category term="zip" scheme="https://note.batype.com/categories/linux/zip/"/>
+    
+    
+    <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
+    
+    <category term="zip" scheme="https://note.batype.com/tags/zip/"/>
+    
+  </entry>
   
   <entry>
     <title>deb  使用</title>
@@ -542,33 +567,6 @@
     <category term="sessionStorage" scheme="https://note.batype.com/tags/sessionStorage/"/>
     
     <category term="TypeScript" scheme="https://note.batype.com/tags/TypeScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网络劫持有哪几种，如何防范？</title>
-    <link href="https://note.batype.com/browser/network/hijack.html"/>
-    <id>https://note.batype.com/browser/network/hijack.html</id>
-    <published>2023-10-21T14:06:18.000Z</published>
-    <updated>2023-11-06T15:16:45.777Z</updated>
-    
-    <content type="html"><![CDATA[<div id="vip-container"><h5 id="⽹络劫持"><a href="#⽹络劫持" class="headerlink" title="⽹络劫持"></a>⽹络劫持</h5><ol><li>DNS 劫持: (输⼊京东被强制跳转到淘宝这就属于dns 劫持)</li></ol><ul><li>DNS 强制解析: 通过修改运营商的本地 DNS 记录，来引导⽤户流量到缓存服务器</li><li>302 跳转的⽅式: 通过监控⽹络出⼝的流量，分析判断哪些内容是可以进⾏劫持处理的,再对劫持的内存发起302 跳转的回复，引导⽤户获取内容</li></ul><ol start="2"><li>HTTP 劫持: (访问⾕歌但是⼀直有贪玩蓝⽉的⼴告),由于http明⽂传输,运营商会修改你的 http 响应内容(即加⼴告)</li></ol><h5 id="如何防范网络劫持？"><a href="#如何防范网络劫持？" class="headerlink" title="如何防范网络劫持？"></a>如何防范网络劫持？</h5><p>DNS 劫持由于涉嫌违法，已经被监管起来，现在很少会有DNS劫持，⽽http 劫持依然⾮常盛⾏，最有效的办法就是全站HTTPS，将HTTP 加密，这使得运营商⽆法获取明⽂，就⽆法劫持你的响应内容。</p><p>网络劫持指的是网络中的某个节点对数据进行恶意篡改和篡改，以达到非法获取用户信息或者控制用户设备的目的。以下是预防网络劫持的几个方法：</p><ol><li><p>使用HTTPS：HTTPS是一个安全的协议，对通信进行加密和身份验证，防止劫持者对数据进行篡改。使用HTTPS之前，可以使用SSL证书来验证服务器的身份。</p></li><li><p>使用VPN：VPN可以加密数据并建立一个虚拟私人网络，从而保护用户的数据和隐私。使用VPN可以防止网络劫持和嗅探攻击。</p></li><li><p>使用防火墙和反病毒软件：网络劫持者可能会通过恶意软件或病毒对用户设备进行攻击，使用防火墙和反病毒软件可以防止这种攻击。</p></li><li><p>更新操作系统和软件程序：最新版本的操作系统和软件程序通常包含了修复安全漏洞的补丁。不定期更新操作系统和软件程序可以减少遭受网络攻击的风险。</p></li><li><p>警惕钓鱼网站和不安全的链接：劫持者可能会伪造合法的网站或链接，引导用户向其提供个人信息或下载恶意软件。不要轻信不安全的链接，要时刻保持警惕。</p></li></ol></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
-    
-    
-    <summary type="html">网路劫持可以导致非常严重是信息泄露或者信息被恶意篡改等，DNS 劫持由于涉嫌违法，已经被监管起来。</summary>
-    
-    
-    
-    <category term="浏览器" scheme="https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-    <category term="网路安全" scheme="https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/"/>
-    
-    
-    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="浏览器" scheme="https://note.batype.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-    <category term="网路安全" scheme="https://note.batype.com/tags/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
