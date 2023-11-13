@@ -21,25 +21,29 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"note.batype.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
 
-    <meta name="description" content="Notes on personal growth">
+    <meta name="description" content="Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="batype-note">
-<meta property="og:url" content="https://note.batype.com/tags/localStorage/index.html">
+<meta property="og:title" content="zsh install">
+<meta property="og:url" content="https://note.batype.com/linux/install/zsh.html">
 <meta property="og:site_name" content="batype-note">
-<meta property="og:description" content="Notes on personal growth">
+<meta property="og:description" content="Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-13T06:32:08.000Z">
+<meta property="article:modified_time" content="2023-11-13T06:34:39.373Z">
 <meta property="article:author" content="songshao">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="zsh">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://note.batype.com/tags/localStorage/">
+<link rel="canonical" href="https://note.batype.com/linux/install/zsh">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"tags/localStorage/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://note.batype.com/linux/install/zsh.html","path":"/linux/install/zsh.html","title":"zsh install"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Tag: localStorage | batype-note</title>
+<title>zsh install | batype-note</title>
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/analytics/baidu-analytics.min.js"></script>
@@ -137,7 +141,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -150,6 +154,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Clone-The-Repository"><span class="nav-number">1.</span> <span class="nav-text">Clone The Repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Optionally-Backup-Your-Existing-zshrc-File"><span class="nav-number">2.</span> <span class="nav-text">Optionally, Backup Your Existing ~&#x2F;.zshrc File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-A-New-Zsh-Configuration-File"><span class="nav-number">3.</span> <span class="nav-text">Create A New Zsh Configuration File</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Change-Your-Default-Shell"><span class="nav-number">4.</span> <span class="nav-text">Change Your Default Shell</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -219,56 +224,237 @@
         </ul>
       </div>
     </div>
+        <div class="sidebar-inner sidebar-post-related">
+          <div class="animated">
+              <div class="links-of-blogroll-title"><i class="fa fa-signs-post fa-fw"></i>
+    Related Posts
+  </div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/hexo/config/pagination.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-23</time>
+        <br>
+      Hexo 内容分页配置
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/web/npm/nrm.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-25</time>
+        <br>
+      nrm 管理 npm registry
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/browser/session/cookies.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-22</time>
+        <br>
+      session-cookies 三个缓存 localStorage、sessionStorage、Cookies。
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/hexo/config/rss.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-21</time>
+        <br>
+      Hexo 开启 RSS
+      </a>
+    </li>
+    <li class="popular-posts-item">
+      <a class="popular-posts-link" href="/react/components/unstate-next-use.html" rel="bookmark">
+        <time class="popular-posts-time">2023-10-25</time>
+        <br>
+      unstate-next 的使用
+      </a>
+    </li>
+  </ul>
+
+          </div>
+        </div>
   </aside>
 
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">localStorage
-          <small>Tag</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://note.batype.com/linux/install/zsh.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
+      <meta itemprop="name" content="songshao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="batype-note">
+      <meta itemprop="description" content="Notes on personal growth">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="zsh install | batype-note">
+      <meta itemprop="description" content="Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          zsh install<a href="https://gitee.com/batype/songs-note/tree/master/source/_posts/linux/zsh.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-11-13 14:32:08" itemprop="dateCreated datePublished" datetime="2023-11-13T14:32:08+08:00">2023-11-13</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/zsh/" itemprop="url" rel="index"><span itemprop="name">zsh</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan: </span>
+    
+    <a title="zsh install" href="/linux/install/zsh.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::ce16e047c86367795b8ecc98fa315c22" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>434</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description">Oh My Zsh is an open source, community-driven framework for managing your zsh configuration.</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div id="vip-container"><p>Manual Installation</p>
+<h3 id="Clone-The-Repository"><a href="#Clone-The-Repository" class="headerlink" title="Clone The Repository"></a>Clone The Repository</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://githubfast.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh</span><br></pre></td></tr></table></figure>
+
+<h3 id="Optionally-Backup-Your-Existing-zshrc-File"><a href="#Optionally-Backup-Your-Existing-zshrc-File" class="headerlink" title="Optionally, Backup Your Existing ~&#x2F;.zshrc File"></a>Optionally, Backup Your Existing ~&#x2F;.zshrc File</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp ~/.zshrc ~/.zshrc.orig</span><br></pre></td></tr></table></figure>
+
+<h3 id="Create-A-New-Zsh-Configuration-File"><a href="#Create-A-New-Zsh-Configuration-File" class="headerlink" title="Create A New Zsh Configuration File"></a>Create A New Zsh Configuration File</h3><p>You can create a new zsh config file by copying the template that we have included for you.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<h3 id="Change-Your-Default-Shell"><a href="#Change-Your-Default-Shell" class="headerlink" title="Change Your Default Shell"></a>Change Your Default Shell</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">which zsh</span><br><span class="line">chsh -s $(which zsh)</span><br></pre></td></tr></table></figure>
+
+<p>You must log out from your user session and log back in to see this change.</p>
+</div>
+
+			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+			<script>
+			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+			if (!isMobile) {
+			    var btw = new BTWPlugin();
+			    btw.init({
+			        "id": "vip-container",
+			        "blogId": "31652-1697970027416-119",
+			        "name": "BaType",
+			        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",
+			        "keyword": "666"
+			    });
+			}
+			</script>
+		
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-22T18:06:18+08:00"
-              content="2023-10-22">
-          10-22
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechat.png" alt="songshao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="songshao Alipay">
+        <span>Alipay</span>
       </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/browser/session/cookies.html" itemprop="url">
-          <span itemprop="name">session-cookies 三个缓存 localStorage、sessionStorage、Cookies。</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/zsh/" rel="tag"><i class="fa fa-tag"></i> zsh</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/linux/install/docker-compose.html" rel="prev" title="docker-compose install">
+                  <i class="fa fa-angle-left"></i> docker-compose install
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="ce16e047c86367795b8ecc98fa315c22"></div>
 </div>
   </main>
 
@@ -364,7 +550,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/tags/localStorage/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/linux/install/zsh.html"}</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/quicklink.min.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cywWcj4BR","appkey":"a30428fc71ec317dbe68d573c2f4ce31","count":true}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/comments/changyan.min.js"></script>
