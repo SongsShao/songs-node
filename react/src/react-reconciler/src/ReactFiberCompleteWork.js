@@ -1,5 +1,6 @@
 import { enableCache } from "../../shared/ReactFeatureFlags";
 import { Passive } from "./ReactFiberFlags";
+import { HostRoot, HostComponent, HostText } from "./ReactWorkTags";
 
 export function completeWork(current, workInProgress) {
   const newProps = workInProgress.pendingProps;
