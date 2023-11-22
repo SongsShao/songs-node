@@ -389,7 +389,7 @@ docker inspect 容器id
   docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my123456 -d mysql:5.7
 
   # 配置启动并同步数据
-  docker run -d -p 8081:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 --name mysql01 mysql:5.7
+  docker run -d -p 8081:3306 -v /home/mysql/conf.d:/etc/mysql/conf.d -v /home/mysql/mysql.conf.d:/etc/mysql/mysql.conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=weiliao&666 --name mysql01 mysql:5.7
 
 ```
 
