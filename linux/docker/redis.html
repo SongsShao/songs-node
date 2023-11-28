@@ -21,25 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"note.batype.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
 
-    <meta name="description" content="Notes on personal growth">
+    <meta name="description" content="Docker 安装Redis,并且进行数据和配置文件同步，以及密码修改。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="batype-note">
-<meta property="og:url" content="https://note.batype.com/categories/linux/zsh/index.html">
+<meta property="og:title" content="Docker 安装Redis">
+<meta property="og:url" content="https://note.batype.com/linux/docker/redis.html">
 <meta property="og:site_name" content="batype-note">
-<meta property="og:description" content="Notes on personal growth">
+<meta property="og:description" content="Docker 安装Redis,并且进行数据和配置文件同步，以及密码修改。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-11-22T13:24:32.000Z">
+<meta property="article:modified_time" content="2023-11-28T08:49:04.273Z">
 <meta property="article:author" content="songshao">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="docker， redis">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://note.batype.com/categories/linux/zsh/">
+<link rel="canonical" href="https://note.batype.com/linux/docker/redis">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"categories/linux/zsh/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://note.batype.com/linux/docker/redis.html","path":"/linux/docker/redis.html","title":"Docker 安装Redis"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Category: zsh | batype-note</title>
+<title>Docker 安装Redis | batype-note</title>
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/analytics/baidu-analytics.min.js"></script>
@@ -137,7 +142,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -150,6 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDredis-%E9%95%9C%E5%83%8F"><span class="nav-number">1.</span> <span class="nav-text">下载redis 镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E9%95%9C%E5%83%8F%E5%B9%B6%E5%90%8C%E6%AD%A5%E6%95%B0%E6%8D%AE"><span class="nav-number">2.</span> <span class="nav-text">启动镜像并同步数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%AF%86%E7%A0%81"><span class="nav-number">3.</span> <span class="nav-text">添加密码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E5%AE%B9%E5%99%A8"><span class="nav-number">3.1.</span> <span class="nav-text">进入容器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%90%AFRedis%E5%AE%B9%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">重启Redis容器</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,51 +230,191 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">zsh
-          <small>Category</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://note.batype.com/linux/docker/redis.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
+      <meta itemprop="name" content="songshao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="batype-note">
+      <meta itemprop="description" content="Notes on personal growth">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Docker 安装Redis | batype-note">
+      <meta itemprop="description" content="Docker 安装Redis,并且进行数据和配置文件同步，以及密码修改。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Docker 安装Redis<a href="https://gitee.com/batype/songs-note/tree/master/source/_posts/linux/docker/redis.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-11-22 21:24:32" itemprop="dateCreated datePublished" datetime="2023-11-22T21:24:32+08:00">2023-11-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/docker/redis/" itemprop="url" rel="index"><span itemprop="name">redis</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan: </span>
+    
+    <a title="Docker 安装Redis" href="/linux/docker/redis.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::6a1f902e3286611191f4e484222c41a6" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>148</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description">Docker 安装Redis,并且进行数据和配置文件同步，以及密码修改。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div id="vip-container"><h3 id="下载redis-镜像"><a href="#下载redis-镜像" class="headerlink" title="下载redis 镜像"></a>下载redis 镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动镜像并同步数据"><a href="#启动镜像并同步数据" class="headerlink" title="启动镜像并同步数据"></a>启动镜像并同步数据</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name redis -p 6379:6379 \</span><br><span class="line"> --restart=always \</span><br><span class="line"> -v /home/xt/redis/redis.conf:/etc/redis/redis.conf \</span><br><span class="line"> -v /home/xt/redis/data:/data \</span><br><span class="line"> redis redis-server /etc/redis/redis.conf</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加密码"><a href="#添加密码" class="headerlink" title="添加密码"></a>添加密码</h3><h4 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 04f824eaf3800958615a9874084ea6d57ab346cd61723a1eb54074a9477f1efe /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>在Redis命令行中，我们可以使用config set命令来设置Redis的密码。以下是设置密码的代码和注释。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config set requirepass your_password</span><br></pre></td></tr></table></figure>
+
+<h3 id="重启Redis容器"><a href="#重启Redis容器" class="headerlink" title="重启Redis容器"></a>重启Redis容器</h3><p>完成上述步骤后，我们需要重启Redis容器使密码生效。可以使用以下命令重启Redis容器。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart 04f824eaf3800958615a9874084ea6d57ab346cd61723a1eb54074a9477f1efe</span><br></pre></td></tr></table></figure></div>
+
+			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+			<script>
+			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+			if (!isMobile) {
+			    var btw = new BTWPlugin();
+			    btw.init({
+			        "id": "vip-container",
+			        "blogId": "31652-1697970027416-119",
+			        "name": "BaType",
+			        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",
+			        "keyword": "666"
+			    });
+			}
+			</script>
+		
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-13T14:32:08+08:00"
-              content="2023-11-13">
-          11-13
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechat.png" alt="songshao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="songshao Alipay">
+        <span>Alipay</span>
       </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/install/zsh.html" itemprop="url">
-          <span itemprop="name">zsh install</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/docker%EF%BC%8C-redis/" rel="tag"><i class="fa fa-tag"></i> docker， redis</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/linux/config/git-config.html" rel="prev" title="linux 配置缩写快捷操作">
+                  <i class="fa fa-angle-left"></i> linux 配置缩写快捷操作
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="6a1f902e3286611191f4e484222c41a6"></div>
 </div>
   </main>
 
@@ -364,7 +510,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/categories/linux/zsh/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/linux/docker/redis.html"}</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/quicklink.min.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cywWcj4BR","appkey":"a30428fc71ec317dbe68d573c2f4ce31","count":true}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/comments/changyan.min.js"></script>
