@@ -6,7 +6,7 @@
   <link href="https://note.batype.com/atom.xml" rel="self"/>
   
   <link href="https://note.batype.com/"/>
-  <updated>2023-11-28T08:49:04.273Z</updated>
+  <updated>2023-12-05T02:50:54.364Z</updated>
   <id>https://note.batype.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Optional chaining 语法编程</title>
+    <link href="https://note.batype.com/javascript/optional/chaining.html"/>
+    <id>https://note.batype.com/javascript/optional/chaining.html</id>
+    <published>2023-12-05T02:43:09.695Z</published>
+    <updated>2023-12-05T02:50:54.364Z</updated>
+    
+    <content type="html"><![CDATA[<div id="vip-container"><h3 id="什么是-Optional-Chaining？"><a href="#什么是-Optional-Chaining？" class="headerlink" title="什么是 Optional Chaining？"></a>什么是 Optional Chaining？</h3><p>Optional chaining 是一个现代JavaScript语法特性，允许开发者在读取对象内部嵌套属性时安全地处理 <code>undefined</code> 或 <code>null</code> 值。这种语法通过 <code>?.</code> 操作符实现，可以避免在查询属性或调用方法时因为中间某个环节不存在而引发错误。</p><h3 id="Optional-chaining-的基本使用示例如下"><a href="#Optional-chaining-的基本使用示例如下" class="headerlink" title="Optional chaining 的基本使用示例如下"></a>Optional chaining 的基本使用示例如下</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    <span class="attr">a</span>: &#123;</span><br><span class="line">        <span class="attr">b</span>: &#123;</span><br><span class="line">            <span class="attr">c</span>: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 传统的深层属性访问可能会抛出错误，如果某个属性不存在</span></span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> value = obj &amp;&amp; obj.<span class="property">a</span> &amp;&amp; obj.<span class="property">a</span>.<span class="property">b</span> &amp;&amp; obj.<span class="property">a</span>.<span class="property">b</span>.<span class="property">c</span>;</span><br><span class="line"><span class="comment">// 使用 optional chaining 语法，安全地读取嵌套属性</span></span><br></pre></td></tr></table></figure><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> valueWithOptionalChaining = obj?.<span class="property">a</span>?.<span class="property">b</span>?.<span class="property">c</span>; <span class="comment">// 输出 1</span></span><br><span class="line"><span class="comment">// 如果中间某个属性不存在，表达式会返回 undefined，而不是抛出错误</span></span><br><span class="line"><span class="keyword">const</span> undefinedValue = obj?.<span class="property">a</span>?.<span class="property">nonExistingProp</span>?.<span class="property">c</span>; <span class="comment">// 输出 undefined</span></span><br></pre></td></tr></table></figure><h3 id="Optional-chaining-可以用于四种不同的操作"><a href="#Optional-chaining-可以用于四种不同的操作" class="headerlink" title="Optional chaining 可以用于四种不同的操作"></a>Optional chaining 可以用于四种不同的操作</h3><ol><li>对象属性访问</li></ol><p>如上例所示，可以安全地访问嵌套对象属性。</p><ol start="2"><li>数组索引访问</li></ol><p>可以安全地访问数组的索引，如果数组是 undefined 或 null，则不会报错。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">const</span> valueAtIndex = arr?.[<span class="number">2</span>]; <span class="comment">// 输出 3</span></span><br><span class="line"><span class="keyword">const</span> nonExistingIndex = arr?.[<span class="number">5</span>]; <span class="comment">// 输出 undefined</span></span><br></pre></td></tr></table></figure><ol start="3"><li>函数或方法调用</li></ol><p>如果不确定一个对象上的函数是否存在，可以使用 optional chaining 安全地调用函数或方法。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line"><span class="attr">a</span>: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Function exists&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.<span class="property">a</span>?.(); <span class="comment">// 输出 &#x27;Function exists&#x27;</span></span><br><span class="line">obj.<span class="property">b</span>?.(); <span class="comment">// 由于 b 不存在，不执行任何操作，返回 undefined</span></span><br></pre></td></tr></table></figure><ol start="4"><li>默认值中使用</li></ol><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> user = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> name = user?.<span class="property">name</span> ?? <span class="string">&quot;匿名用户&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br></pre></td></tr></table></figure><p>要注意的是，optional chaining 语法是 ECMAScript 2020（ES11）的一部分，因此在老旧的JavaScript环境中可能不受支持。对于这些环境，可以使用Babel这样的工具来转译代码，使其兼容。</p></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
+    
+    
+    <summary type="html">Optional chaining 是一个现代JavaScript语法特性，允许开发者在读取对象内部嵌套属性时安全地处理 undefined 或 null 值。这种语法通过 ?. 操作符实现，可以避免在查询属性或调用方法时因为中间某个环节不存在而引发错误。</summary>
+    
+    
+    
+    <category term="前端" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="es6" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/es6/"/>
+    
+    
+    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="JavaScript" scheme="https://note.batype.com/tags/JavaScript/"/>
+    
+    <category term="es6" scheme="https://note.batype.com/tags/es6/"/>
+    
+  </entry>
   
   <entry>
     <title>Docker 安装Redis</title>
@@ -536,33 +563,6 @@
     <category term="Hexo" scheme="https://note.batype.com/tags/Hexo/"/>
     
     <category term="Pagination" scheme="https://note.batype.com/tags/Pagination/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>webpack 热更新的实现原理</title>
-    <link href="https://note.batype.com/web/webpack/hot/module/replacement.html"/>
-    <id>https://note.batype.com/web/webpack/hot/module/replacement.html</id>
-    <published>2023-10-23T12:43:25.000Z</published>
-    <updated>2023-11-09T03:19:13.316Z</updated>
-    
-    <content type="html"><![CDATA[<div id="vip-container"><p>webpack 的热更新⼜称热替换（Hot Module Replacement），缩写为HMR。这个机制可以做到不⽤刷新浏览器⽽将新变更的模块替换掉旧的模块。<br>原理：<br><img src="https://pic.imgdb.cn/item/65366aa5c458853aefbf449c.png" alt="在这里插入图片描述"></p><p>⾸先要知道 server 端和 client 端都做了处理⼯作：</p><ol><li>在 webpack 的 watch 模式下，⽂件系统中某⼀个⽂件发⽣修改，webpack 监听到⽂件变化，根据配置⽂件对模块重新编译打包，并将打包后的代码通过简单的JavaScript对象保存在内存中。</li><li>webpack-dev-server 和 webpack 之间的接⼝交互，⽽在这⼀步，主要是 dev-server 的中间件webpack- dev-middleware和 webpack 之间的交互，webpack-dev-middleware 调⽤webpack暴露的 API 对代码变化进⾏监 控，并且告诉webpack，将代码打包到内存中。</li><li>webpack-dev-server 对⽂件变化的⼀个监控，这⼀步不同于第⼀步，并不是监控代码变化重新打包。当我们在配置⽂件中配置了 devServer.watchContentBase 为 true 的时候，Server 会监听这些配置⽂件夹中静态⽂件的变化，变化后会通知浏览器端对应⽤进⾏ live reload。注意，这⼉是浏览器刷新，和HMR 是两个概念。</li><li>webpack-dev-server 代码的⼯作，该步骤主要是通过sockjs（webpack-dev-server 的依赖）在浏览器端和服务端之间建⽴⼀个 websocket ⻓连接，将 webpack 编译打包的各个阶段的状态信息告知浏览器端，同时也包括第三步中Server 监听静态⽂件变化的信息。浏览器端根据这些 socket 消息进⾏不同的操作。当然服务端传递的最主要信息还是新模块的 hash 值，后⾯的步骤根据这⼀hash 值来进⾏模块热替换。</li><li>webpack-dev-server&#x2F;client 端并不能够请求更新的代码，也不会执⾏ 热 更 模 块 操 作 ， ⽽ 把 这 些 ⼯ 作⼜交回给了webpack，webpack&#x2F;hot&#x2F;dev-server 的 ⼯ 作就是根据webpack-dev-server&#x2F;client 传给它的信息以及dev-server的配置决定是刷新浏览器呢还是进⾏模块热更新。当然如果仅仅是刷新浏览器，也就没有后⾯那些步骤了。</li><li>HotModuleReplacement.runtime 是客户端HMR 的中枢，它接收到上⼀ 步 传 递 给 他 的 新 模 块 的hash 值，它通过JsonpMainTemplate.runtime 向 server 端发送Ajax 请求，服务端返回⼀个 json，该 json 包含了所有要更新的模块的hash 值，获取到更新列表后，该模块再次通过 jsonp 请求，获取到最新的模块代码。这就是上图中 7、8、9 步骤。</li><li>⽽第 10 步是决定 HMR 成功与否的关键步骤，在该步骤中，HotModulePlugin 将会对新旧模块进⾏对⽐，决定是否更新模块，在决定更新模块后，检查模块之间的依赖关系，更新模块的同时更新模块间的依赖引⽤。</li></ol><p>最后⼀步，当 HMR 失败后，回退到 live reload 操作，也就是进⾏浏览器刷新来获取最新打包代码。</p></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
-    
-    
-    <summary type="html">webpack 的热更新⼜称热替换（Hot Module Replacement），缩写为HMR。这个机制可以做到不⽤刷新浏览器⽽将新变更的模块替换掉旧的模块。</summary>
-    
-    
-    
-    <category term="前端" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="WebPack" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/WebPack/"/>
-    
-    
-    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="浏览器" scheme="https://note.batype.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
-    
-    <category term="WebPack" scheme="https://note.batype.com/tags/WebPack/"/>
     
   </entry>
   
