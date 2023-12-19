@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/web/image/perform.html</loc>
+    <loc>https://note.batype.com/web/lazy/loading.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/web/lazy/loading.html</loc>
+    <loc>https://note.batype.com/web/image/perform.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -146,15 +146,6 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/web/npm/nvm.html</loc>
-    
-    <lastmod>2023-12-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://note.batype.com/web/npm/nrm.html</loc>
     
     <lastmod>2023-12-16</lastmod>
@@ -164,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/react/implement.html</loc>
+    <loc>https://note.batype.com/web/npm/nvm.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -173,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/typescript/use/type.html</loc>
+    <loc>https://note.batype.com/react/implement.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -192,6 +183,15 @@
   
   <url>
     <loc>https://note.batype.com/web/cross/site/script.html</loc>
+    
+    <lastmod>2023-12-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/typescript/use/type.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/react/fiber/node.html</loc>
+    <loc>https://note.batype.com/react/fiber/works.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -236,7 +236,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/react/fiber/works.html</loc>
+    <loc>https://note.batype.com/react/fiber/node.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -344,15 +344,6 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/linux/install/wechat.html</loc>
-    
-    <lastmod>2023-12-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://note.batype.com/linux/docker/redis.html</loc>
     
     <lastmod>2023-12-16</lastmod>
@@ -362,16 +353,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/linux/install/deb.html</loc>
-    
-    <lastmod>2023-12-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/linux/install/docker.html</loc>
+    <loc>https://note.batype.com/linux/install/wechat.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -398,7 +380,16 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/javascript/async/await.html</loc>
+    <loc>https://note.batype.com/linux/install/deb.html</loc>
+    
+    <lastmod>2023-12-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/linux/install/docker.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -408,6 +399,15 @@
   
   <url>
     <loc>https://note.batype.com/javascript/optional/chaining.html</loc>
+    
+    <lastmod>2023-12-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/javascript/async/await.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -479,7 +479,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/browser/session/cookies.html</loc>
+    <loc>https://note.batype.com/browser/restful/and/rpc.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -488,7 +488,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/browser/restful/and/rpc.html</loc>
+    <loc>https://note.batype.com/browser/session/cookies.html</loc>
     
     <lastmod>2023-12-16</lastmod>
     
@@ -543,6 +543,27 @@
   </url>
   
   <url>
+    <loc>https://note.batype.com/tags/RESTful/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/RPC/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/HTTP/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://note.batype.com/tags/cookies/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -565,27 +586,6 @@
   
   <url>
     <loc>https://note.batype.com/tags/TypeScript/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/RESTful/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/RPC/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/HTTP/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -627,14 +627,21 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/react/</loc>
+    <loc>https://note.batype.com/tags/JavaScript/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/JavaScript/</loc>
+    <loc>https://note.batype.com/tags/es6/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/react/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -648,98 +655,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/Git/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/linux/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/deb/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://note.batype.com/tags/JSX/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/docker/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/mysql/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/maven/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/jdk/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/nginx/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/scp/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/zip/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/vscode/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/zsh/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/es6/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -788,21 +704,84 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/docker-compose/</loc>
+    <loc>https://note.batype.com/tags/Git/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/wechat/</loc>
+    <loc>https://note.batype.com/tags/linux/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/docker%EF%BC%8C-redis/</loc>
+    <loc>https://note.batype.com/tags/deb/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/docker/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/maven/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/jdk/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/nginx/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/mysql/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/scp/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/zip/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/vscode/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/zsh/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -816,13 +795,6 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/nvm/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://note.batype.com/tags/nrm/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -830,7 +802,35 @@
   </url>
   
   <url>
+    <loc>https://note.batype.com/tags/nvm/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://note.batype.com/tags/WebPack/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/docker-compose/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/docker%EF%BC%8C-redis/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/wechat/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -853,7 +853,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/Cache/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%8D%8F%E8%AE%AE/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -867,7 +867,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%8D%8F%E8%AE%AE/</loc>
+    <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/Cache/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -909,35 +909,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/linux/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/TypeScript/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/es6/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/categories/React/Fiber/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -958,14 +930,35 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/es6/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/linux/docker/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/TypeScript/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/linux/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/React/Fiber/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -979,13 +972,6 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/linux/git/</loc>
-    <lastmod>2023-12-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://note.batype.com/categories/React/components/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -993,14 +979,21 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/linux/mysql/</loc>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/Hexo/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/%E6%A1%86%E6%9E%B6/Hexo/</loc>
+    <loc>https://note.batype.com/categories/linux/docker/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/linux/git/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1015,6 +1008,13 @@
   
   <url>
     <loc>https://note.batype.com/categories/linux/nginx/</loc>
+    <lastmod>2023-12-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/linux/mysql/</loc>
     <lastmod>2023-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

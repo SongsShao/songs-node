@@ -6,7 +6,7 @@
   <link href="https://note.batype.com/atom.xml" rel="self"/>
   
   <link href="https://note.batype.com/"/>
-  <updated>2023-12-19T15:20:23.098Z</updated>
+  <updated>2023-12-19T16:07:16.299Z</updated>
   <id>https://note.batype.com/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="https://note.batype.com/linux/port/open.html"/>
     <id>https://note.batype.com/linux/port/open.html</id>
     <published>2023-12-19T15:20:21.000Z</published>
-    <updated>2023-12-19T15:20:23.098Z</updated>
+    <updated>2023-12-19T16:07:16.299Z</updated>
     
     <content type="html"><![CDATA[<div id="vip-container"><ol><li><p>了解端口<br>在开始之前，我们需要了解一下端口。端口是计算机网络中的一个概念，它是用于标识应用程序的逻辑地址。在互联网中，每个应用程序都需要使用一个端口来进行通信。常见的端口有 HTTP 端口（80）、FTP 端口（21）、SSH 端口（22）等等。</p></li><li><p>登录腾讯云服务器<br>首先，我们需要登录到腾讯云服务器。可以使用 SSH 工具，如 PuTTY 或 Xshell，连接到服务器。在连接成功后，输入用户名和密码即可登录到服务器。</p></li><li><p>开放端口<br>要开放端口，我们需要使用防火墙规则。腾讯云服务器默认使用的是 iptables 防火墙。我们可以使用以下命令来开放端口：</p></li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport 端口号 -j ACCEPT</span><br></pre></td></tr></table></figure><p>其中，端口号是需要开放的端口号。例如，如果要开放 SSH 端口（22），则可以使用以下命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -I INPUT -p tcp --dport 22 -j ACCEPT</span><br></pre></td></tr></table></figure><ol start="4"><li>保存规则<br>开放端口后，我们需要保存规则，以便在服务器重启后仍然有效。可以使用以下命令来保存规则：</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service iptables save</span><br></pre></td></tr></table></figure><ol start="5"><li>查看规则<br>如果想要查看当前的防火墙规则，可以使用以下命令：</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iptables -L</span><br></pre></td></tr></table></figure><p>这将列出当前的防火墙规则，包括已开放的端口。</p><p>总结<br>开放端口是使用腾讯云服务器的一个基本操作。通过了解端口、登录服务器、开放端口、保存规则和查看规则，我们可以轻松地开放需要的端口，以便应用程序可以正常运行。</p></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;div id=&quot;vip-container&quot;&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;了解端口&lt;br&gt;在开始之前，我们需要了解一下端口。端口是计算机网络中的一个概念，它是用于标识应用程序的逻辑地址。在互联网中，每个应用程序都需要使用一个端口来进行通信。常见的端口有 HTTP 端口（80）、FT</summary>
-      
+    <summary type="html">在开始之前，我们需要了解一下端口。端口是计算机网络中的一个概念，它是用于标识应用程序的逻辑地址。在互联网中，每个应用程序都需要使用一个端口来进行通信。常见的端口有 HTTP 端口（80）、FTP 端口（21）、SSH 端口（22）等等。</summary>
     
     
     
@@ -46,18 +42,12 @@
     <link href="https://note.batype.com/linux/install/nginx.html"/>
     <id>https://note.batype.com/linux/install/nginx.html</id>
     <published>2023-12-19T15:18:25.000Z</published>
-    <updated>2023-12-19T15:18:32.474Z</updated>
+    <updated>2023-12-19T16:07:04.763Z</updated>
     
     <content type="html"><![CDATA[<div id="vip-container"><p>要在CentOS上安装Nginx，您可以按照以下步骤进行操作：</p><p>打开终端或SSH连接到CentOS服务器。</p><p>确保您的系统已经更新到最新版本。运行以下命令更新软件包：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update</span><br></pre></td></tr></table></figure><p>安装Nginx。运行以下命令进行安装：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install nginx</span><br></pre></td></tr></table></figure><p>启动Nginx服务：</p><p>使用以下命令启动Nginx服务：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start nginx</span><br></pre></td></tr></table></figure><p>检查Nginx状态：</p><p>使用以下命令检查Nginx服务的状态：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl status nginx</span><br></pre></td></tr></table></figure><p>如果Nginx正在运行，您将看到”active (running)”状态。</p><p>添加到开机启动项：</p><p>要使Nginx在系统启动时自动启动，可以使用以下命令将其添加到开机启动项：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl enable nginx</span><br></pre></td></tr></table></figure><p>现在，Nginx将在系统启动时自动启动。您可以通过重新启动服务器并检查Nginx状态来验证设置是否成功。请注意，上述命令假定您具有适当的权限（如sudo）来执行这些操作。</p></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;div id=&quot;vip-container&quot;&gt;&lt;p&gt;要在CentOS上安装Nginx，您可以按照以下步骤进行操作：&lt;/p&gt;
-&lt;p&gt;打开终端或SSH连接到CentOS服务器。&lt;/p&gt;
-&lt;p&gt;确保您的系统已经更新到最新版本。运行以下命令更新软件包：&lt;/p&gt;
-&lt;figure clas</summary>
-      
+    <summary type="html">要在CentOS上安装Nginx，您可以按照以下步骤进行操作</summary>
     
     
     
@@ -77,16 +67,12 @@
     <link href="https://note.batype.com/linux/install/MySQL.html"/>
     <id>https://note.batype.com/linux/install/MySQL.html</id>
     <published>2023-12-19T15:14:19.000Z</published>
-    <updated>2023-12-19T15:16:39.290Z</updated>
+    <updated>2023-12-19T16:06:55.429Z</updated>
     
     <content type="html"><![CDATA[<div id="vip-container"><p>在线下载mysql安装包</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://dev.mysql.com/get/mysql57-community-release-el7-10.noarch.rpm</span><br></pre></td></tr></table></figure><p>安装MySQL</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql57-community-release-el7-10.noarch.rpm</span><br></pre></td></tr></table></figure><p>安装MySQL服务器</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql-community-server</span><br></pre></td></tr></table></figure><p>报错 失败的软件包是： mysql-community-libs-compat-5.7.37-1.el7.x86_64<br>GPG 密钥配置为： file:&#x2F;&#x2F;&#x2F;etc&#x2F;pki&#x2F;rpm-gpg&#x2F;RPM-GPG-KEY-mysql<br>解决办法：原因是Mysql的GPG升级了，需要重新获取<br>使用以下命令即可</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2022</span><br></pre></td></tr></table></figure><p>重新执行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install mysql-community-server</span><br></pre></td></tr></table></figure><p>安装完毕<br>启动Mysql服务</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start  mysqld.service</span><br></pre></td></tr></table></figure><p>修改mysql的密码<br>查看MySQL临时密码</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &quot;password&quot; /var/log/mysqld.log</span><br></pre></td></tr></table></figure><p>使用临时密码先登录</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure><p>注意:密码设置必须要大小写字母数字和特殊符号（,&#x2F;‘;:等）,不然不能配置成功<br>查看mysql默认密码复杂度</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SHOW VARIABLES LIKE &#x27;validate_password%&#x27;;</span><br></pre></td></tr></table></figure><p>把MySQL的密码校验强度改为低风险</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set global validate_password_policy=LOW;</span><br></pre></td></tr></table></figure><p>修改MySQL的密码长度</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set global validate_password_length=4;</span><br></pre></td></tr></table></figure><p>修改密码为root</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;root&#x27;;</span><br></pre></td></tr></table></figure><p>开启mysql远程访问</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &#x27;root&#x27;@&#x27;%&#x27; identified by &#x27;root&#x27; with grant option;</span><br></pre></td></tr></table></figure><p>1、使用 grant 命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on 数据库名.表名 to 创建的用户名(root)@&quot;%&quot; identified by &quot;密码&quot;;</span><br></pre></td></tr></table></figure><p>2、格式说明：<br>数据库名.表名 如果写成*.*代表授权所有的数据库<br>@ 后面是访问mysql的客户端IP地址（或是 主机名） % 代表任意的客户端，如果填写 localhost 为本地访问（那此用户就不能远程访问该mysql数据库了）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges; //刷新权限</span><br></pre></td></tr></table></figure><p>退出mysql</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit;</span><br></pre></td></tr></table></figure><p>为firewalld添加开放端口</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent  //开放端口</span><br><span class="line">firewall-cmd --reload  //重新加载防火墙</span><br></pre></td></tr></table></figure><p>其他配置<br>关闭MySQL</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop mysqld</span><br></pre></td></tr></table></figure><p>重启MySQL</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart mysqld</span><br></pre></td></tr></table></figure><p>查看MySQL运行状态</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status mysqld</span><br></pre></td></tr></table></figure><p>设置开机启动</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable mysqld</span><br></pre></td></tr></table></figure><p>关闭开机启动</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl disable mysqld</span><br></pre></td></tr></table></figure><p>配置默认编码为utf8</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br><span class="line">在[mysqld]中加入 character_set_server=utf8 </span><br><span class="line"></span><br></pre></td></tr></table></figure><p>区分大小写</p><p>&#x2F;etc&#x2F;my.cof</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lower_case_table_names=1</span><br></pre></td></tr></table></figure><p>其他默认配置文件路径：<br>配置文件： &#x2F;etc&#x2F;my.cnf<br>日志文件： &#x2F;var&#x2F;log&#x2F;mysqld.log<br>服务启动脚本： &#x2F;usr&#x2F;lib&#x2F;systemd&#x2F;system&#x2F;mysqld.service</p></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;div id=&quot;vip-container&quot;&gt;&lt;p&gt;在线下载mysql安装包&lt;/p&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;b</summary>
-      
+    <summary type="html">在线下载mysql安装包</summary>
     
     
     
@@ -469,9 +455,9 @@
     
     <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="react" scheme="https://note.batype.com/tags/react/"/>
-    
     <category term="JavaScript" scheme="https://note.batype.com/tags/JavaScript/"/>
+    
+    <category term="react" scheme="https://note.batype.com/tags/react/"/>
     
     <category term="JSX" scheme="https://note.batype.com/tags/JSX/"/>
     
@@ -529,9 +515,9 @@
     
     <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="react" scheme="https://note.batype.com/tags/react/"/>
-    
     <category term="JavaScript" scheme="https://note.batype.com/tags/JavaScript/"/>
+    
+    <category term="react" scheme="https://note.batype.com/tags/react/"/>
     
     <category term="Fiber" scheme="https://note.batype.com/tags/Fiber/"/>
     
