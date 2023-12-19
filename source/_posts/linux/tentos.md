@@ -2,7 +2,7 @@
 title: 腾讯云服务器开发端口
 permalink: /linux/port/open.html
 date: 2023-12-19 23:20:21
-description: 
+description: 在开始之前，我们需要了解一下端口。端口是计算机网络中的一个概念，它是用于标识应用程序的逻辑地址。在互联网中，每个应用程序都需要使用一个端口来进行通信。常见的端口有 HTTP 端口（80）、FTP 端口（21）、SSH 端口（22）等等。
 tag: [linux]
 comments: true
 categories: 

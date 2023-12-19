@@ -2,7 +2,7 @@
 title: MySQL linux install
 permalink: /linux/install/MySQL.html
 date: 2023-12-19 23:14:19
-description: 
+description: 在线下载mysql安装包
 tag: [linux, mysql]
 comments: true
 categories: 

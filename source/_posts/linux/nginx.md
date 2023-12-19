@@ -2,7 +2,7 @@
 title: CentOS上安装Nginx
 permalink: /linux/install/nginx.html
 date: 2023-12-19 23:18:25
-description: 
+description: 要在CentOS上安装Nginx，您可以按照以下步骤进行操作
 tag: [linux, nginx]
 comments: true
 categories: 
