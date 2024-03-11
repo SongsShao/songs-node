@@ -8,6 +8,7 @@ comments: true
 categories: 
  - 前端
  - TypeScript
+ - type
 ---
 
 不使用 `Omit` 实现 `TypeScript` 的 `Omit<T, K>` 泛型。

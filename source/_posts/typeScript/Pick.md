@@ -8,6 +8,7 @@ comments: true
 categories: 
  - 前端
  - TypeScript
+ - type
 ---
 不使用 `Pick<T, K>` ，实现 TS 内置的 `Pick<T, K>` 的功能
 
