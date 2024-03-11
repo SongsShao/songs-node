@@ -21,25 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"note.batype.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
 
-    <meta name="description" content="Notes on personal growth">
+    <meta name="description" content="通过提供一个函数&#96;SimpleVue&#96;（类似于&#96;Vue.extend&#96;或&#96;defineComponent&#96;），它应该正确地推断出 computed 和 methods 内部的&#96;this&#96;类型。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="batype-note">
-<meta property="og:url" content="https://note.batype.com/tags/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/index.html">
+<meta property="og:title" content="实现类似Vue的类型支持的简化版本">
+<meta property="og:url" content="https://note.batype.com/typescript/questions/SimpleVue.html">
 <meta property="og:site_name" content="batype-note">
-<meta property="og:description" content="Notes on personal growth">
+<meta property="og:description" content="通过提供一个函数&#96;SimpleVue&#96;（类似于&#96;Vue.extend&#96;或&#96;defineComponent&#96;），它应该正确地推断出 computed 和 methods 内部的&#96;this&#96;类型。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-11T03:29:01.008Z">
+<meta property="article:modified_time" content="2024-03-11T03:31:12.644Z">
 <meta property="article:author" content="songshao">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="TypeScript">
+<meta property="article:tag" content="type">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://note.batype.com/tags/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/">
+<link rel="canonical" href="https://note.batype.com/typescript/questions/SimpleVue">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"tags/网路安全/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://note.batype.com/typescript/questions/SimpleVue.html","path":"/typescript/questions/SimpleVue.html","title":"实现类似Vue的类型支持的简化版本"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Tag: 网路安全 | batype-note</title>
+<title>实现类似Vue的类型支持的简化版本 | batype-note</title>
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/analytics/baidu-analytics.min.js"></script>
@@ -137,7 +142,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -150,6 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E7%AD%94"><span class="nav-number">1.</span> <span class="nav-text">解答</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,51 +230,199 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">网路安全
-          <small>Tag</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://note.batype.com/typescript/questions/SimpleVue.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
+      <meta itemprop="name" content="songshao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="batype-note">
+      <meta itemprop="description" content="Notes on personal growth">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="实现类似Vue的类型支持的简化版本 | batype-note">
+      <meta itemprop="description" content="通过提供一个函数`SimpleVue`（类似于`Vue.extend`或`defineComponent`），它应该正确地推断出 computed 和 methods 内部的`this`类型。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          实现类似Vue的类型支持的简化版本<a href="https://gitee.com/batype/songs-note/tree/master/source/_posts/typeScript/SimpleVue.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
         </h1>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-03-11 11:29:01" itemprop="dateCreated datePublished" datetime="2024-03-11T11:29:01+08:00">2024-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/TypeScript/" itemprop="url" rel="index"><span itemprop="name">TypeScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%89%8D%E7%AB%AF/TypeScript/type/" itemprop="url" rel="index"><span itemprop="name">type</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan: </span>
+    
+    <a title="实现类似Vue的类型支持的简化版本" href="/typescript/questions/SimpleVue.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::d25da681af6b31e0378e017aead2a477" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description">通过提供一个函数`SimpleVue`（类似于`Vue.extend`或`defineComponent`），它应该正确地推断出 computed 和 methods 内部的`this`类型。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><div id="vip-container"><p>实现类似Vue的类型支持的简化版本。</p>
+<p>通过提供一个函数<code>SimpleVue</code>（类似于<code>Vue.extend</code>或<code>defineComponent</code>），它应该正确地推断出 computed 和 methods 内部的<code>this</code>类型。</p>
+<p>在此挑战中，我们假设<code>SimpleVue</code>接受只带有<code>data</code>，<code>computed</code>和<code>methods</code>字段的Object作为其唯一的参数，</p>
+<ul>
+<li><p><code>data</code>是一个简单的函数，它返回一个提供上下文<code>this</code>的对象，但是你无法在<code>data</code>中获取其他的计算属性或方法。</p>
+</li>
+<li><p><code>computed</code>是将<code>this</code>作为上下文的函数的对象，进行一些计算并返回结果。在上下文中应暴露计算出的值而不是函数。</p>
+</li>
+<li><p><code>methods</code>是函数的对象，其上下文也为<code>this</code>。函数中可以访问<code>data</code>，<code>computed</code>以及其他<code>methods</code>中的暴露的字段。 <code>computed</code>与<code>methods</code>的不同之处在于<code>methods</code>在上下文中按原样暴露为函数。</p>
+</li>
+</ul>
+<p><code>SimpleVue</code>的返回值类型可以是任意的。</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> instance = <span class="title class_">SimpleVue</span>(&#123;</span><br><span class="line">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      <span class="attr">firstname</span>: <span class="string">&#x27;Type&#x27;</span>,</span><br><span class="line">      <span class="attr">lastname</span>: <span class="string">&#x27;Challenges&#x27;</span>,</span><br><span class="line">      <span class="attr">amount</span>: <span class="number">10</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="title function_">fullname</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">firstname</span> + <span class="string">&#x27; &#x27;</span> + <span class="variable language_">this</span>.<span class="property">lastname</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">methods</span>: &#123;</span><br><span class="line">    <span class="title function_">hi</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="title function_">alert</span>(<span class="variable language_">this</span>.<span class="property">fullname</span>.<span class="title function_">toLowerCase</span>())</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">DataType</span>&lt;T&gt; = T <span class="keyword">extends</span> &#123; <span class="title function_">data</span>(): infer D &#125; ? D : <span class="built_in">never</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">ComputedType</span>&lt;T, D&gt; = T <span class="keyword">extends</span> &#123; <span class="attr">computed</span>: infer C &#125;</span><br><span class="line">? &#123;</span><br><span class="line">    [K <span class="keyword">in</span> keyof C]: C[K] <span class="keyword">extends</span> (<span class="attr">this</span>: D) =&gt; infer R ? R : <span class="built_in">never</span>;</span><br><span class="line">    &#125;</span><br><span class="line">: &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MethodsType</span>&lt;T, D, C&gt; = T <span class="keyword">extends</span> &#123; <span class="attr">methods</span>: infer M &#125;</span><br><span class="line">? &#123;</span><br><span class="line">    [K <span class="keyword">in</span> keyof M]: M[K] <span class="keyword">extends</span> (<span class="attr">this</span>: D &amp; C) =&gt; infer R ? R : <span class="built_in">never</span>;</span><br><span class="line">    &#125;</span><br><span class="line">: &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">function</span> <span class="title class_">SimpleVue</span>&lt;T&gt;(<span class="attr">options</span>: T): &#123;</span><br><span class="line"><span class="attr">data</span>: <span class="title class_">DataType</span>&lt;T&gt;;</span><br><span class="line"><span class="attr">computed</span>: <span class="title class_">ComputedType</span>&lt;T, <span class="title class_">DataType</span>&lt;T&gt;&gt;;</span><br><span class="line"><span class="attr">methods</span>: <span class="title class_">MethodsType</span>&lt;T, <span class="title class_">DataType</span>&lt;T&gt;, <span class="title class_">ComputedType</span>&lt;T, <span class="title class_">DataType</span>&lt;T&gt;&gt;&gt;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</div>
+
+			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
+			<script>
+			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+			if (!isMobile) {
+			    var btw = new BTWPlugin();
+			    btw.init({
+			        "id": "vip-container",
+			        "blogId": "31652-1697970027416-119",
+			        "name": "BaType",
+			        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",
+			        "keyword": "666"
+			    });
+			}
+			</script>
+		
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-21T22:06:18+08:00"
-              content="2023-10-21">
-          10-21
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechat.png" alt="songshao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="songshao Alipay">
+        <span>Alipay</span>
       </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/browser/network/hijack.html" itemprop="url">
-          <span itemprop="name">网络劫持有哪几种，如何防范？</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+              <a href="/tags/TypeScript/" rel="tag"><i class="fa fa-tag"></i> TypeScript</a>
+              <a href="/tags/type/" rel="tag"><i class="fa fa-tag"></i> type</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/typescript/questions/GetReadonlyKeys.html" rel="prev" title="获取只读属性 GetReadonlyKeys">
+                  <i class="fa fa-angle-left"></i> 获取只读属性 GetReadonlyKeys
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/typescript/questions/Readonly.html" rel="next" title="对象属性只读 Readonly">
+                  对象属性只读 Readonly <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="d25da681af6b31e0378e017aead2a477"></div>
 </div>
   </main>
 
@@ -364,7 +518,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/tags/%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/typescript/questions/SimpleVue.html"}</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/quicklink.min.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cywWcj4BR","appkey":"a30428fc71ec317dbe68d573c2f4ce31","count":true}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/comments/changyan.min.js"></script>
