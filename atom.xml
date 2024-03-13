@@ -6,7 +6,7 @@
   <link href="https://note.batype.com/atom.xml" rel="self"/>
   
   <link href="https://note.batype.com/"/>
-  <updated>2024-03-12T10:12:06.729Z</updated>
+  <updated>2024-03-13T02:38:25.540Z</updated>
   <id>https://note.batype.com/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>对象属性只读（递归）DeepReadonly</title>
+    <link href="https://note.batype.com/typescript/questions/DeepReadonly.html"/>
+    <id>https://note.batype.com/typescript/questions/DeepReadonly.html</id>
+    <published>2024-03-13T02:35:53.195Z</published>
+    <updated>2024-03-13T02:38:25.540Z</updated>
+    
+    <content type="html"><![CDATA[<div id="vip-container"><p>实现一个泛型 <code>DeepReadonly&lt;T&gt;</code>，它将对象的每个参数及其子对象递归地设为只读。</p><p>您可以假设在此挑战中我们仅处理对象。不考虑数组、函数、类等。但是，您仍然可以通过覆盖尽可能多的不同案例来挑战自己。</p><p>例如</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> X = &#123; </span><br><span class="line">    <span class="attr">x</span>: &#123; </span><br><span class="line">        <span class="attr">a</span>: <span class="number">1</span></span><br><span class="line">        <span class="attr">b</span>: <span class="string">&#x27;hi&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="attr">y</span>: <span class="string">&#x27;hey&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Expected</span> = &#123; </span><br><span class="line">    <span class="keyword">readonly</span> <span class="attr">x</span>: &#123; </span><br><span class="line">        <span class="keyword">readonly</span> <span class="attr">a</span>: <span class="number">1</span></span><br><span class="line">        <span class="keyword">readonly</span> <span class="attr">b</span>: <span class="string">&#x27;hi&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">readonly</span> <span class="attr">y</span>: <span class="string">&#x27;hey&#x27;</span> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Todo</span> = <span class="title class_">DeepReadonly</span>&lt;X&gt; <span class="comment">// should be same as `Expected`</span></span><br></pre></td></tr></table></figure><h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><ol><li>属于基础类型则直接返回</li><li>数组、Map、Set需要拆分其内容属性</li></ol><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">Primitive</span> = <span class="literal">undefined</span> | <span class="built_in">string</span> | <span class="literal">null</span> | <span class="built_in">boolean</span> | <span class="built_in">number</span> | <span class="title class_">Function</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">DeepReadonly</span>&lt;T&gt; = T <span class="keyword">extends</span> <span class="title class_">Primitive</span></span><br><span class="line">    ? T</span><br><span class="line">    : T <span class="keyword">extends</span> <span class="title class_">Array</span>&lt;infer U&gt;</span><br><span class="line">    ? <span class="title class_">ReadonlyArray</span>&lt;<span class="title class_">DeepReadonly</span>&lt;T&gt;&gt;</span><br><span class="line">    : T <span class="keyword">extends</span> <span class="title class_">Map</span>&lt;infer K, infer V&gt;</span><br><span class="line">    ? <span class="title class_">ReadonlyMap</span>&lt;<span class="title class_">DeepReadonly</span>&lt;K&gt;, <span class="title class_">DeepReadonly</span>&lt;V&gt;&gt;</span><br><span class="line">    : T <span class="keyword">extends</span> <span class="title class_">Set</span>&lt;infer U&gt;</span><br><span class="line">    ? <span class="title class_">ReadonlySet</span>&lt;<span class="title class_">DeepReadonly</span>&lt;U&gt;&gt;</span><br><span class="line">    : &#123; <span class="keyword">readonly</span> [K <span class="keyword">in</span> keyof T]: <span class="title class_">DeepReadonly</span>&lt;T[K]&gt; &#125;;</span><br></pre></td></tr></table></figure></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
+    
+    
+    <summary type="html">实现一个泛型 `DeepReadonly&lt;T&gt;`，它将对象的每个参数及其子对象递归地设为只读。</summary>
+    
+    
+    
+    <category term="前端" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="TypeScript" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
+    
+    <category term="type" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/TypeScript/type/"/>
+    
+    
+    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="TypeScript" scheme="https://note.batype.com/tags/TypeScript/"/>
+    
+    <category term="type" scheme="https://note.batype.com/tags/type/"/>
+    
+  </entry>
   
   <entry>
     <title>对象部分属性只读 Readonly</title>
@@ -273,9 +302,9 @@
     
     <category term="uni-app" scheme="https://note.batype.com/tags/uni-app/"/>
     
-    <category term="vue" scheme="https://note.batype.com/tags/vue/"/>
-    
     <category term="canvas" scheme="https://note.batype.com/tags/canvas/"/>
+    
+    <category term="vue" scheme="https://note.batype.com/tags/vue/"/>
     
   </entry>
   
@@ -536,35 +565,6 @@
     <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
     
     <category term="zip" scheme="https://note.batype.com/tags/zip/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>deb  使用命令</title>
-    <link href="https://note.batype.com/linux/install/deb.html"/>
-    <id>https://note.batype.com/linux/install/deb.html</id>
-    <published>2023-11-11T04:24:32.000Z</published>
-    <updated>2024-01-08T02:06:24.707Z</updated>
-    
-    <content type="html"><![CDATA[<div id="vip-container"><p>使用dpkg命令：在终端中运行以下命令来安装.deb文件：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i &lt;filename&gt;.deb</span><br></pre></td></tr></table></figure></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
-    
-    
-    <summary type="html">使用dpkg命令：在终端中运行以下命令来安装.deb文件。</summary>
-    
-    
-    
-    <category term="前端" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="es6" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/es6/"/>
-    
-    
-    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Git" scheme="https://note.batype.com/tags/Git/"/>
-    
-    <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
-    
-    <category term="deb" scheme="https://note.batype.com/tags/deb/"/>
     
   </entry>
   
