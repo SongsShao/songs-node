@@ -6,7 +6,7 @@
   <link href="https://note.batype.com/atom.xml" rel="self"/>
   
   <link href="https://note.batype.com/"/>
-  <updated>2024-03-13T02:38:25.540Z</updated>
+  <updated>2024-03-26T09:35:20.565Z</updated>
   <id>https://note.batype.com/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>服务器端渲染（Server-Side Rendering，简称 SSR）</title>
+    <link href="https://note.batype.com/browser/render/ssr.html"/>
+    <id>https://note.batype.com/browser/render/ssr.html</id>
+    <published>2024-03-26T09:32:29.295Z</published>
+    <updated>2024-03-26T09:35:20.565Z</updated>
+    
+    <content type="html"><![CDATA[<div id="vip-container"><p>服务端渲染（Server-Side Rendering，简称 SSR）是一种 Web 应用的渲染方式，其中 HTML 是在服务器上生成的，并作为完整页面发送到客户端（通常是浏览器）。客户端然后解析和显示这个 HTML。这种方法与客户端渲染（Client-Side Rendering，简称 CSR）形成对比，在客户端渲染中，浏览器下载一个最小的 HTML 页面，随后使用JavaScript动态生成页面内容。</p><h2 id="服务端渲染的主要优势和特点包括"><a href="#服务端渲染的主要优势和特点包括" class="headerlink" title="服务端渲染的主要优势和特点包括"></a>服务端渲染的主要优势和特点包括</h2><ol><li><p>更快的首次加载:</p><p> 对于用户来说，SSR 可以更快地显示页面的首次可见内容，因为浏览器接收到的是已经渲染的页面。用户不需要等待所有的JavaScript加载、执行以及渲染完成。</p></li><li><p>搜索引擎优化（SEO）:</p><p> SSR 对 SEO 更加友好，因为搜索引擎爬虫可以直接抓取和索引服务器渲染的HTML内容。而在CSR中，爬虫可能需要等待JavaScript执行完成，有些搜索引擎的爬虫可能不会执行JavaScript，这会影响内容的可索引性。</p></li><li><p>共享重复功能:</p><p> 使用 SSR，服务器可以为多个请求重用页面生成的结果，比如通过缓存，提高效率。</p></li><li><p>更好的性能:</p><p> 对于计算能力较低的设备，SSR 可以提供更好的性能体验，因为服务器通常比客户端设备拥有更强的处理能力。</p></li><li><p>简化前端复杂性:</p><p> SSR 应用可能不需要像完全的客户端应用那样复杂的JavaScript框架或库。</p></li><li><p>更好的用户体验:</p><p> 用户看到的是完整的页面，因此在页面变得可交互之前，他们可以先阅读内容，而不是看到一个空白屏幕或加载指示符。</p></li></ol><p>然而，服务端渲染也有一些潜在的缺点：</p><ol><li><p>服务器负载:</p><p> SSR 可能会增加服务器的负载，因为服务器必须为每个请求生成页面内容。</p></li><li><p>时间到首字节（TTFB）:</p><p> 虽然用户可以更快地看到内容，但是生成页面内容的服务器处理时间可能会导致更长的时间到首字节。</p></li><li><p>客户端 JavaScript 还是需要:</p><p> 即使页面在服务器上预先渲染，通常客户端JavaScript仍然需要以便为页面添加交互功能。</p></li><li><p>复杂的缓存策略:</p><p> 如果页面内容经常变化，实现有效的服务器缓存策略可能会变得复杂。</p></li><li><p>延迟的交互:</p><p> 用户可能能够看到页面内容，但要等到JavaScript下载和执行完成后，页面才变得可交互。</p></li></ol><p>SSR 在许多现代 Web 开发框架和库中都得到了支持，如 Next.js（基于 React）、Nuxt.js（基于 Vue.js）和 Angular Universal。这些工具都提供了简化服务端渲染工作流程的功能。</p></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
+    
+    
+    <summary type="html">服务端渲染（Server-Side Rendering，简称 SSR）是一种 Web 应用的渲染方式，其中 HTML 是在服务器上生成的，并作为完整页面发送到客户端（通常是浏览器）。</summary>
+    
+    
+    
+    <category term="浏览器" scheme="https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    <category term="render" scheme="https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/render/"/>
+    
+    <category term="SSR" scheme="https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/render/SSR/"/>
+    
+    
+    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="浏览器" scheme="https://note.batype.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    <category term="SSR" scheme="https://note.batype.com/tags/SSR/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTPS 和 HTTP 的区别</title>
+    <link href="https://note.batype.com/browser/protocol/http-https.html"/>
+    <id>https://note.batype.com/browser/protocol/http-https.html</id>
+    <published>2024-03-26T06:36:10.787Z</published>
+    <updated>2024-03-26T09:32:12.702Z</updated>
+    
+    <content type="html"><![CDATA[<div id="vip-container"><p><strong>HTTP</strong>: 是一种无状态的请求-响应协议。是互联网上应用最广泛的一种通讯协议，基于 TCP ，可以使浏览器工作效率更为高效，减少网络传输。</p><p><strong>HTTPS</strong>: 是 HTTP 的加强版，可以认为是 HTTP + SSL(Secure Socket Layer)。 在 HTTP 的基础之上增加了一系列的安全机制。一方面可以保证数据传输的安全，另一方面对访问者增加了验证机制。是目前现行架构下，最为安全的解决方案。</p><h2 id="主要区别"><a href="#主要区别" class="headerlink" title="主要区别"></a>主要区别</h2><ol><li><p>安全性</p><ul><li>HTTP 是明文传输协议，数据在传输过程中不加密，容易被篡改和窃听；</li><li>HTTPS 通过使用 SSL(Secure Sockets Layer) 和 TLS(Transport Layer Security) 协议对数据进行加密，确保数据在传输过程中的安全性，防止被窃听和篡改；</li></ul></li><li><p>数据传输协议</p><ul><li>HTTP 使用 TCP(Transmission Control Protocol) 作为传输协议，数据传输速度快；</li><li>HTTPS 在 HTTP 的基础之上加入了 SSL&#x2F;TLS 协议，需要进行加解密操作，数据传输速度慢；</li></ul></li><li><p>端口号</p><ul><li>HTTP 默认端口号 80；</li><li>HTTPS 默认端口号 443；</li></ul></li><li><p>证书</p><ul><li>HTTPS需要使用SSL证书，用于验证服务器的身份，并确保数据传输的安全；</li><li>HTTP不需要使用证书。</li></ul></li></ol><h2 id="HTTP-执行机制"><a href="#HTTP-执行机制" class="headerlink" title="HTTP 执行机制"></a>HTTP 执行机制</h2><ol><li><p>客户端发起请求:</p><p> 客户端向服务器发送 HTTP 请求。这个请求可以是不同类型的，如GET（请求数据），POST（提交数据），PUT（更新数据）等；</p></li><li><p>建立连接:</p><p> 客户端通过网络与服务器建立TCP连接，通常是到服务器的80端口。<br> 对于现代浏览器和服务器，通常使用更复杂的TCP握手过程，比如TCP快速打开（TFO）和TLS假开始（TLS False Start）。</p></li><li><p>发送请求:</p><p> 一旦TCP连接建立，客户端发送一个HTTP请求。HTTP请求包括一个请求行（指明动作如GET或POST）、请求头（包含元数据如User-Agent、Accept、Content-Type等）和请求体（对于POST请求，包含要提交的数据）。</p></li><li><p>服务器处理请求:</p><p> 服务器接收请求并根据请求类型处理它。服务器可能会查询数据库、读取文件或执行其他操作来生成响应。</p></li><li><p>服务器响应:</p><p> 服务器发送一个HTTP响应到客户端。响应包括一个状态行（包含状态码如200 OK或404 Not Found）、响应头（包含元数据如Content-Type、Cache-Control等）和响应体（包含请求的资源的实际数据）。</p></li><li><p>关闭连接:</p><ul><li>在HTTP&#x2F;1.0中，完成响应后，服务器关闭TCP连接;</li><li>在HTTP&#x2F;1.1中，默认使用持久连接（keep-alive），连接在多个请求和响应之后保持打开状态，除非客户端或服务器决定关闭它;</li><li>在HTTP&#x2F;2中，多个请求可以在同一个连接上并行无阻塞地进行，进一步提高效率。</li></ul></li><li><p>客户端处理响应:</p><p> 客户端接收响应并根据内容类型处理数据，如渲染HTML页面、解析JSON数据等。</p></li></ol><h2 id="HTTPS-执行机制"><a href="#HTTPS-执行机制" class="headerlink" title="HTTPS 执行机制"></a>HTTPS 执行机制</h2><ol><li><p>客户端请求:</p><p> 客户端通过在请求的URL中使用“https:&#x2F;&#x2F;”来发起一个HTTPS连接。</p></li><li><p>TLS 握手</p><p> 服务器在其端口443上监听HTTPS请求，并在收到请求时响应；<br> 服务器将其TLS证书发送给客户端。这个证书包含了服务器的公钥和证书颁发机构（CA）的签名；</p></li><li><p>证书验证:</p><p> 客户端验证服务器的证书是否有效，是否在有效期内，以及是否由受信任的CA签发。这个过程也包括检查证书的撤销状态。<br> 这一步，将执行以下步骤进行身份验证：</p><ul><li>验证证书链：客户端检查服务器证书是否由受信任的证书颁发机构（CA）签发，以及证书链是否有效；</li><li>检查有效期：客户端检查证书的有效期，确保证书当前有效期未过期；</li><li>检查撤销状态：客户端肯呢个会检查证书是否被撤销，这可以通过访问 CA 的在线证书状态协议 (OCSP) 服务器或者下载证书撤销列表(CRL) 来完成；</li><li>验证数字签名：客户端使用 CA 的公钥来解密证书的数字签名，以确保它是由正确的 CA 签发且未被篡改；</li></ul></li><li><p>密钥交换</p><p> 一旦确认证书有效，客户端使用服务器的公钥来加密生成一个随机的会话密钥，并将其发送给服务器；<br> 服务器用其私钥解密这个会话密钥。现在，客户端和服务器端都有了共同的会话密钥，用于后续通信的加密；</p></li><li><p>加密通信</p><p> 使用会话密钥，客户端和服务器端之间的所有数据传输都将被加密。这保证了数据传输的机密性和完整性；<br> 客户端和服务器会使用对称加密算法来加密进一步的通信；</p></li><li><p>数据交换</p><p> 客户端和服务器现在可以完全的交换HTTP数据。客户端发送加密的HTTP请求，服务器以加密的HTTP响应回复；</p></li><li><p>会话结束</p><p> 一旦会话完成，客户端和服务器将结束连接并丢弃会话密钥，确保每一个连接都使用一个新的随机密钥。</p></li></ol></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
+    
+    
+    <summary type="html">HTTPS 在 HTTP 的基础之上增加了一系列的安全机制。一方面可以保证数据传输的安全，另一方面对访问者增加了验证机制。是目前现行架构下，最为安全的解决方案。</summary>
+    
+    
+    
+    <category term="浏览器" scheme="https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    <category term="protocol" scheme="https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/protocol/"/>
+    
+    
+    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="浏览器" scheme="https://note.batype.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    <category term="http" scheme="https://note.batype.com/tags/http/"/>
+    
+    <category term="https" scheme="https://note.batype.com/tags/https/"/>
+    
+  </entry>
   
   <entry>
     <title>对象属性只读（递归）DeepReadonly</title>
@@ -513,58 +571,6 @@
     <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
     
     <category term="zsh" scheme="https://note.batype.com/tags/zsh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>docker-compose install</title>
-    <link href="https://note.batype.com/linux/install/docker-compose.html"/>
-    <id>https://note.batype.com/linux/install/docker-compose.html</id>
-    <published>2023-11-13T02:36:03.000Z</published>
-    <updated>2023-11-28T08:49:04.272Z</updated>
-    
-    <content type="html"><![CDATA[<div id="vip-container"><h3 id="Curl-下载"><a href="#Curl-下载" class="headerlink" title="Curl 下载"></a>Curl 下载</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L &quot;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure><h3 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure><h3 id="查询版本"><a href="#查询版本" class="headerlink" title="查询版本"></a>查询版本</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>需要将运行yml 命名为 docker-compose.yml</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
-    
-    
-    <summary type="html">ubantu use wechat, 使用的是模拟window环境打开wechat。</summary>
-    
-    
-    
-    <category term="linux" scheme="https://note.batype.com/categories/linux/"/>
-    
-    <category term="docker-compose" scheme="https://note.batype.com/categories/linux/docker-compose/"/>
-    
-    
-    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
-    
-    <category term="docker-compose" scheme="https://note.batype.com/tags/docker-compose/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu解压Zip文件命令详解</title>
-    <link href="https://note.batype.com/linux/use/zip.html"/>
-    <id>https://note.batype.com/linux/use/zip.html</id>
-    <published>2023-11-12T11:22:59.000Z</published>
-    <updated>2023-11-28T08:49:04.277Z</updated>
-    
-    <content type="html"><![CDATA[<div id="vip-container"><h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>Ubuntu解压Zip文件的命令是“unzip”，它可以解压几乎所有的Zip文件。其基本的语法为：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip [option] filename.zip</span><br></pre></td></tr></table></figure><p>其中，filename.zip表示要解压的Zip文件名，option参数是可选的，用来控制解压的行为，常用的option参数如下：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-d：指定解压到的目录，例如：unzip -d /home/user/untitled filename.zip，即将filename.zip解压到/home/user/untitled目录；</span><br><span class="line">-q：不显示详细信息，即不显示每个文件的解压进度信息；</span><br><span class="line">-o：覆盖目标文件，即如果目标文件存在就覆盖它；</span><br><span class="line">-P：指定Zip文件的密码。</span><br></pre></td></tr></table></figure><h3 id="解压Zip文件到当前路径"><a href="#解压Zip文件到当前路径" class="headerlink" title="解压Zip文件到当前路径"></a>解压Zip文件到当前路径</h3><p>解压一个Zip文件到当前路径很简单，只要在终端中输入“unzip filename.zip”即可。比如：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip archive.zip</span><br></pre></td></tr></table></figure><p>上述命令将会将“archive.zip”文件解压到当前路径中。如果你希望将Zip文件解压到另外一个路径，可以使用“-d”参数，如下所示：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip archive.zip -d /home/user/some_folder</span><br></pre></td></tr></table></figure><p>上述命令将会将“archive.zip”文件解压到“&#x2F;home&#x2F;user&#x2F;some_folder”路径中。</p><h3 id="解压指定的文件"><a href="#解压指定的文件" class="headerlink" title="解压指定的文件"></a>解压指定的文件</h3><p>有时候我们只需要解压Zip文件中的某些文件，而不是全部文件，这时候可以使用“unzip -j”命令。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -j archive.zip file.txt</span><br></pre></td></tr></table></figure><p>上述命令将会将“archive.zip”文件中的“file.txt”文件解压到当前路径中。</p><h3 id="解压时覆盖已存在的文件"><a href="#解压时覆盖已存在的文件" class="headerlink" title="解压时覆盖已存在的文件"></a>解压时覆盖已存在的文件</h3><p>默认情况下，如果解压的目标文件已经存在，unzip命令会提示是否覆盖。如果你希望不进行提示，强制覆盖已经存在的文件，可以使用“-o”参数。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -o archive.zip</span><br></pre></td></tr></table></figure><p>上述命令将会解压“archive.zip”文件到当前路径中，如果有重名的文件会强制覆盖。</p><h3 id="解压时保留目录结构"><a href="#解压时保留目录结构" class="headerlink" title="解压时保留目录结构"></a>解压时保留目录结构</h3><p>默认情况下，unzip命令会将Zip文件中的所有文件解压到当前路径中，不管其原来所在的目录结构。如果你希望保留原来的目录结构，可以使用“unzip -j”命令，如下所示：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip archive.zip -d /home/user/some_folder</span><br></pre></td></tr></table></figure><p>上述命令将会将“archive.zip”文件解压到“&#x2F;home&#x2F;user&#x2F;some_folder”路径中，并保留原来的目录结构。</p><h3 id="解压时指定密码"><a href="#解压时指定密码" class="headerlink" title="解压时指定密码"></a>解压时指定密码</h3><p>如果Zip文件设置了密码，那么我们需要在解压时指定密码。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip -P secretPassword archive.zip</span><br></pre></td></tr></table></figure><p>上述命令将会解压“archive.zip”文件，并使用“secretPassword”作为密码。</p></div><script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script><script>var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);if (!isMobile) {    var btw = new BTWPlugin();    btw.init({        "id": "vip-container",        "blogId": "31652-1697970027416-119",        "name": "BaType",        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",        "keyword": "666"    });}</script>]]></content>
-    
-    
-    <summary type="html">Ubuntu解压Zip文件的命令是“unzip”，它可以解压几乎所有的Zip文件。。</summary>
-    
-    
-    
-    <category term="linux" scheme="https://note.batype.com/categories/linux/"/>
-    
-    <category term="zip" scheme="https://note.batype.com/categories/linux/zip/"/>
-    
-    
-    <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
-    
-    <category term="zip" scheme="https://note.batype.com/tags/zip/"/>
     
   </entry>
   
