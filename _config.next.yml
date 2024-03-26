@@ -200,7 +200,7 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://gitee.com/batype/songs-note || fab fa-github
-  RSS: /atom.xml || fa fa-rss
+  RSS: /rss.xml || fa fa-rss
   Sitemap: /sitemap.xml || fa fa-sitemap
   #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
   #Weibo: https://weibo.com/yourname || fab fa-weibo
@@ -923,7 +923,4 @@ relative_link: false
 #                 订阅 RSS
 # ---------------------------------------------------------------
 
-feed:
-  type: atom
-  path: atom.xml
-  limit: 20
+
