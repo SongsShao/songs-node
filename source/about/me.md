@@ -25,7 +25,7 @@ comments: false
 
 #### 专业技能
 
-- 熟练使用：React、JavaScript、HTML、CSS、TypeScript、Java
+- 熟练使用：React、VUE、JavaScript、HTML、CSS、TypeScript、Java
 - 前端框架：Taro-UI、JQuery、Echarts、Antd、ThreeJS
 - 前端服务层：Mobx、Redux
 - 前端请求服务：Axios、Ajax、fetch
