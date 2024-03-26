@@ -28,8 +28,8 @@
 <meta property="og:site_name" content="batype-note">
 <meta property="og:description" content="实现泛型&#96;GetReadonlyKeys&#96;，&#96;GetReadonlyKeys&#96;返回由对象 &#96;T&#96; 所有只读属性的键组成的联合类型。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-03-11T02:10:43.733Z">
-<meta property="article:modified_time" content="2024-03-11T02:15:53.532Z">
+<meta property="article:published_time" content="2024-03-26T13:23:13.102Z">
+<meta property="article:modified_time" content="2024-03-26T13:23:13.102Z">
 <meta property="article:author" content="songshao">
 <meta property="article:tag" content="前端">
 <meta property="article:tag" content="TypeScript">
@@ -68,7 +68,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link rel="alternate" href="/atom.xml" title="batype-note" type="application/atom+xml">
+<link rel="alternate" href="/rss.xml" title="batype-note" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -104,7 +104,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/me.html" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">55</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">40</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">62</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/me.html" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">56</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">40</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">63</span></a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a></li><li class="menu-item menu-item-docs"><a href="/docs/" rel="section"><i class="fa fa-book fa-fw"></i>Docs</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -170,7 +170,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-count">63</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -181,7 +181,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -191,7 +191,7 @@
         <a href="https://gitee.com/batype/songs-note" title="GitHub → https:&#x2F;&#x2F;gitee.com&#x2F;batype&#x2F;songs-note" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
       <span class="links-of-author-item">
-        <a href="/atom.xml" title="RSS → &#x2F;atom.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
+        <a href="/rss.xml" title="RSS → &#x2F;rss.xml" rel="noopener me"><i class="fa fa-rss fa-fw"></i>RSS</a>
       </span>
       <span class="links-of-author-item">
         <a href="/sitemap.xml" title="Sitemap → &#x2F;sitemap.xml" rel="noopener me"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
@@ -270,7 +270,7 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2024-03-11 10:10:43" itemprop="dateCreated datePublished" datetime="2024-03-11T10:10:43+08:00">2024-03-11</time>
+      <time title="Created: 2024-03-26 21:23:13" itemprop="dateCreated datePublished" datetime="2024-03-26T21:23:13+08:00">2024-03-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -336,7 +336,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><div id="vip-container"><p>实现泛型<code>GetReadonlyKeys&lt;T&gt;</code>，<code>GetReadonlyKeys&lt;T&gt;</code>返回由对象 T 所有只读属性的键组成的联合类型。</p>
+    <div class="post-body" itemprop="articleBody"><p>实现泛型<code>GetReadonlyKeys&lt;T&gt;</code>，<code>GetReadonlyKeys&lt;T&gt;</code>返回由对象 T 所有只读属性的键组成的联合类型。</p>
 <p>例如</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Todo</span> &#123;</span><br><span class="line">  <span class="keyword">readonly</span> <span class="attr">title</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="keyword">readonly</span> <span class="attr">description</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">completed</span>: <span class="built_in">boolean</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">Keys</span> = <span class="title class_">GetReadonlyKeys</span>&lt;<span class="title class_">Todo</span>&gt; <span class="comment">// expected to be &quot;title&quot; | &quot;description&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -376,23 +376,7 @@
 </ul>
 <p>综上所述，<code>GetReadonlyKeys&lt;T&gt;</code> 类型会返回 T 中所有声明为只读属性的键名组成的联合类型。如果 <code>T</code> 没有只读属性，则返回类型为 <code>never</code>。</p>
 <figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">GetReadonlyKeys</span>&lt;T&gt; = keyof &#123;</span><br><span class="line">    [</span><br><span class="line">        P <span class="keyword">in</span> keyof T <span class="keyword">as</span> (</span><br><span class="line">            &lt;I&gt;<span class="function">() =&gt;</span> I <span class="keyword">extends</span> (&#123; [I <span class="keyword">in</span> P]: T[I] &#125;) ? <span class="literal">true</span> : <span class="built_in">never</span></span><br><span class="line">        ) <span class="keyword">extends</span> (</span><br><span class="line">            &lt;I&gt;<span class="function">() =&gt;</span> I <span class="keyword">extends</span> (&#123; <span class="keyword">readonly</span> [I <span class="keyword">in</span> P]: T[I] &#125;) ? <span class="literal">true</span> : <span class="built_in">never</span></span><br><span class="line">        ) ? P : <span class="built_in">never</span></span><br><span class="line">    ] : <span class="built_in">never</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</div>
 
-			<script src="https://my.openwrite.cn/js/readmore.js" type="text/javascript"></script>
-			<script>
-			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
-			if (!isMobile) {
-			    var btw = new BTWPlugin();
-			    btw.init({
-			        "id": "vip-container",
-			        "blogId": "31652-1697970027416-119",
-			        "name": "BaType",
-			        "qrcode": "https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg",
-			        "keyword": "666"
-			    });
-			}
-			</script>
-		
     </div>
 
     
@@ -428,13 +412,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/typescript/questions/returntype.html" rel="prev" title="实现 ReturnType">
-                  <i class="fa fa-angle-left"></i> 实现 ReturnType
+                <a href="/typescript/questions/omit.html" rel="prev" title="实现 Omit">
+                  <i class="fa fa-angle-left"></i> 实现 Omit
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/typescript/questions/SimpleVue.html" rel="next" title="实现类似Vue的类型支持的简化版本">
-                  实现类似Vue的类型支持的简化版本 <i class="fa fa-angle-right"></i>
+                <a href="/typescript/questions/DeepReadonly.html" rel="next" title="对象属性只读（递归）DeepReadonly">
+                  对象属性只读（递归）DeepReadonly <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -470,13 +454,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">40k</span>
+    <span title="Word count total">41k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:26</span>
+    <span title="Reading time total">2:28</span>
   </span>
 </div>
 <div class="busuanzi-count">
