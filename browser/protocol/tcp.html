@@ -21,25 +21,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"note.batype.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"changyan","storage":true,"lazyload":false,"nav":null,"activeClass":"changyan"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/config.min.js"></script>
 
-    <meta name="description" content="Notes on personal growth">
+    <meta name="description" content="TCP（Transmission Control Protocol，传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议，广泛用于互联网中的数据传输。它是TCP&#x2F;IP模型中的核心协议之一，与IP（Internet Protocol，互联网协议）协同工作，负责在多个网络设备之间传输数据。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="batype-note">
-<meta property="og:url" content="https://note.batype.com/archives/page/2/index.html">
+<meta property="og:title" content="TCP（Transmission Control Protocol，传输控制协议）">
+<meta property="og:url" content="https://note.batype.com/browser/protocol/tcp.html">
 <meta property="og:site_name" content="batype-note">
-<meta property="og:description" content="Notes on personal growth">
+<meta property="og:description" content="TCP（Transmission Control Protocol，传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议，广泛用于互联网中的数据传输。它是TCP&#x2F;IP模型中的核心协议之一，与IP（Internet Protocol，互联网协议）协同工作，负责在多个网络设备之间传输数据。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-03-27T02:21:58.077Z">
+<meta property="article:modified_time" content="2024-03-27T10:27:31.864Z">
 <meta property="article:author" content="songshao">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="浏览器">
+<meta property="article:tag" content="TCP">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://note.batype.com/archives/page/2/">
+<link rel="canonical" href="https://note.batype.com/browser/protocol/tcp">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"archives/page/2/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://note.batype.com/browser/protocol/tcp.html","path":"/browser/protocol/tcp.html","title":"TCP（Transmission Control Protocol，传输控制协议）"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Archive | batype-note</title>
+<title>TCP（Transmission Control Protocol，传输控制协议） | batype-note</title>
   
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/analytics/baidu-analytics.min.js"></script>
@@ -84,7 +89,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">batype-note</h1>
+      <p class="site-title">batype-note</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -137,7 +142,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -150,6 +155,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%9ASYN"><span class="nav-number">1.</span> <span class="nav-text">第一次握手：SYN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%9ASYN-ACK"><span class="nav-number">2.</span> <span class="nav-text">第二次握手：SYN-ACK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%9AACK"><span class="nav-number">3.</span> <span class="nav-text">第三次握手：ACK</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%A1%E6%89%8B%E5%AE%8C%E6%88%90"><span class="nav-number">4.</span> <span class="nav-text">握手完成</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -224,434 +230,226 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        
-        <span class="collection-header">Nice! 64 posts in total. Keep on posting.</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://note.batype.com/browser/protocol/tcp.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic.imgdb.cn/item/65367574c458853aefebde36.jpg">
+      <meta itemprop="name" content="songshao">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="batype-note">
+      <meta itemprop="description" content="Notes on personal growth">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="TCP（Transmission Control Protocol，传输控制协议） | batype-note">
+      <meta itemprop="description" content="TCP（Transmission Control Protocol，传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议，广泛用于互联网中的数据传输。它是TCP/IP模型中的核心协议之一，与IP（Internet Protocol，互联网协议）协同工作，负责在多个网络设备之间传输数据。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TCP（Transmission Control Protocol，传输控制协议）<a href="https://gitee.com/batype/songs-note/tree/master/source/_posts/browser/tcp.md" class="post-edit-link" title="Edit this post" rel="noopener" target="_blank"><i class="fa fa-pen-nib"></i></a>
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-03-27 10:21:58" itemprop="dateCreated datePublished" datetime="2024-03-27T10:21:58+08:00">2024-03-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">浏览器</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/protocol/" itemprop="url" rel="index"><span itemprop="name">protocol</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Changyan: </span>
+    
+    <a title="TCP（Transmission Control Protocol，传输控制协议）" href="/browser/protocol/tcp.html#SOHUCS" itemprop="discussionUrl">
+      <span id="sourceId::63494a83d4775db2003e45a5fcc3e76a" class="cy_cmt_count" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.3k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description">TCP（Transmission Control Protocol，传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议，广泛用于互联网中的数据传输。它是TCP/IP模型中的核心协议之一，与IP（Internet Protocol，互联网协议）协同工作，负责在多个网络设备之间传输数据。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>TCP（Transmission Control Protocol，传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议，广泛用于互联网中的数据传输。它是TCP&#x2F;IP模型中的核心协议之一，与IP（Internet Protocol，互联网协议）协同工作，负责在多个网络设备之间传输数据。</p>
+<p>TCP 协议的主要特点和功能包括：</p>
+<ol>
+<li><p>面向连接:</p>
+<p> 在数据传输开始之前，TCP 需要在两端建立一个连接，通常通过三次握手（three-way handshake）过程完成。</p>
+</li>
+<li><p>可靠性传输:</p>
+<p> TCP 提供可靠的数据传输服务，确保数据无差错、不丢失、不重复，并且按序到达。它通过序列号、确认应答（ACKs）、超时重传等机制实现这一点。</p>
+</li>
+<li><p>流量控制:</p>
+<p> TCP 使用滑动窗口协议来进行流量控制，防止快速发送方淹没慢速接收方。</p>
+</li>
+<li><p>拥塞控制:</p>
+<p> TCP 实现拥塞控制算法，如慢启动（Slow Start）、拥塞避免（Congestion Avoidance）、快速重传（Fast Retransmit）和快速恢复（Fast Recovery），以避免网络拥塞。</p>
+</li>
+<li><p>全双工通信:</p>
+<p> TCP 提供全双工服务，意味着数据可以在两个方向上同时传输，双方都可以是发送者和接收者。</p>
+</li>
+<li><p>顺序控制和数据重组:</p>
+<p> TCP 在数据包传输中使用序列号对数据包进行排序，确保接收端可以根据这些序列号将数据重新组合成原始的数据流。</p>
+</li>
+<li><p>错误检测:</p>
+<p> TCP 头部包含校验和（checksum）字段，用于检测数据在传输过程中的任何错误。</p>
+</li>
+<li><p>连接管理:</p>
+<p> TCP 协议管理和维护连接的生命周期，包括连接的建立、数据传输和连接的终止（通常通过四次挥手（four-way handshake）过程实现）。</p>
+</li>
+</ol>
+<p>在TCP&#x2F;IP协议栈中，TCP位于传输层，正上方是应用层，应用层协议如HTTP、FTP等使用TCP来保证数据传输的可靠性；正下方是网络层，网络层协议如IP负责将数据包路由到正确的目的地。TCP处理的是端到端的通信，确保数据能够在应用程序之间准确无误地传输。</p>
+<p>由于TCP提供的可靠性和面向连接的特性，它广泛用于需要保证数据完整性和正确顺序的应用场景，如网页浏览、文件传输、电子邮件发送等。</p>
+<p>TCP三次握手（Three-way Handshake）是建立TCP&#x2F;IP网络连接的标准过程，其目的是在两个网络主机之间创建一个可靠的连接。这个过程确保了双方都准备好接收和发送数据，并且同步了双方的初始序列号，用于数据包的正确排序和可靠传输。下面是TCP三次握手的详细步骤：</p>
+<h3 id="第一次握手：SYN"><a href="#第一次握手：SYN" class="headerlink" title="第一次握手：SYN"></a>第一次握手：SYN</h3><ol>
+<li><p><strong>客户端发送SYN包</strong>:</p>
+<ul>
+<li>客户端选择一个初始序列号（ISN）并向服务器发送一个SYN（同步）包。这个SYN包包含客户端的初始序列号，并且SYN标志位被设置为1，其他标志位（如ACK）被设置为0。</li>
+</ul>
+</li>
+</ol>
+<h3 id="第二次握手：SYN-ACK"><a href="#第二次握手：SYN-ACK" class="headerlink" title="第二次握手：SYN-ACK"></a>第二次握手：SYN-ACK</h3><ol start="2">
+<li><p><strong>服务器回应SYN-ACK包</strong>:</p>
+<ul>
+<li>服务器接收到SYN包后，发送一个SYN-ACK（同步-确认）包作为回应。该包含有服务器自己的初始序列号，同时将客户端的初始序列号加1，并在ACK字段中回传此值，以确认接收到客户端的SYN。此时，SYN和ACK标志位都被设置为1。</li>
+</ul>
+</li>
+</ol>
+<h3 id="第三次握手：ACK"><a href="#第三次握手：ACK" class="headerlink" title="第三次握手：ACK"></a>第三次握手：ACK</h3><ol start="3">
+<li><p><strong>客户端发送ACK包</strong>:</p>
+<ul>
+<li>客户端收到SYN-ACK包后，将服务器的序列号加1，并将这个值放在ACK包的确认字段中，发送给服务器。这个ACK包的ACK标志位设置为1，表示确认。</li>
+</ul>
+</li>
+</ol>
+<h3 id="握手完成"><a href="#握手完成" class="headerlink" title="握手完成"></a>握手完成</h3><ol start="4">
+<li><p><strong>连接建立</strong>:</p>
+<ul>
+<li>服务器接收到客户端的ACK包后，三次握手完成，客户端和服务器之间建立了一个双向的可靠连接。之后，数据可以在双方之间开始传输。</li>
+</ul>
+</li>
+</ol>
+<p>这个过程的关键在于两次增量序列号的交换，这保证了双方都能确认对方已准备好进行通信，并且正确地维护了TCP的状态信息。三次握手可以防止历史连接的初始化数据段突然出现在当前连接中，从而导致不可预料的问题。</p>
+<p>简化的表示如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">客户端                     服务器</span><br><span class="line">  |-----SYN(X)------------&gt;|</span><br><span class="line">  |&lt;----SYN(Y), ACK(X+1)---|</span><br><span class="line">  |-----ACK(Y+1)----------&gt;|</span><br></pre></td></tr></table></figure>
+
+<p>其中，X 和 Y 分别是客户端和服务器选择的初始序列号。</p>
+<p>值得注意的是，TCP三次握手仅仅是建立连接的一部分，数据传输会在三次握手之后开始，而在数据传输结束后，TCP用另一个独立的四次挥手（Four-way Handshake）过程来关闭连接。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-13T15:35:10+08:00"
-              content="2023-11-13">
-          11-13
-        </time>
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    Donate
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechat.png" alt="songshao WeChat Pay">
+        <span>WeChat Pay</span>
+      </div>
+      <div>
+        <img src="/images/alipay.png" alt="songshao Alipay">
+        <span>Alipay</span>
       </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/install/maven/jdk.html" itemprop="url">
-          <span itemprop="name">ubantu 安装Maven 和jdk 步骤</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-13T14:32:08+08:00"
-              content="2023-11-13">
-          11-13
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/install/zsh.html" itemprop="url">
-          <span itemprop="name">zsh install</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-13T10:36:03+08:00"
-              content="2023-11-13">
-          11-13
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/install/docker-compose.html" itemprop="url">
-          <span itemprop="name">docker-compose install</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-12T19:22:59+08:00"
-              content="2023-11-12">
-          11-12
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/use/zip.html" itemprop="url">
-          <span itemprop="name">Ubuntu解压Zip文件命令详解</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-11T12:24:32+08:00"
-              content="2023-11-11">
-          11-11
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/install/deb.html" itemprop="url">
-          <span itemprop="name">deb  使用命令</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-11T12:24:32+08:00"
-              content="2023-11-11">
-          11-11
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/install/wechat.html" itemprop="url">
-          <span itemprop="name">ubantu use wechat</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-09T17:01:53+08:00"
-              content="2023-11-09">
-          11-09
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/use/vscode/open/project.html" itemprop="url">
-          <span itemprop="name">vscode . open project</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-07T21:40:32+08:00"
-              content="2023-11-07">
-          11-07
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/config/git.html" itemprop="url">
-          <span itemprop="name">Git 使用</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-02T21:24:32+08:00"
-              content="2023-11-02">
-          11-02
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/install/docker.html" itemprop="url">
-          <span itemprop="name">Docker 的安装和使用</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-02T21:24:32+08:00"
-              content="2023-11-02">
-          11-02
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/linux/use/scp.html" itemprop="url">
-          <span itemprop="name">Scp 复制文件到服务器</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-27T10:58:50+08:00"
-              content="2023-10-27">
-          10-27
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/react/implement.html" itemprop="url">
-          <span itemprop="name">React 实现原理</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-26T15:49:35+08:00"
-              content="2023-10-26">
-          10-26
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/react/components/unstate-next-implement.html" itemprop="url">
-          <span itemprop="name">unstate-next 的实现原理</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-25T18:12:49+08:00"
-              content="2023-10-25">
-          10-25
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/react/fiber/works.html" itemprop="url">
-          <span itemprop="name">Fiber架构工作原理</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-25T16:42:53+08:00"
-              content="2023-10-25">
-          10-25
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/react/components/unstate-next-use.html" itemprop="url">
-          <span itemprop="name">unstate-next 的使用</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-25T15:47:01+08:00"
-              content="2023-10-25">
-          10-25
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/web/npm/nvm.html" itemprop="url">
-          <span itemprop="name">nvm 管理node版本</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-25T15:25:17+08:00"
-              content="2023-10-25">
-          10-25
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/web/npm/nrm.html" itemprop="url">
-          <span itemprop="name">nrm 管理 npm registry</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-23T21:27:22+08:00"
-              content="2023-10-23">
-          10-23
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/hexo/config/pagination.html" itemprop="url">
-          <span itemprop="name">Hexo 内容分页配置</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-23T20:43:25+08:00"
-              content="2023-10-23">
-          10-23
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/web/webpack/hot/module/replacement.html" itemprop="url">
-          <span itemprop="name">webpack 热更新的实现原理</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-23T20:37:51+08:00"
-              content="2023-10-23">
-          10-23
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/javascript/prototype.html" itemprop="url">
-          <span itemprop="name">对原型、原型链的理解</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-23T20:34:19+08:00"
-              content="2023-10-23">
-          10-23
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/javascript/var/let/const.html" itemprop="url">
-          <span itemprop="name">var、let、const的区别</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-
-    </div>
   </div>
-  
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" title="Previous page" aria-label="Previous page" href="/archives/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/archives/page/3/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+</div>
 
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+              <a href="/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="tag"><i class="fa fa-tag"></i> 浏览器</a>
+              <a href="/tags/TCP/" rel="tag"><i class="fa fa-tag"></i> TCP</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/browser/protocol/tls.html" rel="prev" title="TLS（Transport Layer Security，传输层安全协议）三次握手">
+                  <i class="fa fa-angle-left"></i> TLS（Transport Layer Security，传输层安全协议）三次握手
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="SOHUCS" sid="63494a83d4775db2003e45a5fcc3e76a"></div>
 </div>
   </main>
 
@@ -747,7 +545,7 @@
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/quicklink/2.3.0/quicklink.umd.js" integrity="sha256-yvJQOINiH9fWemHn0vCA5lsHWJaHs6/ZmO+1Ft04SvM=" crossorigin="anonymous"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/archives/page/2/"}</script>
+  <script class="next-config" data-name="quicklink" type="application/json">{"enable":true,"home":true,"archive":true,"delay":true,"timeout":2000,"priority":true,"url":"https://note.batype.com/browser/protocol/tcp.html"}</script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/quicklink.min.js"></script>
 <script class="next-config" data-name="changyan" type="application/json">{"enable":true,"appid":"cywWcj4BR","appkey":"a30428fc71ec317dbe68d573c2f4ce31","count":true}</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-next/8.18.2/third-party/comments/changyan.min.js"></script>
