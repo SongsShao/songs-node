@@ -1,6 +1,6 @@
 {
   "name": "batype-note",
-  "version": "0.0.110",
+  "version": "0.0.111",
   "private": true,
   "scripts": {
     "build": "hexo clean && hexo generate",
