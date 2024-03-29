@@ -1,7 +1,7 @@
 ---
-title: HTTPS 详解
+title: HTTP 详解
 permalink: /browser/protocol/http.html
-date: 2024年3月29日21:35:27
+date: 2024年3月29日22:18:19
 description: HTTP（Hypertext Transfer Protocol）是一种用于在网络上传输超文本数据的协议。它是一种客户端-服务器协议，客户端发送请求，服务器返回响应。HTTP是Web的基础，用于在Web浏览器和Web服务器之间传输数据
 tag: [前端, 浏览器, http]
 comments: true
@@ -129,6 +129,7 @@ HTTP报文由请求报文和响应报文两种格式组成，它们的基本结�
 - **请求头部字段**
 
     - 包含了请求的各种附加信息，如User-Agent、Content-Type等。
+
 - **空行**
     
     - 用于分隔请求头部和请求体。
