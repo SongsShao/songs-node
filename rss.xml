@@ -6,7 +6,7 @@
   <link href="https://note.batype.com/rss.xml" rel="self"/>
   
   <link href="https://note.batype.com/"/>
-  <updated>2024-03-28T14:55:07.556Z</updated>
+  <updated>2024-03-29T14:06:13.331Z</updated>
   <id>https://note.batype.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTTPS 详解</title>
+    <link href="https://note.batype.com/browser/protocol/http.html"/>
+    <id>https://note.batype.com/browser/protocol/http.html</id>
+    <published>2024-03-29T13:35:04.054Z</published>
+    <updated>2024-03-29T14:06:13.331Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="HTTP（Hypertext-Transfer-Protocol）基本信息"><a href="#HTTP（Hypertext-Transfer-Protocol）基本信息" class="headerlink" title="HTTP（Hypertext Transfer Protocol）基本信息"></a>HTTP（Hypertext Transfer Protocol）基本信息</h3><p>HTTP（Hypertext Transfer Protocol）是一种用于在网络上传输超文本数据的协议。它是一种客户端-服务器协议，客户端发送请求，服务器返回响应。HTTP是Web的基础，用于在Web浏览器和Web服务器之间传输数据。</p><p>以下是HTTP的一些关键概念和详解：</p><ol><li><p>请求和响应</p><p> HTTP通信是基于请求-响应模型。客户端发送HTTP请求到服务器，服务器处理请求并返回HTTP响应。</p></li><li><p>URL（Uniform Resource Locator）</p><p> URL是用于标识资源的地址。它由协议类型（如http:&#x2F;&#x2F;或https:&#x2F;&#x2F;）、域名或IP地址、端口号（可选）、路径和查询参数组成。<br> URL（Uniform Resource Locator）是用于标识资源的地址。</p><p> 下面是一个URL的图解示例：</p> <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">┌─────────────────────────────────────────────────────┐</span><br><span class="line">│                        URL                          │</span><br><span class="line">├───────────┬─────────────┬─────────┬───────┬───────┤</span><br><span class="line">│  协议类型   │    域名/IP   │ 端口号  │  路径  │ 查询参数 │</span><br><span class="line">├───────────┴─────────────┴─────────┴───────┴───────┤</span><br><span class="line">│                     示例：                           │</span><br><span class="line">│   https://www.example.com:8080/path/to/resource?q=1 │</span><br><span class="line">└─────────────────────────────────────────────────────┘</span><br></pre></td></tr></table></figure><ul><li>协议类型（Protocol）：指定使用的协议，如HTTP、HTTPS、FTP等。</li><li>域名或IP地址（Domain&#x2F;IP）：标识资源所在的主机名或IP地址。</li><li>端口号（Port）：可选项，用于指定与服务器通信的端口号，默认使用协议的默认端口号（如HTTP的默认端口号是80）。</li><li>路径（Path）：指定资源在服务器上的路径，用斜杠（&#x2F;）分隔不同的目录或文件。</li><li>查询参数（Query Parameters）：可选项，用于向服务器传递额外的参数，以键值对的形式出现，多个参数使用&amp;符号分隔。</li></ul><p> 在示例中，URL是以HTTPS协议访问的，域名为<a href="http://www.example.com,使用了8080端口号.路径为/path/to/resource%EF%BC%8C%E6%9F%A5%E8%AF%A2%E5%8F%82%E6%95%B0%E4%B8%BAq=1%E3%80%82">www.example.com，使用了8080端口号。路径为/path/to/resource，查询参数为q=1。</a></p><p> URL的结构可以根据不同的协议和应用场景有所变化，但基本的组成部分是协议类型、域名或IP地址、端口号、路径和查询参数。通过URL，我们可以定位和访问互联网上的各种资源。</p></li><li><p>HTTP方法</p><p> HTTP定义了一组方法，用于指定对资源的操作类型。常见的HTTP方法有GET（获取资源）、POST（提交数据创建资源）、PUT（更新资源）、DELETE（删除资源）、PATCH（更新资源）、OPTIONS（获取资源支持的HTTP方法）、HEAD（获取资源头信息）。</p><ul><li><p><strong>GET</strong>：用于获取资源。客户端发送GET请求到服务器，服务器返回请求的资源。GET请求通常不应该对服务器端产生副作用，即不应该修改服务器上的数据。</p></li><li><p><strong>POST</strong>：用于提交数据创建资源。客户端发送POST请求到服务器，请求创建一个新的资源。POST请求通常用于提交表单数据、上传文件等操作。</p></li><li><p><strong>PUT</strong>：用于更新资源。客户端发送PUT请求到服务器，请求更新指定的资源。PUT请求应该是幂等的，即多次执行相同的PUT请求结果应该是一致的。</p></li><li><p><strong>DELETE</strong>：用于删除资源。客户端发送DELETE请求到服务器，请求删除指定的资源。</p></li><li><p><strong>PATCH</strong>：用于局部更新资源。客户端发送PATCH请求到服务器，请求对指定的资源进行部分更新。</p></li><li><p><strong>HEAD</strong>：类似于GET请求，但只返回响应头信息，不返回响应体。HEAD请求常用于获取资源的元数据，如文件大小、修改时间等，而不需要获取完整的资源内容。</p></li><li><p><strong>OPTIONS</strong>：用于获取服务器支持的HTTP方法和其他选项。客户端发送OPTIONS请求到服务器，服务器返回支持的方法和其他信息，用于客户端了解服务器的功能和配置</p></li></ul></li><li><p>请求头</p><p> HTTP请求包含一组请求头，用于传递关于请求的元数据，如User-Agent（客户端标识）、Content-Type（请求体的数据类型）、Authorization（身份验证信息）等。</p></li><li><p>响应头</p><p> HTTP响应也包含一组响应头，用于传递关于响应的元数据，如Content-Type（响应体的数据类型）、Content-Length（响应体长度）、Cache-Control（缓存策略）等。</p></li><li><p>状态码</p><p> HTTP响应包含一个状态码，用于表示请求的处理结果。常见的状态码有200（成功）、404（资源未找到）、500（服务器内部错误）等。</p><p> 以下是HTTP状态码的分类：</p><ul><li>1xx（信息性状态码）：表示接收的请求正在处理。</li><li>2xx（成功状态码）：表示请求成功被服务器接收、理解、并接受。</li><li>3xx（重定向状态码）：需要后续操作才能完成这一请求。</li><li>4xx（客户端错误状态码）：表示请求包含语法错误或无法完成。</li><li>5xx（服务器错误状态码）：服务器在处理请求的过程中发生了错误。</li></ul></li><li><p>请求体和响应体</p><p> 某些HTTP请求和响应可能包含一个可选的消息体，用于传递数据。请求体通常用于POST或PUT请求发送数据，而响应体用于返回请求的结果数据。</p></li><li><p>Cookie</p><p> Cookie是一种在客户端和服务器之间传递的小型数据，用于跟踪和识别用户。服务器可以通过设置响应头中的Set-Cookie字段来发送Cookie给客户端，客户端在后续的请求中会自动将Cookie包含在请求头中发送给服务器。</p></li><li><p>缓存</p><p> HTTP支持缓存机制，可以减少对服务器的请求次数，提高性能。服务器可以通过设置响应头中的Cache-Control字段来控制缓存策略，客户端可以通过设置请求头中的If-Modified-Since或If-None-Match字段来验证缓存的有效性。</p></li></ol><p>HTTP是一个无状态协议，每个请求和响应之间是相互独立的。为了跟踪用户状态，HTTP引入了Cookie等机制。此外，HTTP还支持HTTPS（HTTP Secure）协议，通过加密和身份验证来提供更安全的通信。</p><h3 id="HTTP-报文"><a href="#HTTP-报文" class="headerlink" title="HTTP 报文"></a>HTTP 报文</h3><p>HTTP 协议的请求报文和响应报文的基本结构相同，由三大部分组成：</p><ul><li>起始行（start line）： 描述请求或相应的基本信息；</li><li>头部字段集合（header）：使用  <code>key-value</code> 形式更详细地说明报文</li><li>消息体（entity）：实际传输的数据，它不一定是纯文本，可以是图片、视频等二进制数据。</li></ul><p>HTTP报文由请求报文和响应报文两种格式组成，它们的基本结构如下：</p><ol><li>请求报文格式：</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;方法&gt; &lt;URL&gt; &lt;协议版本&gt;  : 请求行</span><br><span class="line">&lt;请求头部字段1&gt;: &lt;值1&gt;</span><br><span class="line">&lt;请求头部字段2&gt;: &lt;值2&gt;</span><br><span class="line">...</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">&lt;请求体&gt;</span><br></pre></td></tr></table></figure><ul><li><p><strong>请求行</strong></p><ul><li>方法：指定请求的方法，如GET、POST等。</li><li>URL：请求的目标资源的URL。</li><li>协议版本：使用的HTTP协议版本，如HTTP&#x2F;1.1。</li></ul></li><li><p><strong>请求头部字段</strong></p><ul><li>包含了请求的各种附加信息，如User-Agent、Content-Type等。</li></ul></li><li><p><strong>空行</strong></p><ul><li>用于分隔请求头部和请求体。</li></ul></li><li><p><strong>请求体</strong></p><ul><li>可选项，包含了请求的主体内容，如POST请求中的表单数据、PUT请求中的更新内容等。</li></ul></li></ul><ol start="2"><li>响应报文格式：</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;协议版本&gt; &lt;状态码&gt; &lt;状态码描述&gt;: 响应行</span><br><span class="line">&lt;响应头部字段1&gt;: &lt;值1&gt;</span><br><span class="line">&lt;响应头部字段2&gt;: &lt;值2&gt;</span><br><span class="line">...</span><br><span class="line">&lt;空行&gt;</span><br><span class="line">&lt;响应体&gt;</span><br></pre></td></tr></table></figure><ul><li><p><strong>响应行</strong></p><ul><li>协议版本：使用的HTTP协议版本，如HTTP&#x2F;1.1。</li><li>状态码：表示服务器对请求的处理结果，如200表示成功，404表示资源未找到等。</li><li>状态码描述：对状态码的简短描述。</li></ul></li><li><p><strong>响应头部字段</strong></p><ul><li>包含了响应的各种附加信息，如Content-Type、Content-Length等。</li></ul></li><li><p><strong>空行</strong></p><ul><li>用于分隔响应头部和响应体。</li></ul></li><li><p><strong>响应体</strong></p><ul><li>包含了响应的主体内容，如HTML页面、JSON数据等。</li></ul></li></ul><p>HTTP报文的格式是文本格式，使用ASCII编码。请求报文由客户端发送到服务器，响应报文由服务器返回给客户端。报文中的请求头部和响应头部字段提供了关于请求和响应的元数据信息，而请求体和响应体则包含了具体的数据内容。通过这种报文格式，客户端和服务器可以进行有效的通信和数据交换。</p>]]></content>
+    
+    
+    <summary type="html">HTTP（Hypertext Transfer Protocol）是一种用于在网络上传输超文本数据的协议。它是一种客户端-服务器协议，客户端发送请求，服务器返回响应。HTTP是Web的基础，用于在Web浏览器和Web服务器之间传输数据</summary>
+    
+    
+    
+    <category term="浏览器" scheme="https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    <category term="protocol" scheme="https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/protocol/"/>
+    
+    
+    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="浏览器" scheme="https://note.batype.com/tags/%E6%B5%8F%E8%A7%88%E5%99%A8/"/>
+    
+    <category term="http" scheme="https://note.batype.com/tags/http/"/>
+    
+  </entry>
   
   <entry>
     <title>事件循环（Event Loop）</title>
@@ -542,35 +569,6 @@
     <category term="JavaScript" scheme="https://note.batype.com/tags/JavaScript/"/>
     
     <category term="es6" scheme="https://note.batype.com/tags/es6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker 安装Redis</title>
-    <link href="https://note.batype.com/linux/docker/redis.html"/>
-    <id>https://note.batype.com/linux/docker/redis.html</id>
-    <published>2023-11-22T13:24:32.000Z</published>
-    <updated>2023-12-16T11:25:03.539Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="下载redis-镜像"><a href="#下载redis-镜像" class="headerlink" title="下载redis 镜像"></a>下载redis 镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull redis</span><br></pre></td></tr></table></figure><h3 id="启动镜像并同步数据"><a href="#启动镜像并同步数据" class="headerlink" title="启动镜像并同步数据"></a>启动镜像并同步数据</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name redis -p 6379:6379 \</span><br><span class="line"> --restart=always \</span><br><span class="line"> -v /home/xt/redis/redis.conf:/etc/redis/redis.conf \</span><br><span class="line"> -v /home/xt/redis/data:/data \</span><br><span class="line"> redis redis-server /etc/redis/redis.conf</span><br></pre></td></tr></table></figure><h3 id="添加密码"><a href="#添加密码" class="headerlink" title="添加密码"></a>添加密码</h3><h4 id="进入容器"><a href="#进入容器" class="headerlink" title="进入容器"></a>进入容器</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it 04f824eaf3800958615a9874084ea6d57ab346cd61723a1eb54074a9477f1efe /bin/bash</span><br></pre></td></tr></table></figure><p>在Redis命令行中，我们可以使用config set命令来设置Redis的密码。以下是设置密码的代码和注释。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">config set requirepass your_password</span><br></pre></td></tr></table></figure><h3 id="重启Redis容器"><a href="#重启Redis容器" class="headerlink" title="重启Redis容器"></a>重启Redis容器</h3><p>完成上述步骤后，我们需要重启Redis容器使密码生效。可以使用以下命令重启Redis容器。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart 04f824eaf3800958615a9874084ea6d57ab346cd61723a1eb54074a9477f1efe</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">Docker 安装Redis,并且进行数据和配置文件同步，以及密码修改。</summary>
-    
-    
-    
-    <category term="linux" scheme="https://note.batype.com/categories/linux/"/>
-    
-    <category term="docker" scheme="https://note.batype.com/categories/linux/docker/"/>
-    
-    <category term="redis" scheme="https://note.batype.com/categories/linux/docker/redis/"/>
-    
-    
-    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="linux" scheme="https://note.batype.com/tags/linux/"/>
-    
-    <category term="docker， redis" scheme="https://note.batype.com/tags/docker%EF%BC%8C-redis/"/>
     
   </entry>
   
