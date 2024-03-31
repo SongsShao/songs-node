@@ -212,6 +212,35 @@
   </entry>
   
   <entry>
+    <title>对象部分属性只读 Readonly</title>
+    <link href="https://note.batype.com/typescript/questions/Readonly2.html"/>
+    <id>https://note.batype.com/typescript/questions/Readonly2.html</id>
+    <published>2024-03-26T13:23:13.103Z</published>
+    <updated>2024-03-26T13:23:13.104Z</updated>
+    
+    <content type="html"><![CDATA[<p>实现一个泛型<code>MyReadonly2&lt;T, K&gt;</code>，它带有两种类型的参数<code>T</code>和<code>K</code>。</p><p>类型 <code>K</code> 指定 <code>T</code> 中要被设置为只读 (readonly) 的属性。如果未提供<code>K</code>，则应使所有属性都变为只读，就像普通的<code>Readonly&lt;T&gt;</code>一样。</p><p>例如</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Todo</span> &#123;</span><br><span class="line"><span class="attr">title</span>: <span class="built_in">string</span></span><br><span class="line"><span class="attr">description</span>: <span class="built_in">string</span></span><br><span class="line"><span class="attr">completed</span>: <span class="built_in">boolean</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">todo</span>: <span class="title class_">MyReadonly2</span>&lt;<span class="title class_">Todo</span>, <span class="string">&#x27;title&#x27;</span> | <span class="string">&#x27;description&#x27;</span>&gt; = &#123;</span><br><span class="line"><span class="attr">title</span>: <span class="string">&quot;Hey&quot;</span>,</span><br><span class="line"><span class="attr">description</span>: <span class="string">&quot;foobar&quot;</span>,</span><br><span class="line"><span class="attr">completed</span>: <span class="literal">false</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">todo.<span class="property">title</span> = <span class="string">&quot;Hello&quot;</span> <span class="comment">// Error: cannot reassign a readonly property</span></span><br><span class="line">todo.<span class="property">description</span> = <span class="string">&quot;barFoo&quot;</span> <span class="comment">// Error: cannot reassign a readonly property</span></span><br><span class="line">todo.<span class="property">completed</span> = <span class="literal">true</span> <span class="comment">// OK</span></span><br></pre></td></tr></table></figure><h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>先取出需要 <code>readonly</code> 参数，然后在把不需要声明的参数用排除法加上。 </p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">MyReadonly2</span>&lt;T, D <span class="keyword">extends</span> keyof T&gt; = &#123;</span><br><span class="line">    <span class="keyword">readonly</span> [P <span class="keyword">in</span> D]: T[P];</span><br><span class="line">&#125; &amp; &#123;</span><br><span class="line">    [P <span class="keyword">in</span> keyof T <span class="keyword">as</span> P <span class="keyword">extends</span> D ? <span class="built_in">never</span> : P]: T[P];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">实现一个泛型`MyReadonly2&lt;T, K&gt;`，它带有两种类型的参数`T`和`K`。</summary>
+    
+    
+    
+    <category term="前端" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="TypeScript" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
+    
+    <category term="type" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/TypeScript/type/"/>
+    
+    
+    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="TypeScript" scheme="https://note.batype.com/tags/TypeScript/"/>
+    
+    <category term="type" scheme="https://note.batype.com/tags/type/"/>
+    
+  </entry>
+  
+  <entry>
     <title>对象属性只读 Readonly</title>
     <link href="https://note.batype.com/typescript/questions/Readonly.html"/>
     <id>https://note.batype.com/typescript/questions/Readonly.html</id>
@@ -241,16 +270,16 @@
   </entry>
   
   <entry>
-    <title>对象部分属性只读 Readonly</title>
-    <link href="https://note.batype.com/typescript/questions/Readonly2.html"/>
-    <id>https://note.batype.com/typescript/questions/Readonly2.html</id>
-    <published>2024-03-26T13:23:13.103Z</published>
-    <updated>2024-03-26T13:23:13.104Z</updated>
+    <title>实现 Omit</title>
+    <link href="https://note.batype.com/typescript/questions/omit.html"/>
+    <id>https://note.batype.com/typescript/questions/omit.html</id>
+    <published>2024-03-26T13:23:13.102Z</published>
+    <updated>2024-03-26T13:23:13.103Z</updated>
     
-    <content type="html"><![CDATA[<p>实现一个泛型<code>MyReadonly2&lt;T, K&gt;</code>，它带有两种类型的参数<code>T</code>和<code>K</code>。</p><p>类型 <code>K</code> 指定 <code>T</code> 中要被设置为只读 (readonly) 的属性。如果未提供<code>K</code>，则应使所有属性都变为只读，就像普通的<code>Readonly&lt;T&gt;</code>一样。</p><p>例如</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Todo</span> &#123;</span><br><span class="line"><span class="attr">title</span>: <span class="built_in">string</span></span><br><span class="line"><span class="attr">description</span>: <span class="built_in">string</span></span><br><span class="line"><span class="attr">completed</span>: <span class="built_in">boolean</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">todo</span>: <span class="title class_">MyReadonly2</span>&lt;<span class="title class_">Todo</span>, <span class="string">&#x27;title&#x27;</span> | <span class="string">&#x27;description&#x27;</span>&gt; = &#123;</span><br><span class="line"><span class="attr">title</span>: <span class="string">&quot;Hey&quot;</span>,</span><br><span class="line"><span class="attr">description</span>: <span class="string">&quot;foobar&quot;</span>,</span><br><span class="line"><span class="attr">completed</span>: <span class="literal">false</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">todo.<span class="property">title</span> = <span class="string">&quot;Hello&quot;</span> <span class="comment">// Error: cannot reassign a readonly property</span></span><br><span class="line">todo.<span class="property">description</span> = <span class="string">&quot;barFoo&quot;</span> <span class="comment">// Error: cannot reassign a readonly property</span></span><br><span class="line">todo.<span class="property">completed</span> = <span class="literal">true</span> <span class="comment">// OK</span></span><br></pre></td></tr></table></figure><h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>先取出需要 <code>readonly</code> 参数，然后在把不需要声明的参数用排除法加上。 </p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">MyReadonly2</span>&lt;T, D <span class="keyword">extends</span> keyof T&gt; = &#123;</span><br><span class="line">    <span class="keyword">readonly</span> [P <span class="keyword">in</span> D]: T[P];</span><br><span class="line">&#125; &amp; &#123;</span><br><span class="line">    [P <span class="keyword">in</span> keyof T <span class="keyword">as</span> P <span class="keyword">extends</span> D ? <span class="built_in">never</span> : P]: T[P];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>不使用 <code>Omit</code> 实现 <code>TypeScript</code> 的 <code>Omit&lt;T, K&gt;</code> 泛型。</p><p><code>Omit</code> 会创建一个省略 <code>K</code> 中字段的 <code>T</code> 对象。</p><p>例如：</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Todo</span> &#123;</span><br><span class="line">  <span class="attr">title</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">description</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">completed</span>: <span class="built_in">boolean</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">TodoPreview</span> = <span class="title class_">MyOmit</span>&lt;<span class="title class_">Todo</span>, <span class="string">&#x27;description&#x27;</span> | <span class="string">&#x27;title&#x27;</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">todo</span>: <span class="title class_">TodoPreview</span> = &#123;</span><br><span class="line">  <span class="attr">completed</span>: <span class="literal">false</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Todo</span> &#123;</span><br><span class="line">    <span class="attr">title</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="attr">description</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="attr">completed</span>: <span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyOmit</span>&lt;T, K <span class="keyword">extends</span> keyof T&gt; = &#123;</span><br><span class="line">    [P <span class="keyword">in</span> keyof T <span class="keyword">as</span> P <span class="keyword">extends</span> K ? <span class="built_in">never</span> : P]: T[P];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// @ts-expect-error</span></span><br><span class="line"><span class="keyword">type</span> error = <span class="title class_">MyOmit</span>&lt;<span class="title class_">Todo</span>, <span class="string">&quot;description&quot;</span> | <span class="string">&quot;invalid&quot;</span>&gt;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
     
     
-    <summary type="html">实现一个泛型`MyReadonly2&lt;T, K&gt;`，它带有两种类型的参数`T`和`K`。</summary>
+    <summary type="html">不使用 `Omit` 实现 `TypeScript` 的 `Omit&lt;T, K&gt;` 泛型。</summary>
     
     
     
@@ -309,35 +338,6 @@
     
     
     <summary type="html">实现泛型`GetReadonlyKeys&lt;T&gt;`，`GetReadonlyKeys&lt;T&gt;`返回由对象 `T` 所有只读属性的键组成的联合类型。</summary>
-    
-    
-    
-    <category term="前端" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="TypeScript" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/TypeScript/"/>
-    
-    <category term="type" scheme="https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/TypeScript/type/"/>
-    
-    
-    <category term="前端" scheme="https://note.batype.com/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="TypeScript" scheme="https://note.batype.com/tags/TypeScript/"/>
-    
-    <category term="type" scheme="https://note.batype.com/tags/type/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实现 Omit</title>
-    <link href="https://note.batype.com/typescript/questions/omit.html"/>
-    <id>https://note.batype.com/typescript/questions/omit.html</id>
-    <published>2024-03-26T13:23:13.102Z</published>
-    <updated>2024-03-26T13:23:13.103Z</updated>
-    
-    <content type="html"><![CDATA[<p>不使用 <code>Omit</code> 实现 <code>TypeScript</code> 的 <code>Omit&lt;T, K&gt;</code> 泛型。</p><p><code>Omit</code> 会创建一个省略 <code>K</code> 中字段的 <code>T</code> 对象。</p><p>例如：</p><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">Todo</span> &#123;</span><br><span class="line">  <span class="attr">title</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">description</span>: <span class="built_in">string</span></span><br><span class="line">  <span class="attr">completed</span>: <span class="built_in">boolean</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">TodoPreview</span> = <span class="title class_">MyOmit</span>&lt;<span class="title class_">Todo</span>, <span class="string">&#x27;description&#x27;</span> | <span class="string">&#x27;title&#x27;</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="attr">todo</span>: <span class="title class_">TodoPreview</span> = &#123;</span><br><span class="line">  <span class="attr">completed</span>: <span class="literal">false</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Todo</span> &#123;</span><br><span class="line">    <span class="attr">title</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="attr">description</span>: <span class="built_in">string</span>;</span><br><span class="line">    <span class="attr">completed</span>: <span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">MyOmit</span>&lt;T, K <span class="keyword">extends</span> keyof T&gt; = &#123;</span><br><span class="line">    [P <span class="keyword">in</span> keyof T <span class="keyword">as</span> P <span class="keyword">extends</span> K ? <span class="built_in">never</span> : P]: T[P];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// @ts-expect-error</span></span><br><span class="line"><span class="keyword">type</span> error = <span class="title class_">MyOmit</span>&lt;<span class="title class_">Todo</span>, <span class="string">&quot;description&quot;</span> | <span class="string">&quot;invalid&quot;</span>&gt;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-    <summary type="html">不使用 `Omit` 实现 `TypeScript` 的 `Omit&lt;T, K&gt;` 泛型。</summary>
     
     
     
