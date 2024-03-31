@@ -460,7 +460,7 @@ github_banner:
 
 font:
   enable: true
-  host: https://fonts.lug.ustc.edu.cn
+  host: https://npm.proxy.ustclug.org/
   codes:
     external: true
     family: Inconsolata
