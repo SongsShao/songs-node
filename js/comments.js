@@ -1,21 +1,21 @@
 /* global CONFIG */
 
-window.addEventListener('tabs:register', () => {
-  let { activeClass } = CONFIG.comments;
+window.addEventListener('tabs:register', function () {
+  var activeClass = CONFIG.comments.activeClass;
   if (CONFIG.comments.storage) {
     activeClass = localStorage.getItem('comments_active') || activeClass;
   }
   if (activeClass) {
-    const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+    var activeTab = document.querySelector("a[href=\"#comment-".concat(activeClass, "\"]"));
     if (activeTab) {
       activeTab.click();
     }
   }
 });
 if (CONFIG.comments.storage) {
-  window.addEventListener('tabs:click', event => {
+  window.addEventListener('tabs:click', function (event) {
     if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-    const commentClass = event.target.classList[1];
+    var commentClass = event.target.classList[1];
     localStorage.setItem('comments_active', commentClass);
   });
 }

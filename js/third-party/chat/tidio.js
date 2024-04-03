@@ -1,9 +1,9 @@
 /* global tidioChatApi */
 
-(function() {
-  const chatButton = document.querySelector('.sidebar-button button');
+(function () {
+  var chatButton = document.querySelector('.sidebar-button button');
   if (chatButton) {
-    chatButton.addEventListener('click', () => {
+    chatButton.addEventListener('click', function () {
       tidioChatApi.open();
     });
   }

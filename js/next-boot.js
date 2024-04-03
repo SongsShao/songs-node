@@ -1,42 +1,35 @@
 /* global NexT, CONFIG */
 
 NexT.boot = {};
-
-NexT.boot.registerEvents = function() {
-
+NexT.boot.registerEvents = function () {
   NexT.utils.registerScrollPercent();
   NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.
-  document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {
+  document.querySelector('.site-nav-toggle .toggle').addEventListener('click', function (event) {
     event.currentTarget.classList.toggle('toggle-close');
-    const siteNav = document.querySelector('.site-nav');
+    var siteNav = document.querySelector('.site-nav');
     if (!siteNav) return;
     siteNav.style.setProperty('--scroll-height', siteNav.scrollHeight + 'px');
     document.body.classList.toggle('site-nav-on');
   });
-
-  document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
-    element.addEventListener('click', () => {
+  document.querySelectorAll('.sidebar-nav li').forEach(function (element, index) {
+    element.addEventListener('click', function () {
       NexT.utils.activateSidebarPanel(index);
     });
   });
-
-  window.addEventListener('hashchange', () => {
-    const tHash = location.hash;
+  window.addEventListener('hashchange', function () {
+    var tHash = location.hash;
     if (tHash !== '' && !tHash.match(/%\S{2}/)) {
-      const target = document.querySelector(`.tabs ul.nav-tabs li a[href="${tHash}"]`);
+      var target = document.querySelector(".tabs ul.nav-tabs li a[href=\"".concat(tHash, "\"]"));
       target && target.click();
     }
   });
-
-  window.addEventListener('tabs:click', e => {
+  window.addEventListener('tabs:click', function (e) {
     NexT.utils.registerCodeblock(e.target);
   });
 };
-
-NexT.boot.refresh = function() {
-
+NexT.boot.refresh = function () {
   /**
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
@@ -47,7 +40,6 @@ NexT.boot.refresh = function() {
   });
   CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
-
   CONFIG.exturl && NexT.utils.registerExtURL();
   NexT.utils.wrapTableWithBox();
   NexT.utils.registerCodeblock();
@@ -58,21 +50,14 @@ NexT.boot.refresh = function() {
   NexT.utils.registerPostReward();
   NexT.utils.registerVideoIframe();
 };
-
-NexT.boot.motion = function() {
+NexT.boot.motion = function () {
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .add(NexT.motion.middleWares.header)
-      .add(NexT.motion.middleWares.postList)
-      .add(NexT.motion.middleWares.sidebar)
-      .add(NexT.motion.middleWares.footer)
-      .bootstrap();
+    NexT.motion.integrator.add(NexT.motion.middleWares.header).add(NexT.motion.middleWares.postList).add(NexT.motion.middleWares.sidebar).add(NexT.motion.middleWares.footer).bootstrap();
   }
   NexT.utils.updateSidebarPosition();
 };
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
   NexT.boot.registerEvents();
   NexT.boot.refresh();
   NexT.boot.motion();

@@ -1,12 +1,10 @@
 /* global CONFIG */
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  const isRight = CONFIG.sidebar.position === 'right';
-
-  const sidebarToggleMotion = {
+document.addEventListener('DOMContentLoaded', function () {
+  var isRight = CONFIG.sidebar.position === 'right';
+  var sidebarToggleMotion = {
     mouse: {},
-    init : function() {
+    init: function init() {
       window.addEventListener('mousedown', this.mousedownHandler.bind(this));
       window.addEventListener('mouseup', this.mouseupHandler.bind(this));
       document.querySelector('.sidebar-dimmer').addEventListener('click', this.clickHandler.bind(this));
@@ -14,47 +12,47 @@ document.addEventListener('DOMContentLoaded', () => {
       window.addEventListener('sidebar:show', this.showSidebar);
       window.addEventListener('sidebar:hide', this.hideSidebar);
     },
-    mousedownHandler: function(event) {
+    mousedownHandler: function mousedownHandler(event) {
       this.mouse.X = event.pageX;
       this.mouse.Y = event.pageY;
     },
-    mouseupHandler: function(event) {
-      const deltaX = event.pageX - this.mouse.X;
-      const deltaY = event.pageY - this.mouse.Y;
-      const clickingBlankPart = Math.hypot(deltaX, deltaY) < 20 && event.target.matches('.main');
+    mouseupHandler: function mouseupHandler(event) {
+      var deltaX = event.pageX - this.mouse.X;
+      var deltaY = event.pageY - this.mouse.Y;
+      var clickingBlankPart = Math.hypot(deltaX, deltaY) < 20 && event.target.matches('.main');
       // Fancybox has z-index property, but medium-zoom does not, so the sidebar will overlay the zoomed image.
       if (clickingBlankPart || event.target.matches('img.medium-zoom-image')) {
         this.hideSidebar();
       }
     },
-    clickHandler: function() {
+    clickHandler: function clickHandler() {
       document.body.classList.contains('sidebar-active') ? this.hideSidebar() : this.showSidebar();
     },
-    showSidebar: function() {
+    showSidebar: function showSidebar() {
       document.body.classList.add('sidebar-active');
-      const animateAction = isRight ? 'fadeInRight' : 'fadeInLeft';
-      document.querySelectorAll('.sidebar .animated').forEach((element, index) => {
-        element.style.animationDelay = (100 * index) + 'ms';
+      var animateAction = isRight ? 'fadeInRight' : 'fadeInLeft';
+      document.querySelectorAll('.sidebar .animated').forEach(function (element, index) {
+        element.style.animationDelay = 100 * index + 'ms';
         element.classList.remove(animateAction);
-        setTimeout(() => {
+        setTimeout(function () {
           // Trigger a DOM reflow
           element.classList.add(animateAction);
         });
       });
     },
-    hideSidebar: function() {
+    hideSidebar: function hideSidebar() {
       document.body.classList.remove('sidebar-active');
     }
   };
   if (CONFIG.sidebar.display !== 'remove') sidebarToggleMotion.init();
-
   function updateFooterPosition() {
-    const footer = document.querySelector('.footer');
-    const containerHeight = document.querySelector('.main').offsetHeight + footer.offsetHeight;
+    var footer = document.querySelector('.footer');
+    var containerHeight = document.querySelector('.main').offsetHeight + footer.offsetHeight;
     footer.classList.toggle('footer-fixed', containerHeight <= window.innerHeight);
   }
-
   updateFooterPosition();
   window.addEventListener('resize', updateFooterPosition);
-  window.addEventListener('scroll', updateFooterPosition, { passive: true });
+  window.addEventListener('scroll', updateFooterPosition, {
+    passive: true
+  });
 });

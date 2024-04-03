@@ -1,19 +1,20 @@
 /* global NexT, CONFIG, MathJax */
 
-document.addEventListener('page:loaded', () => {
+document.addEventListener('page:loaded', function () {
   if (!CONFIG.enableMath) return;
-
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       tex: {
-        inlineMath: { '[+]': [['$', '$']] },
-        tags      : CONFIG.mathjax.tags
+        inlineMath: {
+          '[+]': [['$', '$']]
+        },
+        tags: CONFIG.mathjax.tags
       },
       options: {
         renderActions: {
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              const target = node.parentNode;
+          insertedScript: [200, function () {
+            document.querySelectorAll('mjx-container').forEach(function (node) {
+              var target = node.parentNode;
               if (target.nodeName.toLowerCase() === 'li') {
                 target.parentNode.classList.add('has-jax');
               }

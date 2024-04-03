@@ -1,18 +1,16 @@
 /* global CONFIG, Chatra */
 
-(function() {
+(function () {
   if (CONFIG.chatra.embed) {
     window.ChatraSetup = {
-      mode    : 'frame',
+      mode: 'frame',
       injectTo: CONFIG.chatra.embed
     };
   }
-
   window.ChatraID = CONFIG.chatra.id;
-
-  const chatButton = document.querySelector('.sidebar-button button');
+  var chatButton = document.querySelector('.sidebar-button button');
   if (chatButton) {
-    chatButton.addEventListener('click', () => {
+    chatButton.addEventListener('click', function () {
       Chatra('openChat', true);
     });
   }
