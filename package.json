@@ -1,12 +1,13 @@
 {
   "name": "batype-note",
-  "version": "0.0.117",
+  "version": "0.0.118",
   "private": true,
   "scripts": {
     "build": "hexo clean && hexo generate",
     "clean": "hexo clean",
     "release": "npm run build && gh-pages -d public",
     "start": "hexo server -p 8888",
+    "server-d": "hexo server -d",
     "create:page": "hexo new page --path about/me `about me`",
     "prod": "node ./publish/publish.js"
   },
@@ -14,9 +15,13 @@
     "version": "6.3.0"
   },
   "dependencies": {
+    "@babel/core": "^7.24.3",
+    "@babel/preset-env": "^7.24.3",
     "expect": "^29.7.0",
     "gh-pages": "^6.0.0",
     "hexo": "^6.3.0",
+    "hexo-admin": "^2.3.0",
+    "hexo-babel": "^1.1.14",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-feed": "^3.0.0",
@@ -24,6 +29,8 @@
     "hexo-generator-searchdb": "^1.4.1",
     "hexo-generator-sitemap": "^3.0.1",
     "hexo-generator-tag": "^2.0.0",
+    "hexo-html-minifier": "^1.0.0",
+    "hexo-pangu": "^0.2.2",
     "hexo-plugin-readmore": "^0.1.1",
     "hexo-related-posts": "^1.5.1",
     "hexo-renderer-ejs": "^2.0.0",

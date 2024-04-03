@@ -116,8 +116,29 @@ plugins:
       name: BaType
       qrcode: https://i.postimg.cc/BnGK06H2/qrcode-for-gh-50f2ce2229c5-258.jpg
       keyword: 666
-      
+
 feed:
   type: rss
   path: rss.xml
   limit: 20
+
+html_minifier:
+  collapseBooleanAttributes: true
+  collapseWhitespace: true
+  # Ignore '<!-- more -->' https://hexo.io/docs/tag-plugins#Post-Excerpt
+  ignoreCustomComments: [!!js/regexp /^\s*more/]
+  removeComments: true
+  removeEmptyAttributes: true
+  removeScriptTypeAttributes: true
+  removeStyleLinkTypeAttributes: true
+  minifyJS: true
+  minifyCSS: true
+
+babel:
+  options:
+    presets:
+      - - "@babel/preset-env"
+        - targets: last 5 versions, not dead, > 0.3%
+    sourceType: script
+  exclude:
+    - "*.min.js"
