@@ -7,8 +7,14 @@ title: batype-note
 subtitle: ""
 description: "Notes on personal growth"
 keywords:
+  - batype
+  - songshao
+  - batype-note
 author: songshao
-language: en
+language:
+  - en
+  - zh-CN
+  - zh-TW
 timezone: ""
 
 # URL
