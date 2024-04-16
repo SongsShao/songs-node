@@ -1,6 +1,6 @@
 ---
 title: HTTP 请求流程
-permalink: /browser/protocol/http-flow.html
+permalink: /browser/protocol/http/flow.html
 date: 2024年04月11日14:16:08
 description: HTTP是一种允许浏览器向服务器获取资源的协议，是Web的基础，通常由浏览器发起请求，用来获取不同类型的文件，例如HTML文件、CSS文件、JavaScript文件、图片、视频等。此外，HTTP也是浏览器使用最广的协议，所以要想学好浏览器，就要先深入了解HTTP。
 tag: [前端, 浏览器, http]
