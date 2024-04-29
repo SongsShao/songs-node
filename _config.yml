@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: batype-note
-subtitle: ""
-description: "Notes on personal growth"
+title: note
+subtitle: "This is Batype's note website"
+description: "This is Batype's note website, where users take learning notes for easy and quick viewing, providing examples of quick development solutions."
 keywords:
   - batype
   - songshao
@@ -56,7 +56,7 @@ highlight:
   auto_detect: false
   tab_replace: ""
   wrap: true
-  hljs: false
+  hljs: true
 prismjs:
   enable: false
   preprocess: true
@@ -148,3 +148,14 @@ babel:
     sourceType: script
   exclude:
     - "*.min.js"
+
+marked:
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
+  modifyAnchors: ""
+  autolink: true
