@@ -1,14 +1,14 @@
 ---
 title: 垃圾回收：Scavenge算法
-permalink: /browser/javascript/v8/scavenge-algorithm.html
+# permalink: /browser/v8/ScavengeAlgorithm.html
 date: 2024年04月30日14:17:11
-description: Scavenge算法是一种特定于垃圾回收（Garbage Collection, GC）技术的算法，主要在一些现代编程语言的运行时环境中被实现，例如在V8 JavaScript引擎中。它是一种采用分代回收（Generational Collection）策略的垃圾回收机制的一部分，着重于快速高效地回收年轻代（Young Generation）中的对象。
-tag: [前端, javascript, v8]
-comments: true
-categories: 
- - 浏览器
- - javascript
- - v8
+# description: Scavenge算法是一种特定于垃圾回收（Garbage Collection, GC）技术的算法，主要在一些现代编程语言的运行时环境中被实现，例如在V8 JavaScript引擎中。它是一种采用分代回收（Generational Collection）策略的垃圾回收机制的一部分，着重于快速高效地回收年轻代（Young Generation）中的对象。
+# tag: [前端, javascript, v8]
+# comments: true
+# categories: 
+#  - 浏览器
+#  - javascript
+#  - v8
 ---
 
 Scavenge算法是一种特定于垃圾回收（Garbage Collection, GC）技术的算法，主要在一些现代编程语言的运行时环境中被实现，例如在V8 JavaScript引擎中。它是一种采用分代回收（Generational Collection）策略的垃圾回收机制的一部分，着重于快速高效地回收年轻代（Young Generation）中的对象。

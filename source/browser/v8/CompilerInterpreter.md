@@ -1,14 +1,14 @@
 ---
 title: 编译器和解释器：V8是如何执行一段JavaScript代码的？
-permalink: /browser/javascript/v8/compiler-interpreter.html
+# permalink: /browser/v8/compiler-interpreter.html
 date: 2024年04月29日18:28:15
-description: 要深入理解V8的工作原理，你需要搞清楚一些概念和原理，比如接下来我们要详细讲解的编译器（Compiler）、解释器（Interpreter）、抽象语法树（AST）、字节码（Bytecode）、即时编译器（JIT）等概念，都是你需要重点关注的。
-tag: [前端, javascript, v8]
-comments: true
-categories: 
- - 浏览器
- - javascript
- - v8
+# description: 要深入理解V8的工作原理，你需要搞清楚一些概念和原理，比如接下来我们要详细讲解的编译器（Compiler）、解释器（Interpreter）、抽象语法树（AST）、字节码（Bytecode）、即时编译器（JIT）等概念，都是你需要重点关注的。
+# tag: [前端, javascript, v8]
+# comments: true
+# categories: 
+#  - 浏览器
+#  - javascript
+#  - v8
 ---
 
 前面我们已经花了很多篇幅来介绍JavaScript是如何工作的，了解这些内容能帮助你从底层理解JavaScript的工作机制，从而能帮助你更好地理解和应用JavaScript。

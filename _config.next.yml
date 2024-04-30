@@ -38,7 +38,7 @@ custom_file_path:
 # scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-scheme: Muse
+scheme: Gemini
 
 # Dark Mode
 darkmode: true
@@ -95,15 +95,17 @@ menu:
   archives: /archives/ || fa fa-archive
   schedule: /schedule/ || fa fa-calendar
   # commonweal: /404/ || fa fa-heartbeat
-  Docs:
-    default: /docs/ || fa fa-book
-
-    #Getting Started:
-    #  default: /getting-started/ || fa fa-flag
-    #  Installation: /installation.html || fa fa-download
-    #  Deployment: /deployment.html || fa fa-upload
-    #  Configuration: /configuration.html || fa fa-wrench
-    #  Upgrade: /upgrade.html || fa fa-history
+  Browser:
+    default: /browser/ || fa fa-globe
+    "v8":
+      default: /v8/ || fa fa-tags
+      "栈空间和堆空间": /StackAndHeap.html || fa fa-book
+      "垃圾回收": /GarbageCollection.html || fa fa-book
+      "编译器和解释器": /CompilerInterpreter.html || fa fa-book
+      "Scavenge": /ScavengeAlgorithm.html || fa fa-book
+      "Mark-Sweep": /MarkSweep.html || fa fa-book
+      "Mark-Compact": /MarkCompact.html || fa fa-book
+      "Incremental-Marking": /IncrementalMarking.html || fa fa-book
     #Theme Settings:
     #  default: /theme-settings/ || fa fa-star
     #  Sidebar: /sidebar.html || fa fa-bars

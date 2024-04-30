@@ -1,14 +1,14 @@
 ---
 title: 栈空间和堆空间：数据是如何存储的？
-permalink: /browser/javascript/v8/stackAndHeap.html
+# permalink: /browser/v8/StackAndHeap.html
 date: 2024年04月29日15:30:41
-description: 对于前端开发者来说，JavaScript的内存机制是一个不被经常提及的概念 ，因此很容易被忽视。特别是一些非计算机专业的同学，对内存机制可能没有非常清晰的认识，甚至有些同学根本就不知道JavaScript的内存机制是什么。
-tag: [前端, javascript, v8]
-comments: true
-categories: 
- - 浏览器
- - javascript
- - v8
+# description: 对于前端开发者来说，JavaScript的内存机制是一个不被经常提及的概念 ，因此很容易被忽视。特别是一些非计算机专业的同学，对内存机制可能没有非常清晰的认识，甚至有些同学根本就不知道JavaScript的内存机制是什么。
+# tag: [前端, javascript, v8]
+# comments: true
+# categories: 
+#  - 浏览器
+#  - javascript
+#  - v8
 ---
 
 对于前端开发者来说，JavaScript的内存机制是一个不被经常提及的概念 ，因此很容易被忽视。特别是一些非计算机专业的同学，对内存机制可能没有非常清晰的认识，甚至有些同学根本就不知道JavaScript的内存机制是什么。
