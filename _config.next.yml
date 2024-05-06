@@ -106,6 +106,13 @@ menu:
       "Mark-Sweep": /MarkSweep.html || fa fa-book
       "Mark-Compact": /MarkCompact.html || fa fa-book
       "Incremental-Marking": /IncrementalMarking.html || fa fa-book
+    "页面循环系统":
+      default: /pageEventLoop/ || fa fa-tags
+      "setTimeout": /setTimeout.html || fa fa-book
+      "requestAnimationFrame": /requestAnimationFrame.html || fa fa-book
+      "XMLHttpRequest": /XMLHttpRequest.html || fa fa-book
+      "宏任务和微任务": /MacroAndMicroTasks.html || fa fa-book
+      "PromiseXFetch": /PromiseXFetch.html || fa fa-book
     #Theme Settings:
     #  default: /theme-settings/ || fa fa-star
     #  Sidebar: /sidebar.html || fa fa-bars
@@ -513,8 +520,8 @@ note:
   #  - modern    bootstrap callout new (v2-v3) alert style.
   #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
   #  - disabled  disable all CSS styles import of note tag.
-  style: simple
-  icons: false
+  style: modern
+  icons: true
   # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
   # Offset also applied to label tag variables. This option can work with disabled note tag.
   light_bg_offset: 0
@@ -522,9 +529,9 @@ note:
 # Tabs tag
 tabs:
   # Make the nav bar of tabs with long content stick to the top.
-  sticky: false
+  sticky: true
   transition:
-    tabs: false
+    tabs: true
     labels: true
 
 # PDF tag
