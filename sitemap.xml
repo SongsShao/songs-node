@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://note.batype.com/browser/v8/StacksAndHeap.html</loc>
+    <loc>https://note.batype.com/browser/v8/StackAndHeap.html</loc>
     
     <lastmod>2024-05-06</lastmod>
     
@@ -533,7 +533,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/web/image/perform.html</loc>
+    <loc>https://note.batype.com/web/security/question.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -542,7 +542,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/web/security/question.html</loc>
+    <loc>https://note.batype.com/web/image/perform.html</loc>
     
     <lastmod>2023-11-09</lastmod>
     
@@ -916,6 +916,13 @@
   </url>
   
   <url>
+    <loc>https://note.batype.com/tags/Pagination/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://note.batype.com/tags/ReadMore/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -924,34 +931,6 @@
   
   <url>
     <loc>https://note.batype.com/tags/RSS/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/Pagination/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/Event-Loop/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/JavaScript/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/es6/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1042,6 +1021,27 @@
   </url>
   
   <url>
+    <loc>https://note.batype.com/tags/JavaScript/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/es6/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/Event-Loop/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://note.batype.com/tags/react/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -1064,34 +1064,6 @@
   
   <url>
     <loc>https://note.batype.com/tags/type/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/uni-app/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/vue/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/AppUpdate/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/tags/canvas/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1140,6 +1112,34 @@
   </url>
   
   <url>
+    <loc>https://note.batype.com/tags/uni-app/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/vue/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/AppUpdate/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/tags/canvas/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://note.batype.com/tags/docker-compose/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -1161,14 +1161,14 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/npm/</loc>
+    <loc>https://note.batype.com/tags/WebPack/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/nrm/</loc>
+    <loc>https://note.batype.com/tags/npm/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1182,7 +1182,7 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/tags/WebPack/</loc>
+    <loc>https://note.batype.com/tags/nrm/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1317,13 +1317,6 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/javascript/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/es6/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -1331,7 +1324,14 @@
   </url>
   
   <url>
-    <loc>https://note.batype.com/categories/uni-app/</loc>
+    <loc>https://note.batype.com/categories/linux/docker/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/linux/git/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1346,48 +1346,6 @@
   
   <url>
     <loc>https://note.batype.com/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/categories/linux/docker/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/categories/linux/docker-compose/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/categories/linux/git/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/categories/linux/wechat/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
-    <lastmod>2024-05-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/WebPack/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1415,6 +1373,13 @@
   </url>
   
   <url>
+    <loc>https://note.batype.com/categories/uni-app/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://note.batype.com/categories/linux/scp/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
@@ -1422,7 +1387,35 @@
   </url>
   
   <url>
+    <loc>https://note.batype.com/categories/linux/docker-compose/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/linux/wechat/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/WebPack/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://note.batype.com/categories/linux/zip/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/npm/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1437,6 +1430,13 @@
   
   <url>
     <loc>https://note.batype.com/categories/linux/zsh/</loc>
+    <lastmod>2024-05-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://note.batype.com/categories/%E5%89%8D%E7%AB%AF/javascript/</loc>
     <lastmod>2024-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
