@@ -4,6 +4,7 @@ NexT.boot = {};
 NexT.boot.registerEvents = function () {
   NexT.utils.registerScrollPercent();
   NexT.utils.registerCanIUseTag();
+  NexT.utils.updateFooterPosition();
 
   // Mobile top menu bar.
   document.querySelector('.site-nav-toggle .toggle').addEventListener('click', function (event) {
@@ -53,7 +54,7 @@ NexT.boot.refresh = function () {
 NexT.boot.motion = function () {
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
-    NexT.motion.integrator.add(NexT.motion.middleWares.header).add(NexT.motion.middleWares.postList).add(NexT.motion.middleWares.sidebar).add(NexT.motion.middleWares.footer).bootstrap();
+    NexT.motion.integrator.add(NexT.motion.middleWares.header).add(NexT.motion.middleWares.sidebar).add(NexT.motion.middleWares.postList).add(NexT.motion.middleWares.footer).bootstrap();
   }
   NexT.utils.updateSidebarPosition();
 };
