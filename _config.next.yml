@@ -117,44 +117,8 @@ menu:
     "浏览器中的页面":
       default: /pages/ || fa fa-tags
       "DOM树": /DOMTree.html || fa fa-book
-    #Theme Settings:
-    #  default: /theme-settings/ || fa fa-star
-    #  Sidebar: /sidebar.html || fa fa-bars
-    #  Footer: /footer.html || fa fa-sticky-note
-    #  Posts: /posts.html || fa fa-paragraph
-    #  Custom Pages: /custom-pages.html || fa fa-swatchbook
-    #  Miscellaneous: /miscellaneous.html || fa fa-university
-    #  SEO: /seo.html || fa fa-external-link-square-alt
-    #  i18n: /internationalization.html || fa fa-language
-    #Tag Plugins:
-    #  default: /tag-plugins/ || fa fa-rocket
-    #  Button: /button.html || fa fa-cube
-    #  Caniuse: /caniuse.html || fa fa-signal
-    #  Group Pictures: /group-pictures.html || fa fa-images
-    #  Label: /label.html || fa fa-hat-wizard
-    #  Link Grid: /link-grid.html || fa fa-grip-vertical
-    #  Mermaid: /mermaid.html || fa fa-project-diagram
-    #  WaveDrom: /wavedrom.html || fa fa-diagram-predecessor
-    #  Note: /note.html || fa fa-adjust
-    #  PDF: /pdf.html || fa fa-file-pdf
-    #  Tabs: /tabs.html || fa fa-columns
-    #Third Party Plugins:
-    #  default: /third-party-services/ || fa fa-puzzle-piece
-    #  Math Equations: /math-equations.html || fa fa-square-root-alt
-    #  External Libraries: /external-libraries.html || fa fa-lightbulb
-    #  Comment Systems: /comments.html || fa fa-comment-alt
-    #  Post Widgets: /post-widgets.html || fa fa-gift
-    #  Statistics and Analytics: /statistics-and-analytics.html || fa fa-chart-pie
-    #  Search Services: /search-services.html || fab fa-algolia
-    #  Chat Services: /chat-services.html || fa fa-comments
-    #Advanced Settings:
-    #  default: /advanced-settings/ || fa fa-cog
-    #  Vendors: /vendors.html || fa fa-plug
-    #  Custom Files: /custom-files.html || fa fa-palette
-    #  Injects: injects.html || fa fa-layer-group
-    #  Front Matter: /front-matter.html || fa fa-edit
-    #Troubleshooting: /troubleshooting.html || fa fa-life-ring
-
+      "渲染流水线": /RenderPipeline.html || fa fa-book
+      "分层和合成机制": /LayeAndSynMecha.html || fa fa-book
 # ---------------------------------------------------------------
 #                    baidu site map
 # ---------------------------------------------------------------
@@ -239,6 +203,7 @@ links:
   algorithm-note: https://algorithm.batype.com
   mukang: https://mukang.net.cn
   csdn: https://blog.csdn.net/qq_35490191
+  聚合图床: https://www.superbed.cn
 
 # Table of Contents in the Sidebar
 # Front-matter variable (nonsupport wrap expand_all).
