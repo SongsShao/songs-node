@@ -120,6 +120,7 @@ menu:
       "渲染流水线": /RenderPipeline.html || fa fa-book
       "分层和合成机制": /LayeAndSynMecha.html || fa fa-book
       "Performance": /Performance.html || fa fa-book
+      "VirtualDOM" VirtualDOM.html || fa fa-book
 
 # ---------------------------------------------------------------
 #                    baidu site map
