@@ -114,6 +114,7 @@ menu:
       "XMLHttpRequest": /XMLHttpRequest.html || fa fa-book
       "宏任务和微任务": /MacroAndMicroTasks.html || fa fa-book
       "PromiseXFetch": /PromiseXFetch.html || fa fa-book
+      "Async/Await": /AsyncAwait.html || fa fa-book
     "浏览器中的页面":
       default: /pages/ || fa fa-tags
       "DOM树": /DOMTree.html || fa fa-book
