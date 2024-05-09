@@ -157,7 +157,7 @@ setTimeout函数触发的回调函数都是宏任务，如图中，左右两个�
 
 最后我们介绍了监听DOM变化技术方案的演化史，从轮询到Mutation Event再到最新使用的MutationObserver。MutationObserver方案的核心就是采用了微任务机制，有效地权衡了实时性和执行效率的问题。
 
-## 思考时间
+## 课外作业
 
 下篇文章我会从Promise产生的动机角度来分析Promise，这需要一定的Promise基础，所以今天留给你的作业是搞清楚Promise的工作原理，弄清楚下面这段代码的输出结果，并解释其原因。
 

@@ -97,6 +97,7 @@ menu:
   # commonweal: /404/ || fa fa-heartbeat
   Browser:
     default: /browser/ || fa fa-globe
+    "Browser": / || fa fa-globe
     "v8":
       default: /v8/ || fa fa-tags
       "栈空间和堆空间": /StackAndHeap.html || fa fa-book
@@ -122,7 +123,7 @@ menu:
       "分层和合成机制": /LayeAndSynMecha.html || fa fa-book
       "Performance": /Performance.html || fa fa-book
       "VirtualDOM": /VirtualDOM.html || fa fa-book
-
+      "WebComponent": /WebComponent.html || fa fa-book
 # ---------------------------------------------------------------
 #                    baidu site map
 # ---------------------------------------------------------------

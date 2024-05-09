@@ -101,7 +101,7 @@ will-change: transform, opacity;
 - 然后我们重点介绍了浏览器是怎么实现合成的，其技术细节主要可以使用三个词来概括：分层、分块和合成。
 - 最后我们还讲解了CSS动画比JavaScript动画高效的原因，以及怎么使用 will-change来优化动画或特效。
 
-## 思考时间
+## 课外作业
 
 观察下面代码，结合Performance面板、内存面板和分层面板，全面比较在box中使用 will-change和不使用 will-change的效率、性能和内存占用等情况。
 
