@@ -1,7 +1,7 @@
 /* global NexT, CONFIG, Pjax */
 
 var pjax = new Pjax({
-  selectors: ['head title', 'meta[property="og:title"]', 'script[type="application/json"]',
+  selectors: ['head title', 'script[type="application/json"]',
   // Precede .main-inner to prevent placeholder TOC changes asap
   '.post-toc-wrap', '.main-inner', '.languages', '.pjax'],
   switches: {
@@ -26,9 +26,9 @@ document.addEventListener('pjax:success', function () {
   NexT.boot.refresh();
   // Define Motion Sequence & Bootstrap Motion.
   if (CONFIG.motion.enable) {
-    NexT.motion.integrator.init().add(NexT.motion.middleWares.subMenu)
+    NexT.motion.integrator.init().add(NexT.motion.middleWares.subMenu).add(NexT.motion.middleWares.postList)
     // Add sidebar-post-related transition.
-    .add(NexT.motion.middleWares.sidebar).add(NexT.motion.middleWares.postList).bootstrap();
+    .add(NexT.motion.middleWares.sidebar).bootstrap();
   }
   if (CONFIG.sidebar.display !== 'remove') {
     var hasTOC = document.querySelector('.post-toc:not(.placeholder-toc)');
