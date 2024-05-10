@@ -35,6 +35,12 @@ comments: false
 [05.虚拟DOM ：虚拟DOM和实际的DOM有何不同？](/browser/pages/VirtualDOM.html)
 [06. WebComponent：像搭积木一样构建Web应用](/browser/pages/WebComponent.html)
 
+## 浏览器中的网络
+
+[01. HTTP/1：HTTP性能优化](/browser/http/1.html)
+[02. HTTP/2：如何提升网络速度？](/browser/http/2.html)
+[03. HTTP/3：甩掉TCP、TLS 的包袱，构建高效网络](/browser/http/3.html)
+
 ## 浏览器的安全
 
 [01. 同源策略：为什么XMLHttpRequest不能跨域请求资源？](/browser/security/SameOriginPolicy.html)

@@ -124,10 +124,16 @@ menu:
       "Performance": /Performance.html || fa fa-book
       "VirtualDOM": /VirtualDOM.html || fa fa-book
       "WebComponent": /WebComponent.html || fa fa-book
+    "浏览器中的网络":
+      default: /http/ || fa fa-tags
+      "HTTP/1": /1.html || fa fa-book
+      "HTTP/2": /2.html || fa fa-book
+      "HTTP/3": /3.html || fa fa-book
     "浏览器的安全":
       default: /security/ || fa fa-tags
       "同源策略": /SameOriginPolicy.html || fa fa-book
       "跨站脚本攻击（XSS）": /CrossSiteScripting.html || fa fa-book
+
 # ---------------------------------------------------------------
 #                    baidu site map
 # ---------------------------------------------------------------
