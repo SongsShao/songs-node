@@ -124,6 +124,11 @@ menu:
       "Performance": /Performance.html || fa fa-book
       "VirtualDOM": /VirtualDOM.html || fa fa-book
       "WebComponent": /WebComponent.html || fa fa-book
+    "浏览器中的网络":
+      default: /http/ || fa fa-tags
+      "HTTP/1": /1.html || fa fa-book
+      "HTTP/2": /2.html || fa fa-book
+      "HTTP/3": /3.html || fa fa-book
 # ---------------------------------------------------------------
 #                    baidu site map
 # ---------------------------------------------------------------
