@@ -34,3 +34,8 @@ comments: false
 [04.页面性能：如何系统地优化页面？](/browser/pages/Performance.html)
 [05.虚拟DOM ：虚拟DOM和实际的DOM有何不同？](/browser/pages/VirtualDOM.html)
 [06. WebComponent：像搭积木一样构建Web应用](/browser/pages/WebComponent.html)
+
+## 浏览器的安全
+
+[01. 同源策略：为什么XMLHttpRequest不能跨域请求资源？](/browser/security/SameOriginPolicy.html)
+[02. 跨站脚本攻击（XSS）：为什么Cookie中有HttpOnly属性？](/browser/security/CorssSiteScripting.html)
