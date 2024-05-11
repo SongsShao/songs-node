@@ -6,3 +6,4 @@ comments: false
 
 [01. 同源策略：为什么XMLHttpRequest不能跨域请求资源？](/browser/security/SameOriginPolicy.html)
 [02. 跨站脚本攻击（XSS）：为什么Cookie中有HttpOnly属性？](/browser/security/CorssSiteScripting.html)
+[03. CSRF攻击：陌生链接不要随便点](/browser/security/CrossSiteRequestForgery.html)
