@@ -2,12 +2,12 @@
 title: Acme 证书
 permalink: /linux/cert/acme.html
 date: 2024年05月11日17:15:29
-description: 使用dpkg命令：在终端中运行以下命令来安装.deb文件。
-tag: [前端, Git, linux, deb]
+description: cme.sh 是一个纯 Unix Shell 脚本，用于从证书颁发机构（如 Let’s Encrypt）自动获得 SSL/TLS 证书。
+tag: [nginx, linux, cert]
 comments: true
 categories: 
- - 前端
- - es6
+ - linux
+ - nginx
 ---
 
 acme.sh 是一个纯 Unix Shell 脚本，用于从证书颁发机构（如 Let's Encrypt）自动获得 SSL/TLS 证书。它实现了 ACME 协议并支持多种 DNS 服务商解析，包括阿里云（Alibaba Cloud）。
