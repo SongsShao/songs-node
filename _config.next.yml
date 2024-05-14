@@ -134,7 +134,8 @@ menu:
       "同源策略": /SameOriginPolicy.html || fa fa-book
       "跨站脚本攻击（XSS）": /CrossSiteScripting.html || fa fa-book
       "跨站请求伪造攻击（CSRF）": /CrossSiteRequestForgery.html || fa fa-book
-
+      "安全沙箱": /SecuritySandbox.html || fa fa-book
+      "HTTPS": /HTTPS.html || fa fa-book
 # ---------------------------------------------------------------
 #                    baidu site map
 # ---------------------------------------------------------------
