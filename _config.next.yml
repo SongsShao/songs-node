@@ -793,9 +793,9 @@ clarity_analytics: # <project_id>
 # Matomo Analytics
 # See: https://matomo.org/
 matomo:
-  enable: false
-  server_url: # https://www.example.com/
-  site_id: # <your site id>
+  enable: true
+  server_url: https://batype.matomo.cloud/
+  site_id: "1"
 
 # Umami Analytics
 # See: https://umami.is/
