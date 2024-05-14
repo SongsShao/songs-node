@@ -2,7 +2,7 @@
 title: Acme 证书
 permalink: /linux/cert/acme.html
 date: 2024年05月11日17:15:29
-description: cme.sh 是一个纯 Unix Shell 脚本，用于从证书颁发机构（如 Let’s Encrypt）自动获得 SSL/TLS 证书。
+description: Acme.sh 是一个纯 Unix Shell 脚本，用于从证书颁发机构（如 Let’s Encrypt）自动获得 SSL/TLS 证书。
 tag: [nginx, linux, cert]
 comments: true
 categories: 
