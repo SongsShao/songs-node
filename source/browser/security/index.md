@@ -9,3 +9,5 @@ comments: false
 [03. CSRF攻击：陌生链接不要随便点](/browser/security/CrossSiteRequestForgery.html)
 [04. 安全沙箱：页面和系统之间的隔离墙](/browser/security/SecuritySandbox.html)
 [05. HTTPS：让数据传输更安全](/browser/security/HTTPS.html)
+[06. HTTPS: 浏览器如何验证CA证有效性？](/browser/security/HTTPSCA.html)
+

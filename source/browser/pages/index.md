@@ -10,3 +10,5 @@ comments: false
 [04. 页面性能：如何系统地优化页面？](/browser/pages/Performance.html)
 [05. 虚拟DOM ：虚拟DOM和实际的DOM有何不同？](/browser/pages/VirtualDOM.html)
 [06. WebComponent：像搭积木一样构建Web应用](/browser/pages/WebComponent.html)
+[07. 页面性能工具: 如何使用Performance？](/browser/pages/PagePerformanceTools.html)
+[08.性能分析工具：如何分析Performance中的Main指标？](/borwser/pages/PerformanceAnalysisTools.html)

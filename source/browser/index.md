@@ -25,6 +25,7 @@ comments: false
 [05.宏任务和微任务：不是所有任务都是一个待遇](/browser/pageEventLoop/MacroAndMicroTasks.html)
 [06. Promise：使用Promise，告别回调函数](/browser/pageEventLoop/PromiseXFetch.html)
 [07. async/await：使用同步的方式去写异步代码](/browser/pageEventLoop/AsyncAwait.html)
+[08. 任务调度：有了setTimeOut，为什么还要使用rAF？](/browser/pageEventLoop/TaskSchedule.html)
 
 ## 浏览器中的页面
 
@@ -34,6 +35,8 @@ comments: false
 [04.页面性能：如何系统地优化页面？](/browser/pages/Performance.html)
 [05.虚拟DOM ：虚拟DOM和实际的DOM有何不同？](/browser/pages/VirtualDOM.html)
 [06. WebComponent：像搭积木一样构建Web应用](/browser/pages/WebComponent.html)
+[07. 页面性能工具: 如何使用Performance？](/browser/pages/PagePerformanceTools.html)
+[08.性能分析工具：如何分析Performance中的Main指标？](/borwser/pages/PerformanceAnalysisTools.html)
 
 ## 浏览器中的网络
 
@@ -48,4 +51,4 @@ comments: false
 [03. CSRF攻击：陌生链接不要随便点](/browser/security/CrossSiteRequestForgery.html)
 [04. 安全沙箱：页面和系统之间的隔离墙](/browser/security/SecuritySandbox.html)
 [05. HTTPS：让数据传输更安全](/browser/security/HTTPS.html)
-
+[06. HTTPS: 浏览器如何验证CA证有效性？](/browser/security/HTTPSCA.html)

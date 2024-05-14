@@ -116,6 +116,7 @@ menu:
       "宏任务和微任务": /MacroAndMicroTasks.html || fa fa-book
       "PromiseXFetch": /PromiseXFetch.html || fa fa-book
       "Async/Await": /AsyncAwait.html || fa fa-book
+      "任务调度": /TaskSchedule.html || fa fa-book
     "浏览器中的页面":
       default: /pages/ || fa fa-tags
       "DOM树": /DOMTree.html || fa fa-book
@@ -124,6 +125,8 @@ menu:
       "Performance": /Performance.html || fa fa-book
       "VirtualDOM": /VirtualDOM.html || fa fa-book
       "WebComponent": /WebComponent.html || fa fa-book
+      "页面性能工具": /PagePerformanceTools.html || fa fa-book
+      "性能分析工具": /PerformanceAnalysisTools.html || fa fa-book
     "浏览器中的网络":
       default: /http/ || fa fa-tags
       "HTTP/1": /1.html || fa fa-book
@@ -136,6 +139,7 @@ menu:
       "跨站请求伪造攻击（CSRF）": /CrossSiteRequestForgery.html || fa fa-book
       "安全沙箱": /SecuritySandbox.html || fa fa-book
       "HTTPS": /HTTPS.html || fa fa-book
+      "HTTPS CA认证": /HTTPSCA.html || fa fa-book
 # ---------------------------------------------------------------
 #                    baidu site map
 # ---------------------------------------------------------------
@@ -143,7 +147,7 @@ sitemap:
   path: sitmap.xml
 #baidusitemap:
 #  path: baidusitemap.xml
-
+ 
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true

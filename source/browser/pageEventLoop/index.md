@@ -11,3 +11,4 @@ comments: false
 [05.宏任务和微任务：不是所有任务都是一个待遇](/browser/pageEventLoop/MacroAndMicroTasks.html)
 [06. Promise：使用Promise，告别回调函数](/browser/pageEventLoop/PromiseXFetch.html)
 [07. async/await：使用同步的方式去写异步代码](/browser/pageEventLoop/AsyncAwait.html)
+[08. 任务调度：有了setTimeOut，为什么还要使用rAF？](/browser/pageEventLoop/TaskSchedule.html)
