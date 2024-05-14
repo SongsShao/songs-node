@@ -113,8 +113,8 @@ NexT.motion.middleWares = {
     var sequence = [];
     var sidebar = document.querySelectorAll('.sidebar-inner');
     var sidebarTransition = CONFIG.motion.transition.sidebar;
-    // Only for desktop of Pisces | Gemini.
-    if (sidebarTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') && window.innerWidth >= 992) {
+    // Only for Pisces | Gemini.
+    if (sidebarTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini')) {
       sidebar.forEach(function (targets) {
         sequence.push({
           targets: targets,
